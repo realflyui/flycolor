@@ -14,7 +14,7 @@
 /// color strings for accurate template matching.
 ///
 /// Format: Map<scaleName, List<P3ColorString>> where each list has 12 colors
-/// Reference: https://github.com/radix-ui/colors
+/// Original Source: https://github.com/radix-ui/colors
 ///
 /// See [FlyColorGenerator] for the complete generation algorithm.
 library;

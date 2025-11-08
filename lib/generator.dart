@@ -54,6 +54,8 @@ class _Step9Result {
 /// colors.accentContrast;   // Contrast color for text
 /// colors.accentSurface;    // Surface color
 /// ```
+/// 
+/// Original Source: https://github.com/radix-ui/website/blob/main/components/generateRadixColors.tsx
 class FlyColorGenerator {
   static const double _kMixingFactor = 0.5;
   static const double _kChromaCapMultiplier = 1.5;
