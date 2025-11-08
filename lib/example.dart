@@ -24,7 +24,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
   bool _backgroundColorManuallySet = false;
   bool _showAlpha = false;
 
-  late GeneratedColors _generatedColors;
+  GeneratedColors? _generatedColors;
   late TextEditingController _accentColorController;
   late TextEditingController _grayColorController;
   late TextEditingController _backgroundColorController;
@@ -35,11 +35,27 @@ class _FlyColorExampleState extends State<FlyColorExample> {
     _accentColorController = TextEditingController(text: _accentColor);
     _grayColorController = TextEditingController(text: _grayColor);
     _backgroundColorController = TextEditingController(text: _backgroundColor);
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) {
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Initialize colors if not already initialized
+    if (_generatedColors == null) {
+      _generateColors(context);
+    }
+    // Only update background color automatically if it wasn't manually set
+    if (!_backgroundColorManuallySet) {
+      final brightness = Theme.of(context).brightness;
+      final newBackground = brightness == Brightness.light ? '#FFFFFF' : '#111111';
+      if (_backgroundColor != newBackground) {
+        setState(() {
+          _backgroundColor = newBackground;
+          _backgroundColorController.text = newBackground;
+        });
         _generateColors(context);
       }
-    });
+    }
   }
 
   @override
@@ -50,22 +66,6 @@ class _FlyColorExampleState extends State<FlyColorExample> {
     super.dispose();
   }
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    // Only update background color automatically if it wasn't manually set
-    if (!_backgroundColorManuallySet) {
-      final brightness = Theme.of(context).brightness;
-      final newBackground = brightness == Brightness.light ? '#FFFFFF' : '#111111';
-      if (_backgroundColor != newBackground) {
-        setState(() {
-          _backgroundColor = newBackground;
-          _backgroundColorController.text = newBackground;
-        });
-      }
-    }
-    _generateColors(context);
-  }
 
   void _generateColors(BuildContext context) {
     final brightness = Theme.of(context).brightness;
@@ -96,6 +96,13 @@ class _FlyColorExampleState extends State<FlyColorExample> {
 
   @override
   Widget build(BuildContext context) {
+    // Show loading if colors not initialized yet
+    if (_generatedColors == null) {
+      return const Scaffold(
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
+    
     final textColor = FlyColor.of(context).gray12;
     final brightness = Theme.of(context).brightness;
     final isDark = brightness == Brightness.dark;
@@ -103,7 +110,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('FlyColor'),
-        backgroundColor: _generatedColors.background,
+        backgroundColor: _generatedColors!.background,
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -175,7 +182,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
           ),
         ],
       ),
-      backgroundColor: _generatedColors.background,
+      backgroundColor: _generatedColors!.background,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -192,29 +199,29 @@ class _FlyColorExampleState extends State<FlyColorExample> {
             _buildColorScaleHeaders(textColor),
             _showAlpha
                 ? _buildAlphaColorScaleRow(
-                  _generatedColors.accentScaleAlpha,
+                  _generatedColors!.accentScaleAlpha,
                   'Accent',
                   textColor,
                   isDark: isDark,
-                  contrastColor: _generatedColors.accentContrast,
-                  surfaceColor: _generatedColors.accentSurface,
+                  contrastColor: _generatedColors!.accentContrast,
+                  surfaceColor: _generatedColors!.accentSurface,
                 )
                 : _buildColorScaleRow(
-                  _generatedColors.accentScale,
+                  _generatedColors!.accentScale,
                   'Accent',
                   textColor,
-                  contrastColor: _generatedColors.accentContrast,
-                  surfaceColor: _generatedColors.accentSurface,
+                  contrastColor: _generatedColors!.accentContrast,
+                  surfaceColor: _generatedColors!.accentSurface,
                 ),
             const SizedBox(height: 4),
             _showAlpha
                 ? _buildAlphaColorScaleRow(
-                  _generatedColors.grayScaleAlpha,
+                  _generatedColors!.grayScaleAlpha,
                   'Gray',
                   textColor,
                   isDark: isDark,
                 )
-                : _buildColorScaleRow(_generatedColors.grayScale, 'Gray', textColor),
+                : _buildColorScaleRow(_generatedColors!.grayScale, 'Gray', textColor),
             const SizedBox(height: 24),
           ],
         ),
@@ -418,6 +425,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
     int? step,
     bool isAlpha,
   ) {
+    // Pre-compute all values outside the builder
     final hex = color.toHex();
     final r = color.red;
     final g = color.green;
@@ -427,6 +435,8 @@ class _FlyColorExampleState extends State<FlyColorExample> {
     final brightness = Theme.of(context).brightness;
     final isDark = brightness == Brightness.dark;
     final textColor = isDark ? Colors.white : Colors.black;
+    final checkerboardColor1 = isDark ? const Color(0xFF404040) : const Color(0xFFE0E0E0);
+    final checkerboardColor2 = isDark ? const Color(0xFF505050) : const Color(0xFFF5F5F5);
 
     // Generate usage examples
     String? usageCode;
@@ -461,6 +471,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
 
     showDialog(
       context: context,
+      barrierDismissible: true,
       builder: (context) => Dialog(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
@@ -486,19 +497,21 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: isAlpha
-                      ? Stack(
-                          children: [
-                            // Checkerboard background
-                            CustomPaint(
-                              painter: _CheckerboardPainter(
-                                color1: isDark ? const Color(0xFF404040) : const Color(0xFFE0E0E0),
-                                color2: isDark ? const Color(0xFF505050) : const Color(0xFFF5F5F5),
+                      ? RepaintBoundary(
+                          child: Stack(
+                            children: [
+                              // Checkerboard background
+                              CustomPaint(
+                                painter: _CheckerboardPainter(
+                                  color1: checkerboardColor1,
+                                  color2: checkerboardColor2,
+                                ),
+                                child: Container(),
                               ),
-                              child: Container(),
-                            ),
-                            // Color overlay
-                            Container(color: color),
-                          ],
+                              // Color overlay
+                              Container(color: color),
+                            ],
+                          ),
                         )
                       : Container(color: color),
                 ),
@@ -519,6 +532,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                 context,
                 'Hex',
                 hex,
+                textColor: textColor,
                 onCopy: () {
                   Clipboard.setData(ClipboardData(text: hex));
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -532,6 +546,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                 context,
                 'RGB',
                 'rgb($r, $g, $b)',
+                textColor: textColor,
                 onCopy: () {
                   Clipboard.setData(ClipboardData(text: 'rgb($r, $g, $b)'));
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -546,6 +561,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                   context,
                   'Alpha',
                   '$a / 255 ($opacity)',
+                  textColor: textColor,
                   onCopy: () {
                     Clipboard.setData(ClipboardData(text: a.toString()));
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -554,35 +570,36 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                   },
                 ),
               ],
-              if (usageCode != null) ...[
-                const SizedBox(height: 20),
-                Divider(color: textColor.withOpacity(0.2)),
-                const SizedBox(height: 16),
-                Text(
-                  'Usage',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: textColor,
-                  ),
-                ),
-                const SizedBox(height: 12),
-                // Direct access
+              if (usageCode != null)
                 Builder(
                   builder: (context) {
-                    final code = usageCode!;
+                    final directCode = usageCode!;
                     final contextCode = contextAwareUsage;
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        const SizedBox(height: 20),
+                        Divider(color: textColor.withOpacity(0.2)),
+                        const SizedBox(height: 16),
+                        Text(
+                          'Usage',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: textColor,
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        // Direct access
                         _buildInfoRow(
                           context,
                           'Direct',
-                          code,
+                          directCode,
+                          textColor: textColor,
                           onCopy: () {
-                            Clipboard.setData(ClipboardData(text: code));
+                            Clipboard.setData(ClipboardData(text: directCode));
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text('Copied $code to clipboard')),
+                              SnackBar(content: Text('Copied $directCode to clipboard')),
                             );
                           },
                         ),
@@ -592,6 +609,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                             context,
                             'Context',
                             contextCode,
+                            textColor: textColor,
                             onCopy: () {
                               Clipboard.setData(ClipboardData(text: contextCode));
                               ScaffoldMessenger.of(context).showSnackBar(
@@ -604,7 +622,6 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                     );
                   },
                 ),
-              ],
               const SizedBox(height: 20),
               // Close button
               SizedBox(
@@ -626,10 +643,12 @@ class _FlyColorExampleState extends State<FlyColorExample> {
     String label,
     String value, {
     VoidCallback? onCopy,
+    Color? textColor,
   }) {
-    final brightness = Theme.of(context).brightness;
-    final isDark = brightness == Brightness.dark;
-    final textColor = isDark ? Colors.white : Colors.black;
+    final effectiveTextColor = textColor ?? 
+        (Theme.of(context).brightness == Brightness.dark 
+            ? Colors.white 
+            : Colors.black);
 
     return Row(
       children: [
@@ -640,7 +659,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w500,
-              color: textColor.withOpacity(0.7),
+              color: effectiveTextColor.withOpacity(0.7),
             ),
           ),
         ),
@@ -650,7 +669,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
             style: TextStyle(
               fontSize: 14,
               fontFamily: 'monospace',
-              color: textColor,
+              color: effectiveTextColor,
             ),
           ),
         ),
@@ -863,28 +882,30 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                 final color = entry.value;
                 final step = index + 1;
                 return Expanded(
-                  child: GestureDetector(
-                    onTap: () => _showColorInfoDialog(
-                      context,
-                      color,
-                      label,
-                      step,
-                      false,
-                    ),
-                    child: Container(
-                      height: 80,
-                      color: color,
-                      child: Material(
-                        color: Colors.transparent,
-                        child: InkWell(
-                          onTap: () => _showColorInfoDialog(
-                            context,
-                            color,
-                            label,
-                            step,
-                            false,
+                  child: RepaintBoundary(
+                    child: GestureDetector(
+                      onTap: () => _showColorInfoDialog(
+                        context,
+                        color,
+                        label,
+                        step,
+                        false,
+                      ),
+                      child: Container(
+                        height: 80,
+                        color: color,
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            onTap: () => _showColorInfoDialog(
+                              context,
+                              color,
+                              label,
+                              step,
+                              false,
+                            ),
+                            child: Container(),
                           ),
-                          child: Container(),
                         ),
                       ),
                     ),
@@ -1010,32 +1031,34 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                 final color = entry.value;
                 final step = index + 1;
                 return Expanded(
-                  child: GestureDetector(
-                    onTap: () => _showColorInfoDialog(
-                      context,
-                      color,
-                      label,
-                      step,
-                      true,
-                    ),
-                    child: Container(
-                      height: 80,
-                      child: CustomPaint(
-                        painter: _CheckerboardPainter(
-                          color1: isDark ? const Color(0xFF404040) : const Color(0xFFE0E0E0),
-                          color2: isDark ? const Color(0xFF505050) : const Color(0xFFF5F5F5),
-                        ),
-                        child: Material(
-                          color: Colors.transparent,
-                          child: InkWell(
-                            onTap: () => _showColorInfoDialog(
-                              context,
-                              color,
-                              label,
-                              step,
-                              true,
+                  child: RepaintBoundary(
+                    child: GestureDetector(
+                      onTap: () => _showColorInfoDialog(
+                        context,
+                        color,
+                        label,
+                        step,
+                        true,
+                      ),
+                      child: Container(
+                        height: 80,
+                        child: CustomPaint(
+                          painter: _CheckerboardPainter(
+                            color1: isDark ? const Color(0xFF404040) : const Color(0xFFE0E0E0),
+                            color2: isDark ? const Color(0xFF505050) : const Color(0xFFF5F5F5),
+                          ),
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () => _showColorInfoDialog(
+                                context,
+                                color,
+                                label,
+                                step,
+                                true,
+                              ),
+                              child: Container(color: color),
                             ),
-                            child: Container(color: color),
                           ),
                         ),
                       ),
@@ -1690,51 +1713,55 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                           ...List.generate(12, (index) {
                             final step = index + 1;
                             final color = _showAlpha ? getAlphaColor(name, step) : getColor(name, step);
+                            final checkerboardColor1 = isLight ? const Color(0xFFE0E0E0) : const Color(0xFF404040);
+                            final checkerboardColor2 = isLight ? const Color(0xFFF5F5F5) : const Color(0xFF505050);
                             return Expanded(
-                              child: GestureDetector(
-                                onTap: () => _showColorInfoDialog(
-                                  context,
-                                  color,
-                                  name,
-                                  step,
-                                  _showAlpha,
-                                ),
-                                child: _showAlpha
-                                    ? Container(
-                                        height: 50,
-                                        child: CustomPaint(
-                                          painter: _CheckerboardPainter(
-                                            color1: isLight ? const Color(0xFFE0E0E0) : const Color(0xFF404040),
-                                            color2: isLight ? const Color(0xFFF5F5F5) : const Color(0xFF505050),
-                                          ),
-                                          child: Material(
-                                            color: Colors.transparent,
-                                            child: InkWell(
-                                              onTap: () => _showColorInfoDialog(
-                                                context,
-                                                color,
-                                                name,
-                                                step,
-                                                _showAlpha,
+                              child: RepaintBoundary(
+                                child: GestureDetector(
+                                  onTap: () => _showColorInfoDialog(
+                                    context,
+                                    color,
+                                    name,
+                                    step,
+                                    _showAlpha,
+                                  ),
+                                  child: _showAlpha
+                                      ? Container(
+                                          height: 50,
+                                          child: CustomPaint(
+                                            painter: _CheckerboardPainter(
+                                              color1: checkerboardColor1,
+                                              color2: checkerboardColor2,
+                                            ),
+                                            child: Material(
+                                              color: Colors.transparent,
+                                              child: InkWell(
+                                                onTap: () => _showColorInfoDialog(
+                                                  context,
+                                                  color,
+                                                  name,
+                                                  step,
+                                                  _showAlpha,
+                                                ),
+                                                child: Container(color: color),
                                               ),
-                                              child: Container(color: color),
                                             ),
                                           ),
-                                        ),
-                                      )
-                                    : Material(
-                                        color: Colors.transparent,
-                                        child: InkWell(
-                                          onTap: () => _showColorInfoDialog(
-                                            context,
-                                            color,
-                                            name,
-                                            step,
-                                            _showAlpha,
+                                        )
+                                      : Material(
+                                          color: Colors.transparent,
+                                          child: InkWell(
+                                            onTap: () => _showColorInfoDialog(
+                                              context,
+                                              color,
+                                              name,
+                                              step,
+                                              _showAlpha,
+                                            ),
+                                            child: Container(height: 50, color: color),
                                           ),
-                                          child: Container(height: 50, color: color),
                                         ),
-                                      ),
+                                ),
                               ),
                             );
                           }),
@@ -1816,15 +1843,24 @@ class _CheckerboardPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+    // Optimize: Pre-calculate paints and use integer math
     final paint1 = Paint()..color = color1;
     final paint2 = Paint()..color = color2;
 
-    for (double y = 0; y < size.height; y += _squareSize) {
-      for (double x = 0; x < size.width; x += _squareSize) {
-        final isEvenRow = (y / _squareSize).floor() % 2 == 0;
-        final isEvenCol = (x / _squareSize).floor() % 2 == 0;
-        final shouldUseColor1 = (isEvenRow && isEvenCol) || (!isEvenRow && !isEvenCol);
+    // Calculate number of squares needed
+    final rows = (size.height / _squareSize).ceil();
+    final cols = (size.width / _squareSize).ceil();
 
+    // Draw alternating pattern more efficiently
+    for (int row = 0; row < rows; row++) {
+      final y = row * _squareSize;
+      final isEvenRow = row % 2 == 0;
+      
+      for (int col = 0; col < cols; col++) {
+        final x = col * _squareSize;
+        final isEvenCol = col % 2 == 0;
+        final shouldUseColor1 = (isEvenRow && isEvenCol) || (!isEvenRow && !isEvenCol);
+        
         canvas.drawRect(
           Rect.fromLTWH(x, y, _squareSize, _squareSize),
           shouldUseColor1 ? paint1 : paint2,
