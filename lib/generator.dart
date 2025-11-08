@@ -99,7 +99,7 @@ class FlyColorGenerator {
       backgroundColor: backgroundColor,
     );
 
-    // Use gray scale tint when accent is pure white or black
+    // Make sure we use the tint from the gray scale for when base is pure white or black
     final accentBaseHex = _colorToHex(accentColor).toLowerCase();
     if (accentBaseHex == '#000' ||
         accentBaseHex == '#fff' ||
@@ -250,6 +250,7 @@ class FlyColorGenerator {
 
     allColors.sort((a, b) => a.distance.compareTo(b.distance));
 
+    // Remove non-unique scales - get one color from each unique scale
     final closestColors = <_ColorWithDistance>[];
     final seenScales = <String>{};
     for (final color in allColors) {
@@ -259,7 +260,10 @@ class FlyColorGenerator {
       }
     }
 
-    // Remove duplicate gray scales
+    // If the next two closest colors are both grays, remove the second one until it's not a gray anymore.
+    // This is because up next we will be comparing how close the two closest colors are to the source color,
+    // and since the grays are all extremely close to each other, we won't get any useful data from the second
+    // closest color if it's also a gray.
     final allAreGrays = closestColors.every(
       (c) => grayScaleNames.contains(c.scale),
     );
@@ -278,11 +282,52 @@ class FlyColorGenerator {
     final colorA = closestColors[0];
     final colorB = closestColors[1];
 
-    // Calculate mixing ratio using law of cosines
+    // Light trigonometry ahead.
+    //
+    // We want to determine the color that is the closest to the source color. Sometimes it makes sense
+    // to proportionally mix the two closest colors together, but sometimes it is not useful at all.
+    // Color coords are spatial in 3D, however we can treat the data we have as a 2D projection that is good enough.
+    //
+    // Case 1:
+    // If the distances between the source color, the 1st closest color (A) and the 2nd closest color (B) form
+    // a triangle where NEITHER angle A nor B are larger than 90 degrees, then we want to mix the 1st and the 2nd
+    // closest colors in the same proportion as distances AD and BD are to each other. Mixing the two would result
+    // in a color that would be closer to the source color than either of the two original closest colors.
+    // Example: source color is a desaturated blue, which is between "indigo" and "slate" scales.
+    //
+    //        C ← Source color
+    //       /|⟍
+    //      / |  ⟍
+    //   b /  |    ⟍  a
+    //    /   |      ⟍
+    //   /    |        ⟍
+    //  A --- D -------- B
+    //        ↑
+    //        The color we want to use as the base, which is a mix of A and B.
+    //
+    // Case 2:
+    // If the distances between the source color, the 1st closest color (A) and the 2nd closest color (B) form
+    // a triangle where EITHER angle A or B are larger than 90 degrees, then we don't care about point B because it's
+    // directionally the same as A, as mixing A and B can't provide us with a color that is any closer to the source.
+    // Example: source color is a saturated blue, with "blue" being the closest scale, and "indigo" just being further.
+    //
+    //      C ← Source color
+    //       \⟍
+    //        \  ⟍
+    //         \    ⟍  a
+    //        b \      ⟍
+    //           \        ⟍
+    //            A ------- B
+    //            ↑
+    //            The color we want to use as the base, which is not influenced by B.
+
+    // We'll need all the lengths of the triangle sides, named after the angles they look at:
     final a = colorB.distance;
     final b = colorA.distance;
     final c = _deltaEOK(colorA.color, colorB.color);
 
+    // We can get the ratios of AD to BD lengths with trigonometry using tangents,
+    // as the ratio of the tangents of the opposite angles will match.
     final cosA = (b * b + c * c - a * a) / (2 * b * c);
     final radA = acos(cosA.clamp(-1.0, 1.0));
     final sinA = sin(radA);
@@ -296,24 +341,33 @@ class FlyColorGenerator {
       return scale.map((c) => c.toColor()).toList();
     }
 
+    // Tangent of angle C in the ACD triangle
     final tanC1 = cosA / sinA;
+
+    // Tangent of angle C in the BCD triangle
     final tanC2 = cosB / sinB;
 
+    // The ratio of the tangents corresponds to the ratio of the distances AD to BD
+    // In the end, it means how much of scale B we want to mix into scale A.
+    // If it's "0" or less, this is an obtuse triangle from case 2, and we use just scale A.
     final ratio = max(0.0, tanC1 / tanC2) * _kMixingFactor;
 
+    // The base scale is going to be a mix of the two closest scales, with the mix ratio we determined before
     final scaleA = scales[colorA.scale]!;
     final scaleB = scales[colorB.scale]!;
     final mixedScale = List.generate(12, (i) {
       return _mixOklch(scaleA[i], scaleB[i], ratio);
     });
 
-    // Find closest color from mixed scale
+    // Get the closest color from the pre-mixed scale we created
     final baseColor = mixedScale.reduce(
       (a, b) => _deltaEOK(sourceOklch, a) < _deltaEOK(sourceOklch, b) ? a : b,
     );
 
-    // Correct hue and chroma to match source color
+    // Note the chroma difference between the source color and the base color
     final ratioC = sourceOklch.c / (baseColor.c == 0 ? 0.001 : baseColor.c);
+
+    // Modify hue and chroma of the scale to match the source color
     final adjustedScale = mixedScale.map((color) {
       final newC = min(sourceOklch.c * _kChromaCapMultiplier, color.c * ratioC);
       return OkLch(
@@ -323,7 +377,7 @@ class FlyColorGenerator {
       );
     }).toList();
 
-    // Transpose lightness curve to anchor to background
+    // Transpose lightness curve to anchor to background using Bezier easing
     final isLight = adjustedScale[0].l > 0.5;
     final lightModeEasing = [0.0, 2.0, 0.0, 2.0];
     final darkModeEasing = [1.0, 0.0, 1.0, 0.0];
@@ -331,10 +385,12 @@ class FlyColorGenerator {
     if (isLight) {
       final lightnessScale = adjustedScale.map((c) => c.l).toList();
       final bgL = backgroundOklch.l.clamp(0.0, 1.0);
+      // Add white as the first "step" of the light scale
       final newLightness = _transposeProgressionStart(bgL, [
         1.0,
         ...lightnessScale,
       ], lightModeEasing);
+      // Remove the step we added
       newLightness.removeAt(0);
 
       return List.generate(12, (i) {
@@ -345,9 +401,12 @@ class FlyColorGenerator {
         ).toColor();
       });
     } else {
+      // Dark mode
       var ease = List<double>.from(darkModeEasing);
       final referenceBgL = adjustedScale[0].l;
       final bgL = backgroundOklch.l.clamp(0.0, 1.0);
+
+      // If background is lighter than step 0, we want to gradually change the easing to linear
       final ratioL = bgL / (referenceBgL == 0 ? 0.001 : referenceBgL);
 
       if (ratioL > 1.0) {
@@ -398,6 +457,9 @@ class FlyColorGenerator {
   }
 
   /// Get step 9 color and contrast color.
+  ///
+  /// If the accent base color is close to the page background color, it's likely
+  /// white on white or black on black, so we want to return something that makes sense instead.
   static _Step9Result _getStep9Colors(
     List<Color> scale,
     OkLch accentBaseColor,
@@ -483,6 +545,10 @@ class FlyColorGenerator {
   }
 
   /// Generate button hover color by adjusting lightness and chroma.
+  ///
+  /// Finds closest in-scale color to donate the chroma and hue.
+  /// Especially useful when the source color is pure white or black,
+  /// but the gray scale is tinted.
   static Color _getButtonHoverColor(OkLch source, List<List<Color>> scales) {
     final L = source.l;
     final C = source.c;
@@ -492,6 +558,7 @@ class FlyColorGenerator {
     final newC = L > 0.4 && !H.isNaN ? C * _kButtonHoverChromaMultiplier : C;
     var buttonHoverColor = OkLch(newL, newC, H);
 
+    // Find closest in-scale color to donate the chroma and hue
     var closestColor = buttonHoverColor;
     var minDistance = double.infinity;
 
@@ -516,7 +583,12 @@ class FlyColorGenerator {
   }
 
   /// Calculate alpha color using reverse alpha blending.
+  ///
   /// Solves for foreground color and alpha that blend to target over background.
+  /// Formula: target = background * (1 - alpha) + foreground * alpha
+  /// Solving for alpha: alpha = (target - background) / (foreground - background)
+  ///
+  /// Expects 0-1 numbers for the RGB channels, but works with 0-255 integers internally.
   static Color _getAlphaColorSrgb(
     Color targetColor,
     Color backgroundColor, {
@@ -530,6 +602,11 @@ class FlyColorGenerator {
     final bg = (backgroundColor.g * 255.0).round();
     final bb = (backgroundColor.b * 255.0).round();
 
+    // Is the background color lighter, RGB-wise, than target color?
+    // Decide whether we want to add as little color or as much color as possible,
+    // darkening or lightening the background respectively.
+    // If at least one of the bits of the target RGB value
+    // is lighter than the background, we want to lighten it.
     final desiredRgb = (tr > br || tg > bg || tb > bb) ? 255 : 0;
 
     double alphaR = 0.0;
@@ -558,7 +635,9 @@ class FlyColorGenerator {
 
     final isPureGray = (alphaR == alphaG && alphaG == alphaB);
 
+    // No need for precision gymnastics with pure grays, and we can get cleaner output
     if (isPureGray) {
+      // Convert back to 0-1 values
       final v = desiredRgb / 255.0;
       final alpha = alphaR.clamp(0.0, 1.0);
       return Color.fromRGBO(
@@ -598,6 +677,7 @@ class FlyColorGenerator {
     int finalG = g;
     int finalB = b;
 
+    // Correct for rounding errors in light mode
     if (desiredRgb == 0) {
       if (tr <= br && tr != blendedR) {
         finalR = tr > blendedR ? r + 1 : r - 1;
@@ -608,7 +688,10 @@ class FlyColorGenerator {
       if (tb <= bb && tb != blendedB) {
         finalB = tb > blendedB ? b + 1 : b - 1;
       }
-    } else {
+    }
+
+    // Correct for rounding errors in dark mode
+    if (desiredRgb == 255) {
       if (tr >= br && tr != blendedR) {
         finalR = tr > blendedR ? r + 1 : r - 1;
       }
@@ -628,6 +711,8 @@ class FlyColorGenerator {
     );
   }
 
+  /// Important – This rounding is how the browser actually overlays
+  /// transparent RGB bits over each other. It does NOT round the whole result altogether.
   static int _blendAlpha(int foreground, double alpha, int background) {
     return (background * (1 - alpha)).round() + (foreground * alpha).round();
   }
@@ -669,6 +754,10 @@ class FlyColorGenerator {
   }
 
   /// Cubic Bezier easing function.
+  ///
+  /// Uses Newton's method to solve for t given x, then evaluates y at that t.
+  /// This allows us to use Bezier curves as easing functions where we specify
+  /// the x (input) and get the y (output) value.
   static double _bezierEasing(
     double t,
     double p1x,
@@ -686,6 +775,7 @@ class FlyColorGenerator {
     final by = 3.0 * (p2y - p1y) - cy;
     final ay = 1.0 - cy - by;
 
+    // Newton's method to solve for t
     double currentT = t;
     for (int i = 0; i < 8; i++) {
       final currentX = _bezierX(currentT, ax, bx, cx);
@@ -711,6 +801,10 @@ class FlyColorGenerator {
   }
 
   /// Transpose lightness progression to anchor to background using Bezier easing.
+  ///
+  /// Adjusts the lightness values in the array so that the first value (arr[0])
+  /// is transposed to the target value (to), using a Bezier curve to control
+  /// how the adjustment is distributed across the progression.
   static List<double> _transposeProgressionStart(
     double to,
     List<double> arr,
