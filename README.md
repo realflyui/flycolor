@@ -2,18 +2,19 @@
 
 A Radix inspired color system for Flutter with perceptually uniform, contextually aware 12-step color scales.
 
-## Overview
-
-FlyColor provides a comprehensive set of predefined color scales ready to use in your Flutter applications. Each color includes 12 steps plus contrast and surface variants, with full support for light and dark modes.
-
-For advanced use cases, FlyColor also includes a color generator that creates custom scales from any accent, gray, and background colors using OKLCH color space and sophisticated blending algorithms.
-
 ## Key Features
 
 - **Predefined Color Scales**: 30+ color scales (blue, red, green, etc.) with 12 steps each
-- **Light & Dark Mode**: Built-in support for both themes with context-aware access
+- **Automatic Dark Mode**: Built-in support for both themes with context-aware access. Dark mode Just Works
+- **Accessibility Made Easy**: Text colors are guaranteed to pass target contrast ratios against the corresponding background colors
+- **APCA Text Contrast**: Contrast targets are based on the modern APCA contrast algorithm, which accurately predicts how human vision perceives text
+- **Transparent Variants**: Each scale has matching alpha color variants (1A-12A), which are handy for UI components that need to blend into colored backgrounds
+- **P3 Color Gamut Support**: Template matching uses P3 color space for accurate blending, enabling the brightest yellows and reds possible
+- **Designed for User Interfaces**: Each step is designed with a specific use case in mind, such as backgrounds, hover states, borders, overlays, or text
 - **Perceptually Uniform**: Uses OKLCH color space for accurate color manipulation
 - **Custom Scale Generation**: Generate custom color scales from any input colors (advanced)
+
+For a deep dive into the color generation algorithm and architecture, see [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Usage
 
@@ -22,27 +23,32 @@ For advanced use cases, FlyColor also includes a color generator that creates cu
 FlyColor provides predefined color scales for all colors:
 
 ```dart
-import 'package:flycolor/colors.dart';
+import 'package:flycolor/flycolor.dart';
 
-// Direct access (defaults to light mode)
-FlyColor.blue9;        // Step 9 (seed/base color)
-FlyColor.blue1;        // Lightest step
-FlyColor.blue12;       // Darkest step
-FlyColor.blueContrast; // Contrast color for text
-FlyColor.blueSurface;  // Surface color
+// Explicit light/dark mode access
+FlyColorLight.blue1;        // Lightest step (light mode)
+FlyColorLight.blue9;        // Step 9 (seed/base color)
+FlyColorLight.blue12;       // Darkest step
+FlyColorLight.blueContrast; // Contrast color for text
+FlyColorLight.blueSurface;   // Surface color
+FlyColorLight.blue1A;       // Alpha variant
 
-// Dark mode variants
-FlyColor.blue1Dark;
-FlyColor.blue9Dark;
+FlyColorDark.blue1;         // Lightest step (dark mode)
+FlyColorDark.blue9;         // Step 9 (seed/base color)
+FlyColorDark.blue12;        // Darkest step
 
-// Explicit light/dark mode
-FlyColorLight.blue1;
-FlyColorDark.blue1;
+// Convenience: Step 9 colors (same for light/dark)
+FlyColor.blue;              // Step 9 seed color
 
 // Context-aware (automatically switches based on theme)
-FlyColor.of(context).blue1;
-FlyColor.of(context).gray9;
+final colors = FlyColor.of(context);
+colors.blue1;               // Automatically uses light or dark variant
+colors.blue9;
+colors.blueContrast;
+colors.blue1A;              // Alpha variant
 ```
+
+For detailed technical documentation on the colors, see `lib/colors.dart`.
 
 ### Generating Custom Color Scales (Advanced)
 
@@ -59,11 +65,13 @@ final colors = FlyColorGenerator.generate(
 );
 
 // Access the generated scales
-colors.accentScale;      // 12-step accent scale
-colors.grayScale;        // 12-step gray scale
-colors.accentScaleAlpha; // Alpha variants
-colors.accentContrast;   // Contrast color for text
-colors.accentSurface;    // Surface color
+colors.accentScale;        // 12-step accent scale (List<Color>)
+colors.grayScale;          // 12-step gray scale (List<Color>)
+colors.accentScaleAlpha;   // Alpha variants of accent scale (List<Color>)
+colors.grayScaleAlpha;     // Alpha variants of gray scale (List<Color>)
+colors.accentContrast;     // Contrast color for text on accent backgrounds
+colors.accentSurface;      // Surface color variant
+colors.background;         // The background color used for generation
 ```
 
 For detailed technical documentation on the generator, see `lib/generator.dart`.
