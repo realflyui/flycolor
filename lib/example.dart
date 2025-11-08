@@ -136,7 +136,13 @@ class _FlyColorExampleState extends State<FlyColorExample> {
             // Solid Colors
             _buildSectionHeader('Solid (12 steps)', textColor),
             _buildColorScaleHeaders(textColor),
-            _buildColorScaleRow(_generatedColors.accentScale, 'Accent', textColor),
+            _buildColorScaleRow(
+              _generatedColors.accentScale,
+              'Accent',
+              textColor,
+              contrastColor: _generatedColors.accentContrast,
+              surfaceColor: _generatedColors.accentSurface,
+            ),
             const SizedBox(height: 4),
             _buildColorScaleRow(_generatedColors.grayScale, 'Gray', textColor),
             const SizedBox(height: 24),
@@ -147,11 +153,6 @@ class _FlyColorExampleState extends State<FlyColorExample> {
             _buildColorScaleRow(_generatedColors.accentScaleAlpha, 'Accent', textColor),
             const SizedBox(height: 4),
             _buildColorScaleRow(_generatedColors.grayScaleAlpha, 'Gray', textColor),
-            const SizedBox(height: 24),
-
-            // Special Colors
-            _buildSectionHeader('Special Colors', textColor),
-            _buildSpecialColors(),
             const SizedBox(height: 24),
           ],
         ),
@@ -448,6 +449,20 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                       ),
                     ),
                   ),
+                  // Contrast and Surface
+                  Expanded(
+                    flex: 2,
+                    child: Center(
+                      child: Text(
+                        'Contrast & Surface',
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w600,
+                          color: textColor,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -482,6 +497,32 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                       ),
                     );
                   }),
+                  // Contrast column
+                  Expanded(
+                    child: Center(
+                      child: Text(
+                        'C',
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: textColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                  // Surface column
+                  Expanded(
+                    child: Center(
+                      child: Text(
+                        'S',
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: textColor,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -492,7 +533,13 @@ class _FlyColorExampleState extends State<FlyColorExample> {
     );
   }
 
-  Widget _buildColorScaleRow(List<Color> colors, String label, Color textColor) {
+  Widget _buildColorScaleRow(
+    List<Color> colors,
+    String label,
+    Color textColor, {
+    Color? contrastColor,
+    Color? surfaceColor,
+  }) {
     return Row(
       children: [
         // Label column
@@ -506,48 +553,37 @@ class _FlyColorExampleState extends State<FlyColorExample> {
         // Color swatches
         Expanded(
           child: Row(
-            children: colors.map((color) {
-              return Expanded(
+            children: [
+              // 12 step colors
+              ...colors.map((color) {
+                return Expanded(
+                  child: Container(
+                    height: 80,
+                    color: color,
+                  ),
+                );
+              }),
+              // Contrast color
+              Expanded(
                 child: Container(
                   height: 80,
-                  color: color,
+                  color: contrastColor ?? Colors.transparent,
                 ),
-              );
-            }).toList(),
+              ),
+              // Surface color
+              Expanded(
+                child: Container(
+                  height: 80,
+                  color: surfaceColor ?? Colors.transparent,
+                ),
+              ),
+            ],
           ),
         ),
       ],
     );
   }
 
-  Widget _buildSpecialColors() {
-    return Column(
-      children: [
-        _buildColorSwatch('Contrast', _generatedColors.accentContrast),
-        const SizedBox(height: 8),
-        _buildColorSwatch('Surface', _generatedColors.accentSurface),
-        const SizedBox(height: 8),
-        _buildColorSwatch('Background', _generatedColors.background),
-      ],
-    );
-  }
-
-  Widget _buildColorSwatch(String label, Color color) {
-    return Row(
-      children: [
-        SizedBox(width: 100, child: Text(label)),
-        Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-            color: color,
-            border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(4),
-          ),
-        ),
-      ],
-    );
-  }
 
   Color _hexToColor(String hex) {
     hex = hex.replaceAll('#', '');
