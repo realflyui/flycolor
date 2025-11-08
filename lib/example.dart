@@ -75,6 +75,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
         gray: _grayColor,
         background: _backgroundColor,
       );
+      print(_generatedColors.toMap());
     });
   }
 
@@ -133,8 +134,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
             _buildControls(context, textColor),
             const SizedBox(height: 24),
 
-            // Solid Colors
-            _buildSectionHeader('Solid (12 steps)', textColor),
+            // Color Scales
             _buildColorScaleHeaders(textColor),
             _buildColorScaleRow(
               _generatedColors.accentScale,
@@ -144,15 +144,11 @@ class _FlyColorExampleState extends State<FlyColorExample> {
               surfaceColor: _generatedColors.accentSurface,
             ),
             const SizedBox(height: 4),
-            _buildColorScaleRow(_generatedColors.grayScale, 'Gray', textColor),
-            const SizedBox(height: 24),
-
-            // Alpha Colors
-            _buildSectionHeader('Alpha (12 steps)', textColor),
-            _buildColorScaleHeaders(textColor),
-            _buildColorScaleRow(_generatedColors.accentScaleAlpha, 'Accent', textColor),
+            _buildAlphaColorScaleRow(_generatedColors.accentScaleAlpha, 'Accent', textColor),
             const SizedBox(height: 4),
-            _buildColorScaleRow(_generatedColors.grayScaleAlpha, 'Gray', textColor),
+            _buildColorScaleRow(_generatedColors.grayScale, 'Gray', textColor),
+            const SizedBox(height: 4),
+            _buildAlphaColorScaleRow(_generatedColors.grayScaleAlpha, 'Gray', textColor),
             const SizedBox(height: 24),
           ],
         ),
@@ -233,7 +229,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                 _backgroundColorController.text = color;
               });
               // Change theme mode based on color brightness
-              final colorObj = _hexToColor(color);
+              final colorObj = FlyColorGenerator.hexToColor(color);
               final luminance = colorObj.computeLuminance();
               // If color is light (luminance > 0.5), use light theme; otherwise dark
               widget.onThemeModeChanged(
@@ -282,7 +278,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                color: _hexToColor(currentColor),
+                color: FlyColorGenerator.hexToColor(currentColor),
                 border: Border.all(color: Colors.grey),
                 borderRadius: BorderRadius.circular(4),
               ),
@@ -338,26 +334,12 @@ class _FlyColorExampleState extends State<FlyColorExample> {
         width: 24,
         height: 24,
         decoration: BoxDecoration(
-          color: _hexToColor(color),
+          color: FlyColorGenerator.hexToColor(color),
           border: Border.all(
             color: isSelected ? Colors.blue : Colors.grey,
             width: isSelected ? 2 : 1,
           ),
           borderRadius: BorderRadius.circular(4),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSectionHeader(String title, Color textColor) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12.0),
-      child: Text(
-        title,
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: textColor,
         ),
       ),
     );
@@ -584,14 +566,55 @@ class _FlyColorExampleState extends State<FlyColorExample> {
     );
   }
 
-
-  Color _hexToColor(String hex) {
-    hex = hex.replaceAll('#', '');
-    if (hex.length == 3) {
-      hex = hex.split('').map((c) => c + c).join('');
-    }
-    return Color(int.parse(hex, radix: 16) | 0xFF000000);
+  Widget _buildAlphaColorScaleRow(
+    List<Color> colors,
+    String label,
+    Color textColor,
+  ) {
+    return Row(
+      children: [
+        // Empty label column for alignment
+        const SizedBox(width: 60),
+        // Color swatches with background pattern
+        Expanded(
+          child: Row(
+            children: [
+              // 12 step colors with checkerboard background
+              ...colors.map((color) {
+                return Expanded(
+                  child: Container(
+                    height: 80,
+                    child: CustomPaint(
+                      painter: _CheckerboardPainter(),
+                      child: Container(
+                        color: color,
+                      ),
+                    ),
+                  ),
+                );
+              }),
+              // Empty contrast column
+              Expanded(
+                child: Container(
+                  height: 80,
+                  color: Colors.transparent,
+                ),
+              ),
+              // Empty surface column
+              Expanded(
+                child: Container(
+                  height: 80,
+                  color: Colors.transparent,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
   }
+
+
 
   Widget _buildAllColors(BuildContext context, Color textColor) {
     final brightness = Theme.of(context).brightness;
@@ -1047,4 +1070,33 @@ class _FlyColorExampleState extends State<FlyColorExample> {
     );
   }
 
+}
+
+/// Custom painter for checkerboard pattern background
+class _CheckerboardPainter extends CustomPainter {
+  static const _squareSize = 10.0;
+  static const _color1 = Color(0xFFE0E0E0);
+  static const _color2 = Color(0xFFF5F5F5);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint1 = Paint()..color = _color1;
+    final paint2 = Paint()..color = _color2;
+
+    for (double y = 0; y < size.height; y += _squareSize) {
+      for (double x = 0; x < size.width; x += _squareSize) {
+        final isEvenRow = (y / _squareSize).floor() % 2 == 0;
+        final isEvenCol = (x / _squareSize).floor() % 2 == 0;
+        final shouldUseColor1 = (isEvenRow && isEvenCol) || (!isEvenRow && !isEvenCol);
+
+        canvas.drawRect(
+          Rect.fromLTWH(x, y, _squareSize, _squareSize),
+          shouldUseColor1 ? paint1 : paint2,
+        );
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }

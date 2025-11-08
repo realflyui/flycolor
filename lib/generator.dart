@@ -78,11 +78,11 @@ class FlyColorGenerator {
     final isLight = appearance == 'light';
     final accentColor = accent is Color
         ? accent
-        : _hexToColor(accent as String);
-    final grayColor = gray is Color ? gray : _hexToColor(gray as String);
+        : hexToColor(accent as String);
+    final grayColor = gray is Color ? gray : hexToColor(gray as String);
     final backgroundColor = background is Color
         ? background
-        : _hexToColor(background as String);
+        : hexToColor(background as String);
 
     // Load pre-built scales and convert to OKLCH
     final scales = _loadScales(isLight);
@@ -633,14 +633,30 @@ class FlyColorGenerator {
   }
 
   /// Convert hex string to Color.
-  /// Handles both full form (#RRGGBB) and short form (#RGB) hex strings.
-  static Color _hexToColor(String hex) {
+  /// Handles:
+  /// - Full form (#RRGGBB) - 6 characters
+  /// - Short form (#RGB) - 3 characters
+  /// - With alpha (#RRGGBBAA) - 8 characters
+  static Color hexToColor(String hex) {
     hex = hex.replaceAll('#', '');
+    
+    // Handle 8-character hex with alpha (RRGGBBAA)
+    if (hex.length == 8) {
+      final rgbHex = hex.substring(0, 6);
+      final alphaHex = hex.substring(6, 8);
+      final rgbColor = Color(int.parse(rgbHex, radix: 16) | 0xFF000000);
+      final alpha = int.parse(alphaHex, radix: 16);
+      return rgbColor.withAlpha(alpha);
+    }
+    
+    // Handle 3-character short form (RGB)
     if (hex.length == 3) {
       hex = hex.split('').map((c) => c + c).join('');
     }
+    
+    // Handle 6-character form (RRGGBB)
     if (hex.length != 6) {
-      throw ArgumentError('Invalid hex color: $hex');
+      throw ArgumentError('Invalid hex color: #$hex');
     }
     return Color(int.parse(hex, radix: 16) | 0xFF000000);
   }
