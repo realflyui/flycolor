@@ -34,6 +34,26 @@ class _Step9Result {
 /// 4. Corrects hue and chroma to match source color identity
 /// 5. Transposes lightness curve to anchor to background using Bezier easing
 /// 6. Generates alpha variants using reverse alpha blending
+///
+/// ## Usage
+///
+/// ```dart
+/// import 'package:flycolor/generator.dart';
+///
+/// final colors = FlyColorGenerator.generate(
+///   appearance: 'light',
+///   accent: '#3D63DD',
+///   gray: '#8B8D98',
+///   background: '#FFFFFF',
+/// );
+///
+/// // Access the generated scales
+/// colors.accentScale;      // 12-step accent scale
+/// colors.grayScale;        // 12-step gray scale
+/// colors.accentScaleAlpha; // Alpha variants
+/// colors.accentContrast;   // Contrast color for text
+/// colors.accentSurface;    // Surface color
+/// ```
 class FlyColorGenerator {
   static const double _kMixingFactor = 0.5;
   static const double _kChromaCapMultiplier = 1.5;
@@ -41,10 +61,14 @@ class FlyColorGenerator {
 
   /// Generate colors from base colors.
   ///
-  /// [appearance] - "light" or "dark" mode
-  /// [accent] - Accent color (Color object or hex string like "#3D63DD")
-  /// [gray] - Gray color (Color object or hex string like "#8B8D98")
-  /// [background] - Background color (Color object or hex string like "#111111")
+  /// Returns a [GeneratedColors] object containing all generated color scales.
+  /// See the class documentation for usage examples.
+  ///
+  /// ## Parameters
+  /// - [appearance] - "light" or "dark" mode
+  /// - [accent] - Accent color (Color object or hex string like "#3D63DD")
+  /// - [gray] - Gray color (Color object or hex string like "#8B8D98")
+  /// - [background] - Background color (Color object or hex string like "#111111")
   static GeneratedColors generate({
     required String appearance,
     required dynamic accent,
@@ -689,6 +713,20 @@ class FlyColorGenerator {
 }
 
 /// Generated color scales and variants.
+///
+/// Returned by [FlyColorGenerator.generate] with all generated color scales
+/// and utility colors for use in your application.
+///
+/// Contains:
+/// - [accentScale] - 12-step accent color scale
+/// - [grayScale] - 12-step gray color scale
+/// - [accentScaleAlpha] - Alpha variants of accent scale
+/// - [grayScaleAlpha] - Alpha variants of gray scale
+/// - [accentContrast] - Contrast color for text on accent backgrounds
+/// - [accentSurface] - Surface color variant
+/// - [background] - The background color used for generation
+///
+/// See [FlyColorGenerator] for usage examples.
 class GeneratedColors {
   final List<Color> accentScale;
   final List<Color> accentScaleAlpha;

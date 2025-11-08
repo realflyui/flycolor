@@ -15,31 +15,6 @@ For advanced use cases, FlyColor also includes a color generator that creates cu
 - **Perceptually Uniform**: Uses OKLCH color space for accurate color manipulation
 - **Custom Scale Generation**: Generate custom color scales from any input colors (advanced)
 
-## Available Colors
-
-FlyColor includes 30+ predefined color scales organized by color family:
-
-**Neutrals**
-- gray, mauve, slate, sage, olive, sand
-
-**Reds**
-- tomato, red, ruby, crimson
-
-**Pinks & Purples**
-- pink, plum, purple, violet, iris
-
-**Blues**
-- indigo, blue, cyan, sky
-
-**Greens**
-- teal, jade, green, grass, mint
-
-**Yellows & Oranges**
-- lime, yellow, amber, orange
-
-**Browns & Metals**
-- brown, bronze, gold
-
 ## Usage
 
 ### Predefined Color Scales

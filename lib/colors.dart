@@ -3,13 +3,32 @@
 
 import 'package:flutter/material.dart';
 
-/// Usage:
-///   FlyColor.amber (seed/base color - step 9)
-///   FlyColor.amber1 (light mode - direct access)
-///   FlyColor.amber1Dark (dark mode - direct access)
-///   FlyColorLight.amber1 (light mode - direct access)
-///   FlyColorDark.amber1 (dark mode - direct access)
-///   FlyColor.of(context).amber1 (context-aware)
+/// ## Usage
+///
+/// FlyColor provides predefined color scales for all colors:
+///
+/// ```dart
+/// import 'package:flycolor/colors.dart';
+///
+/// // Direct access (defaults to light mode)
+/// FlyColor.blue9;        // Step 9 (seed/base color)
+/// FlyColor.blue1;        // Lightest step
+/// FlyColor.blue12;       // Darkest step
+/// FlyColor.blueContrast; // Contrast color for text
+/// FlyColor.blueSurface;  // Surface color
+///
+/// // Dark mode variants
+/// FlyColor.blue1Dark;
+/// FlyColor.blue9Dark;
+///
+/// // Explicit light/dark mode
+/// FlyColorLight.blue1;
+/// FlyColorDark.blue1;
+///
+/// // Context-aware (automatically switches based on theme)
+/// FlyColor.of(context).blue1;
+/// FlyColor.of(context).gray9;
+/// ```
 
 /// Light mode colors
 class FlyColorLight {
@@ -953,11 +972,50 @@ class FlyColorDark {
 
 }
 
-/// Main entry point for context-aware color access
+/// Main entry point for context-aware color access.
+///
+/// Provides direct access to predefined color scales and context-aware color
+/// schemes that automatically switch between light and dark modes.
+///
+/// ## Usage
+///
+/// ```dart
+/// import 'package:flycolor/colors.dart';
+///
+/// // Direct access (defaults to light mode)
+/// FlyColor.blue9;        // Step 9 (seed/base color)
+/// FlyColor.blue1;        // Lightest step
+/// FlyColor.blue12;       // Darkest step
+/// FlyColor.blueContrast; // Contrast color for text
+/// FlyColor.blueSurface;  // Surface color
+///
+/// // Dark mode variants
+/// FlyColor.blue1Dark;
+/// FlyColor.blue9Dark;
+///
+/// // Explicit light/dark mode
+/// FlyColorLight.blue1;
+/// FlyColorDark.blue1;
+///
+/// // Context-aware (automatically switches based on theme)
+/// FlyColor.of(context).blue1;
+/// FlyColor.of(context).gray9;
+/// ```
 class FlyColor {
   FlyColor._();
 
-  /// Get context-aware color scheme from BuildContext
+  /// Get context-aware color scheme from BuildContext.
+  ///
+  /// Automatically detects the current theme brightness and returns a
+  /// [FlyColorScheme] that provides colors appropriate for the current theme.
+  ///
+  /// ## Example
+  ///
+  /// ```dart
+  /// // In a widget build method
+  /// final colors = FlyColor.of(context);
+  /// Container(color: colors.blue1);  // Automatically uses light or dark variant
+  /// ```
   static FlyColorScheme of(BuildContext context) {
     final brightness = Theme.of(context).brightness;
     return FlyColorScheme(isLight: brightness == Brightness.light);
@@ -1931,10 +1989,20 @@ class FlyColor {
 
 }
 
-/// Context-aware color scheme
+/// Context-aware color scheme.
 ///
 /// Automatically switches between light and dark colors based on
-/// the current theme context.
+/// the current theme context. Returned by [FlyColor.of] to provide
+/// theme-appropriate colors.
+///
+/// ## Usage
+///
+/// ```dart
+/// // In a widget build method
+/// final colors = FlyColor.of(context);
+/// Container(color: colors.blue1);  // Automatically uses light or dark variant
+/// Text('Hello', style: TextStyle(color: colors.gray12));
+/// ```
 class FlyColorScheme {
   final bool _isLight;
 
