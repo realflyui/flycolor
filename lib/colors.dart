@@ -48,6 +48,18 @@ class FlyColorLight {
   static const Color gray12 = Color(0xff202020);
   static const Color grayContrast = Color(0xffffffff);
   static const Color graySurface = Color(0x06000000);
+  static const Color gray1A = Color(0x03000000);
+  static const Color gray2A = Color(0x06000000);
+  static const Color gray3A = Color(0x10000000);
+  static const Color gray4A = Color(0x17000000);
+  static const Color gray5A = Color(0x1f000000);
+  static const Color gray6A = Color(0x27000000);
+  static const Color gray7A = Color(0x31000000);
+  static const Color gray8A = Color(0x44000000);
+  static const Color gray9A = Color(0x72000000);
+  static const Color gray10A = Color(0x7e000000);
+  static const Color gray11A = Color(0x9b000000);
+  static const Color gray12A = Color(0xdf000000);
 
   static const Color mauve1 = Color(0xfffcfcfe);
   static const Color mauve2 = Color(0xfff9f9fb);
@@ -63,6 +75,18 @@ class FlyColorLight {
   static const Color mauve12 = Color(0xff211f26);
   static const Color mauveContrast = Color(0xffffffff);
   static const Color mauveSurface = Color(0xccf8f8fa);
+  static const Color mauve1A = Color(0x030000aa);
+  static const Color mauve2A = Color(0x06000055);
+  static const Color mauve3A = Color(0x10100050);
+  static const Color mauve4A = Color(0x180b0040);
+  static const Color mauve5A = Color(0x20080040);
+  static const Color mauve6A = Color(0x27070034);
+  static const Color mauve7A = Color(0x320a0033);
+  static const Color mauve8A = Color(0x4607002f);
+  static const Color mauve9A = Color(0x7304001d);
+  static const Color mauve10A = Color(0x7f020016);
+  static const Color mauve11A = Color(0x9c030010);
+  static const Color mauve12A = Color(0xe0020008);
 
   static const Color slate1 = Color(0xfffcfcfd);
   static const Color slate2 = Color(0xfff9f9fb);
@@ -78,6 +102,18 @@ class FlyColorLight {
   static const Color slate12 = Color(0xff1f2025);
   static const Color slateContrast = Color(0xffffffff);
   static const Color slateSurface = Color(0xccf8f8fa);
+  static const Color slate1A = Color(0x03000055);
+  static const Color slate2A = Color(0x06000055);
+  static const Color slate3A = Color(0x10001050);
+  static const Color slate4A = Color(0x18000b40);
+  static const Color slate5A = Color(0x20000840);
+  static const Color slate6A = Color(0x2700072e);
+  static const Color slate7A = Color(0x32000533);
+  static const Color slate8A = Color(0x4600072f);
+  static const Color slate9A = Color(0x7400041d);
+  static const Color slate10A = Color(0x80000418);
+  static const Color slate11A = Color(0x9d000310);
+  static const Color slate12A = Color(0xe0000107);
 
   static const Color sage1 = Color(0xfffbfdfc);
   static const Color sage2 = Color(0xfff7f9f8);
@@ -93,6 +129,18 @@ class FlyColorLight {
   static const Color sage12 = Color(0xff1b211f);
   static const Color sageContrast = Color(0xffffffff);
   static const Color sageSurface = Color(0xccf5f8f6);
+  static const Color sage1A = Color(0x04008040);
+  static const Color sage2A = Color(0x08004020);
+  static const Color sage3A = Color(0x11002d1e);
+  static const Color sage4A = Color(0x1800150b);
+  static const Color sage5A = Color(0x21001f17);
+  static const Color sage6A = Color(0x29001913);
+  static const Color sage7A = Color(0x33000f0a);
+  static const Color sage8A = Color(0x47000e0b);
+  static const Color sage9A = Color(0x7900110b);
+  static const Color sage10A = Color(0x84000c08);
+  static const Color sage11A = Color(0x9f000805);
+  static const Color sage12A = Color(0xe4000704);
 
   static const Color olive1 = Color(0xfffcfdfc);
   static const Color olive2 = Color(0xfff8faf8);
@@ -108,6 +156,18 @@ class FlyColorLight {
   static const Color olive12 = Color(0xff1e221c);
   static const Color oliveContrast = Color(0xffffffff);
   static const Color oliveSurface = Color(0xccf6f9f6);
+  static const Color olive1A = Color(0x03005500);
+  static const Color olive2A = Color(0x07004900);
+  static const Color olive3A = Color(0x110f2d00);
+  static const Color olive4A = Color(0x190a1f00);
+  static const Color olive5A = Color(0x20081800);
+  static const Color olive6A = Color(0x290c1900);
+  static const Color olive7A = Color(0x34051400);
+  static const Color olive8A = Color(0x48041200);
+  static const Color olive9A = Color(0x78040f00);
+  static const Color olive10A = Color(0x83040c00);
+  static const Color olive11A = Color(0xa0020a00);
+  static const Color olive12A = Color(0xe3020700);
 
   static const Color sand1 = Color(0xfffdfdfb);
   static const Color sand2 = Color(0xfffafaf7);
@@ -123,6 +183,18 @@ class FlyColorLight {
   static const Color sand12 = Color(0xff20201b);
   static const Color sandContrast = Color(0xffffffff);
   static const Color sandSurface = Color(0xccf9f9f5);
+  static const Color sand1A = Color(0x04808000);
+  static const Color sand2A = Color(0x08606000);
+  static const Color sand3A = Color(0x112d2d00);
+  static const Color sand4A = Color(0x191f1f00);
+  static const Color sand5A = Color(0x211f1f00);
+  static const Color sand6A = Color(0x29191900);
+  static const Color sand7A = Color(0x340f1400);
+  static const Color sand8A = Color(0x49111100);
+  static const Color sand9A = Color(0x790f0f00);
+  static const Color sand10A = Color(0x840c0c00);
+  static const Color sand11A = Color(0xa20b0b00);
+  static const Color sand12A = Color(0xe4060600);
 
   static const Color tomato1 = Color(0xfffefcfb);
   static const Color tomato2 = Color(0xfffef7f6);
@@ -138,6 +210,18 @@ class FlyColorLight {
   static const Color tomato12 = Color(0xff601b0d);
   static const Color tomatoContrast = Color(0xffffffff);
   static const Color tomatoSurface = Color(0xccfef5f4);
+  static const Color tomato1A = Color(0x04bf4000);
+  static const Color tomato2A = Color(0x09e31c00);
+  static const Color tomato3A = Color(0x19f52900);
+  static const Color tomato4A = Color(0x29f33200);
+  static const Color tomato5A = Color(0x38df2900);
+  static const Color tomato6A = Color(0x48ca2700);
+  static const Color tomato7A = Color(0x5dbd2400);
+  static const Color tomato8A = Color(0x77b82200);
+  static const Color tomato9A = Color(0xd1df2600);
+  static const Color tomato10A = Color(0xdfd02300);
+  static const Color tomato11A = Color(0xf2c02400);
+  static const Color tomato12A = Color(0xf2570f00);
 
   static const Color red1 = Color(0xfffefcfc);
   static const Color red2 = Color(0xfffef7f6);
@@ -153,6 +237,18 @@ class FlyColorLight {
   static const Color red12 = Color(0xff61191b);
   static const Color redContrast = Color(0xffffffff);
   static const Color redSurface = Color(0xccfef5f4);
+  static const Color red1A = Color(0x03aa0000);
+  static const Color red2A = Color(0x09e31c00);
+  static const Color red3A = Color(0x17ff1600);
+  static const Color red4A = Color(0x25f11500);
+  static const Color red5A = Color(0x33dc0f00);
+  static const Color red6A = Color(0x42c90f00);
+  static const Color red7A = Color(0x55b70c00);
+  static const Color red8A = Color(0x6db20900);
+  static const Color red9A = Color(0xb7db0007);
+  static const Color red10A = Color(0xc5c90009);
+  static const Color red11A = Color(0xd5b8000d);
+  static const Color red12A = Color(0xe6500002);
 
   static const Color ruby1 = Color(0xfffefcfc);
   static const Color ruby2 = Color(0xfffef7f7);
@@ -168,6 +264,18 @@ class FlyColorLight {
   static const Color ruby12 = Color(0xff601826);
   static const Color rubyContrast = Color(0xffffffff);
   static const Color rubySurface = Color(0xccfef5f5);
+  static const Color ruby1A = Color(0x03aa0000);
+  static const Color ruby2A = Color(0x08df0000);
+  static const Color ruby3A = Color(0x15f3000c);
+  static const Color ruby4A = Color(0x23f00016);
+  static const Color ruby5A = Color(0x31db0010);
+  static const Color ruby6A = Color(0x3fc60010);
+  static const Color ruby7A = Color(0x52b40010);
+  static const Color ruby8A = Color(0x6ab00011);
+  static const Color ruby9A = Color(0xb9db002c);
+  static const Color ruby10A = Color(0xc7c9002c);
+  static const Color ruby11A = Color(0xd8b8002d);
+  static const Color ruby12A = Color(0xe74f000f);
 
   static const Color crimson1 = Color(0xfffffcfc);
   static const Color crimson2 = Color(0xfffef7f8);
@@ -183,6 +291,18 @@ class FlyColorLight {
   static const Color crimson12 = Color(0xff601232);
   static const Color crimsonContrast = Color(0xffffffff);
   static const Color crimsonSurface = Color(0xccfef5f6);
+  static const Color crimson1A = Color(0x03ff0000);
+  static const Color crimson2A = Color(0x08df0020);
+  static const Color crimson3A = Color(0x15ff003d);
+  static const Color crimson4A = Color(0x23ff0042);
+  static const Color crimson5A = Color(0x31ea0039);
+  static const Color crimson6A = Color(0x40d30034);
+  static const Color crimson7A = Color(0x55c30033);
+  static const Color crimson8A = Color(0x6fba0035);
+  static const Color crimson9A = Color(0xc2e2005b);
+  static const Color crimson10A = Color(0xd0d00057);
+  static const Color crimson11A = Color(0xe8c00058);
+  static const Color crimson12A = Color(0xed540022);
 
   static const Color pink1 = Color(0xfffefcfd);
   static const Color pink2 = Color(0xfffdf7fa);
@@ -198,6 +318,18 @@ class FlyColorLight {
   static const Color pink12 = Color(0xff5b1742);
   static const Color pinkContrast = Color(0xffffffff);
   static const Color pinkSurface = Color(0xccfdf5f9);
+  static const Color pink1A = Color(0x03aa0055);
+  static const Color pink2A = Color(0x08bf0060);
+  static const Color pink3A = Color(0x16e80074);
+  static const Color pink4A = Color(0x23db006d);
+  static const Color pink5A = Color(0x31c60063);
+  static const Color pink6A = Color(0x40b30060);
+  static const Color pink7A = Color(0x53a60056);
+  static const Color pink8A = Color(0x6ba20058);
+  static const Color pink9A = Color(0xbfc8007f);
+  static const Color pink10A = Color(0xcdb80077);
+  static const Color pink11A = Color(0xdaad0071);
+  static const Color pink12A = Color(0xe84b002f);
 
   static const Color plum1 = Color(0xfffefcfe);
   static const Color plum2 = Color(0xfffcf7fd);
@@ -213,6 +345,18 @@ class FlyColorLight {
   static const Color plum12 = Color(0xff531d5c);
   static const Color plumContrast = Color(0xffffffff);
   static const Color plumSurface = Color(0xccfbf5fd);
+  static const Color plum1A = Color(0x03aa00aa);
+  static const Color plum2A = Color(0x089f00bf);
+  static const Color plum3A = Color(0x159e00b6);
+  static const Color plum4A = Color(0x219b00b2);
+  static const Color plum5A = Color(0x2e8b009b);
+  static const Color plum6A = Color(0x3d820092);
+  static const Color plum7A = Color(0x4f7b008e);
+  static const Color plum8A = Color(0x6779008b);
+  static const Color plum9A = Color(0xb589009e);
+  static const Color plum10A = Color(0xc37e0091);
+  static const Color plum11A = Color(0xc0800093);
+  static const Color plum12A = Color(0xe23d0047);
 
   static const Color purple1 = Color(0xfffdfcff);
   static const Color purple2 = Color(0xfffaf8fe);
@@ -228,6 +372,18 @@ class FlyColorLight {
   static const Color purple12 = Color(0xff42245d);
   static const Color purpleContrast = Color(0xffffffff);
   static const Color purpleSurface = Color(0xccf9f6fe);
+  static const Color purple1A = Color(0x035500ff);
+  static const Color purple2A = Color(0x074900db);
+  static const Color purple3A = Color(0x106000cf);
+  static const Color purple4A = Color(0x1b6800e3);
+  static const Color purple5A = Color(0x286600d9);
+  static const Color purple6A = Color(0x375800c3);
+  static const Color purple7A = Color(0x4b5500b8);
+  static const Color purple8A = Color(0x675700b2);
+  static const Color purple9A = Color(0xb15c00ad);
+  static const Color purple10A = Color(0xbf55009f);
+  static const Color purple11A = Color(0xb25c00ac);
+  static const Color purple12A = Color(0xdb230042);
 
   static const Color violet1 = Color(0xfffdfdfe);
   static const Color violet2 = Color(0xfff9f9fe);
@@ -243,6 +399,18 @@ class FlyColorLight {
   static const Color violet12 = Color(0xff322a5c);
   static const Color violetContrast = Color(0xffffffff);
   static const Color violetSurface = Color(0xccf8f8fe);
+  static const Color violet1A = Color(0x02000080);
+  static const Color violet2A = Color(0x060000d5);
+  static const Color violet3A = Color(0x0f0000dd);
+  static const Color violet4A = Color(0x190a00eb);
+  static const Color violet5A = Color(0x250e00e3);
+  static const Color violet6A = Color(0x340f00dd);
+  static const Color violet7A = Color(0x460f00c1);
+  static const Color violet8A = Color(0x601000b7);
+  static const Color violet9A = Color(0xa92400b7);
+  static const Color violet10A = Color(0xb41f009a);
+  static const Color violet11A = Color(0xad1f00a1);
+  static const Color violet12A = Color(0xd50a003c);
 
   static const Color iris1 = Color(0xfffdfdfe);
   static const Color iris2 = Color(0xfff8f9fe);
@@ -258,6 +426,18 @@ class FlyColorLight {
   static const Color iris12 = Color(0xff282b59);
   static const Color irisContrast = Color(0xffffffff);
   static const Color irisSurface = Color(0xccf6f8fe);
+  static const Color iris1A = Color(0x02000080);
+  static const Color iris2A = Color(0x070024db);
+  static const Color iris3A = Color(0x100020df);
+  static const Color iris4A = Color(0x1b0026ff);
+  static const Color iris5A = Color(0x280026ff);
+  static const Color iris6A = Color(0x380024ff);
+  static const Color iris7A = Color(0x4c001bdd);
+  static const Color iris8A = Color(0x670014cd);
+  static const Color iris9A = Color(0xa40000bf);
+  static const Color iris10A = Color(0xaf00009f);
+  static const Color iris11A = Color(0xac0001a5);
+  static const Color iris12A = Color(0xd700043a);
 
   static const Color indigo1 = Color(0xfffdfdfe);
   static const Color indigo2 = Color(0xfff7f9fe);
@@ -273,6 +453,18 @@ class FlyColorLight {
   static const Color indigo12 = Color(0xff1d2d5c);
   static const Color indigoContrast = Color(0xffffffff);
   static const Color indigoSurface = Color(0xccf5f8fe);
+  static const Color indigo1A = Color(0x02000080);
+  static const Color indigo2A = Color(0x080040df);
+  static const Color indigo3A = Color(0x120047f1);
+  static const Color indigo4A = Color(0x1f0052ff);
+  static const Color indigo5A = Color(0x2f0051ff);
+  static const Color indigo6A = Color(0x41004eff);
+  static const Color indigo7A = Color(0x580046eb);
+  static const Color indigo8A = Color(0x77003edb);
+  static const Color indigo9A = Color(0xc10031d2);
+  static const Color indigo10A = Color(0xc9002ab4);
+  static const Color indigo11A = Color(0xc7002cb7);
+  static const Color indigo12A = Color(0xe2001247);
 
   static const Color blue1 = Color(0xfffbfdff);
   static const Color blue2 = Color(0xfff5faff);
@@ -288,6 +480,18 @@ class FlyColorLight {
   static const Color blue12 = Color(0xff003464);
   static const Color blueContrast = Color(0xffffffff);
   static const Color blueSurface = Color(0xccf3f9ff);
+  static const Color blue1A = Color(0x040080ff);
+  static const Color blue2A = Color(0x0a0080ff);
+  static const Color blue3A = Color(0x15006dff);
+  static const Color blue4A = Color(0x24007fff);
+  static const Color blue5A = Color(0x36007bff);
+  static const Color blue6A = Color(0x4b0077fc);
+  static const Color blue7A = Color(0x66006eeb);
+  static const Color blue8A = Color(0x8f006fe6);
+  static const Color blue9A = Color(0xff0090ff);
+  static const Color blue10A = Color(0xff0083ed);
+  static const Color blue11A = Color(0xff0073de);
+  static const Color blue12A = Color(0xff003464);
 
   static const Color cyan1 = Color(0xfffafeff);
   static const Color cyan2 = Color(0xfff4fbfd);
@@ -303,6 +507,18 @@ class FlyColorLight {
   static const Color cyan12 = Color(0xff193a45);
   static const Color cyanContrast = Color(0xffffffff);
   static const Color cyanSurface = Color(0xccf1fafd);
+  static const Color cyan1A = Color(0x0500ccff);
+  static const Color cyan2A = Color(0x0b00a2d1);
+  static const Color cyan3A = Color(0x1a00a7e2);
+  static const Color cyan4A = Color(0x2b00a0db);
+  static const Color cyan5A = Color(0x3f009ed7);
+  static const Color cyan6A = Color(0x580097cb);
+  static const Color cyan7A = Color(0x7c0094c7);
+  static const Color cyan8A = Color(0xb60097c6);
+  static const Color cyan9A = Color(0xff00a2c7);
+  static const Color cyan10A = Color(0xff0095b8);
+  static const Color cyan11A = Color(0xff007998);
+  static const Color cyan12A = Color(0xe6002531);
 
   static const Color teal1 = Color(0xfffafefd);
   static const Color teal2 = Color(0xfff4fbfa);
@@ -318,6 +534,18 @@ class FlyColorLight {
   static const Color teal12 = Color(0xff1a3b36);
   static const Color tealContrast = Color(0xffffffff);
   static const Color tealSurface = Color(0xccf1faf9);
+  static const Color teal1A = Color(0x0500cc99);
+  static const Color teal2A = Color(0x0b00a28b);
+  static const Color teal3A = Color(0x1a00b189);
+  static const Color teal4A = Color(0x2b00ac88);
+  static const Color teal5A = Color(0x3e00a584);
+  static const Color teal6A = Color(0x56009d7f);
+  static const Color teal7A = Color(0x7600957b);
+  static const Color teal8A = Color(0xaa00967e);
+  static const Color teal9A = Color(0xed009e8c);
+  static const Color teal10A = Color(0xfb009686);
+  static const Color teal11A = Color(0xff008272);
+  static const Color teal12A = Color(0xe500251f);
 
   static const Color jade1 = Color(0xfffafefd);
   static const Color jade2 = Color(0xfff5fbf9);
@@ -333,6 +561,18 @@ class FlyColorLight {
   static const Color jade12 = Color(0xff1d3b31);
   static const Color jadeContrast = Color(0xffffffff);
   static const Color jadeSurface = Color(0xccf3faf8);
+  static const Color jade1A = Color(0x0500cc99);
+  static const Color jade2A = Color(0x0a009966);
+  static const Color jade3A = Color(0x1a00b16c);
+  static const Color jade4A = Color(0x2a00aa6d);
+  static const Color jade5A = Color(0x3c00a266);
+  static const Color jade6A = Color(0x53009a62);
+  static const Color jade7A = Color(0x7100905f);
+  static const Color jade8A = Color(0xa0008f61);
+  static const Color jade9A = Color(0xd600916b);
+  static const Color jade10A = Color(0xdf008665);
+  static const Color jade11A = Color(0xff008265);
+  static const Color jade12A = Color(0xe2002217);
 
   static const Color green1 = Color(0xfffafefc);
   static const Color green2 = Color(0xfff5fbf7);
@@ -348,6 +588,18 @@ class FlyColorLight {
   static const Color green12 = Color(0xff1f3c2c);
   static const Color greenContrast = Color(0xffffffff);
   static const Color greenSurface = Color(0xccf3faf5);
+  static const Color green1A = Color(0x0500cc66);
+  static const Color green2A = Color(0x0a009933);
+  static const Color green3A = Color(0x1800aa40);
+  static const Color green4A = Color(0x2700aa3b);
+  static const Color green5A = Color(0x3900a13a);
+  static const Color green6A = Color(0x50009939);
+  static const Color green7A = Color(0x7000943b);
+  static const Color green8A = Color(0xa1009544);
+  static const Color green9A = Color(0xcf008f4a);
+  static const Color green10A = Color(0xd8008346);
+  static const Color green11A = Color(0xe400713c);
+  static const Color green12A = Color(0xe000210f);
 
   static const Color grass1 = Color(0xfffbfdfb);
   static const Color grass2 = Color(0xfff3fbf4);
@@ -363,6 +615,18 @@ class FlyColorLight {
   static const Color grass12 = Color(0xff253f28);
   static const Color grassContrast = Color(0xffffffff);
   static const Color grassSurface = Color(0xccf0faf1);
+  static const Color grass1A = Color(0x04008000);
+  static const Color grass2A = Color(0x0c00aa15);
+  static const Color grass3A = Color(0x1900ad0a);
+  static const Color grass4A = Color(0x3100b610);
+  static const Color grass5A = Color(0x4400b013);
+  static const Color grass6A = Color(0x53009d0f);
+  static const Color grass7A = Color(0x6700880c);
+  static const Color grass8A = Color(0x87008011);
+  static const Color grass9A = Color(0xb9008619);
+  static const Color grass10A = Color(0xc800801b);
+  static const Color grass11A = Color(0xd0007117);
+  static const Color grass12A = Color(0xda001e04);
 
   static const Color brown1 = Color(0xfffffdfb);
   static const Color brown2 = Color(0xfffdf8f5);
@@ -378,6 +642,18 @@ class FlyColorLight {
   static const Color brown12 = Color(0xff413226);
   static const Color brownContrast = Color(0xffffffff);
   static const Color brownSurface = Color(0xccfdf6f3);
+  static const Color brown1A = Color(0x04ff8000);
+  static const Color brown2A = Color(0x0acc4d00);
+  static const Color brown3A = Color(0x19d65c00);
+  static const Color brown4A = Color(0x28cc5900);
+  static const Color brown5A = Color(0x38bf5200);
+  static const Color brown6A = Color(0x4aac4c00);
+  static const Color brown7A = Color(0x629f4600);
+  static const Color brown8A = Color(0x83984400);
+  static const Color brown9A = Color(0xa7823c00);
+  static const Color brown10A = Color(0xb1733700);
+  static const Color brown11A = Color(0xc46b3000);
+  static const Color brown12A = Color(0xd9200e00);
 
   static const Color bronze1 = Color(0xfffefdfc);
   static const Color bronze2 = Color(0xfffcf9f7);
@@ -393,6 +669,18 @@ class FlyColorLight {
   static const Color bronze12 = Color(0xff352d2a);
   static const Color bronzeContrast = Color(0xffffffff);
   static const Color bronzeSurface = Color(0xccfbf8f5);
+  static const Color bronze1A = Color(0x03aa5500);
+  static const Color bronze2A = Color(0x089f4000);
+  static const Color bronze3A = Color(0x147f2600);
+  static const Color bronze4A = Color(0x1f7b2900);
+  static const Color bronze5A = Color(0x2b7d2400);
+  static const Color bronze6A = Color(0x387b2400);
+  static const Color bronze7A = Color(0x49772300);
+  static const Color bronze8A = Color(0x64752400);
+  static const Color bronze9A = Color(0x8d551900);
+  static const Color bronze10A = Color(0x96461400);
+  static const Color bronze11A = Color(0xaa330f00);
+  static const Color bronze12A = Color(0xd50d0400);
 
   static const Color gold1 = Color(0xfffefdfc);
   static const Color gold2 = Color(0xfffbf9f6);
@@ -408,6 +696,18 @@ class FlyColorLight {
   static const Color gold12 = Color(0xff332f28);
   static const Color goldContrast = Color(0xffffffff);
   static const Color goldSurface = Color(0xccfaf8f4);
+  static const Color gold1A = Color(0x03aa5500);
+  static const Color gold2A = Color(0x098e5500);
+  static const Color gold3A = Color(0x16744600);
+  static const Color gold4A = Color(0x22714400);
+  static const Color gold5A = Color(0x2f724100);
+  static const Color gold6A = Color(0x3d714300);
+  static const Color gold7A = Color(0x51714200);
+  static const Color gold8A = Color(0x6e6f4300);
+  static const Color gold9A = Color(0x9a533200);
+  static const Color gold10A = Color(0xa3462a00);
+  static const Color gold11A = Color(0xb1321e00);
+  static const Color gold12A = Color(0xd70d0800);
 
   static const Color sky1 = Color(0xfffbfdfe);
   static const Color sky2 = Color(0xffeefbfe);
@@ -423,6 +723,18 @@ class FlyColorLight {
   static const Color sky12 = Color(0xff00414f);
   static const Color skyContrast = Color(0xffffffff);
   static const Color skySurface = Color(0xcceafafe);
+  static const Color sky1A = Color(0x040080bf);
+  static const Color sky2A = Color(0x1100c3f0);
+  static const Color sky3A = Color(0x2700cbff);
+  static const Color sky4A = Color(0x5600d5ff);
+  static const Color sky5A = Color(0x7700d2ff);
+  static const Color sky6A = Color(0x8500c4f9);
+  static const Color sky7A = Color(0x9800addc);
+  static const Color sky8A = Color(0xcd00add5);
+  static const Color sky9A = Color(0xff00add6);
+  static const Color sky10A = Color(0xff00a0c9);
+  static const Color sky11A = Color(0xff008eb7);
+  static const Color sky12A = Color(0xff00414f);
 
   static const Color mint1 = Color(0xfffbfdfd);
   static const Color mint2 = Color(0xffeefdf9);
@@ -438,6 +750,18 @@ class FlyColorLight {
   static const Color mint12 = Color(0xff1a423a);
   static const Color mintContrast = Color(0xff072821);
   static const Color mintSurface = Color(0xcceafdf8);
+  static const Color mint1A = Color(0x04008080);
+  static const Color mint2A = Color(0x1100e1a5);
+  static const Color mint3A = Color(0x2d00f9bb);
+  static const Color mint4A = Color(0x5200f3bb);
+  static const Color mint5A = Color(0x7100ebb7);
+  static const Color mint6A = Color(0x7900d3a4);
+  static const Color mint7A = Color(0x8b00b78f);
+  static const Color mint8A = Color(0xb500ad8b);
+  static const Color mint9A = Color(0xff00d3b5);
+  static const Color mint10A = Color(0xff00c7a9);
+  static const Color mint11A = Color(0xff009178);
+  static const Color mint12A = Color(0xe5002d24);
 
   static const Color lime1 = Color(0xfffcfdf9);
   static const Color lime2 = Color(0xfff7feed);
@@ -453,6 +777,18 @@ class FlyColorLight {
   static const Color lime12 = Color(0xff364027);
   static const Color limeContrast = Color(0xff1d250f);
   static const Color limeSurface = Color(0xccf5fee9);
+  static const Color lime1A = Color(0x0680aa00);
+  static const Color lime2A = Color(0x128ef100);
+  static const Color lime3A = Color(0x399dff00);
+  static const Color lime4A = Color(0x5498fc00);
+  static const Color lime5A = Color(0x6e92ec00);
+  static const Color lime6A = Color(0x777ecc00);
+  static const Color lime7A = Color(0x7d6aad00);
+  static const Color lime8A = Color(0x9d619c00);
+  static const Color lime9A = Color(0xa4a6fd00);
+  static const Color lime10A = Color(0x9897e900);
+  static const Color lime11A = Color(0xdb4c7000);
+  static const Color lime12A = Color(0xd8121e00);
 
   static const Color yellow1 = Color(0xfffdfdf9);
   static const Color yellow2 = Color(0xfffefceb);
@@ -468,6 +804,18 @@ class FlyColorLight {
   static const Color yellow12 = Color(0xff413d22);
   static const Color yellowContrast = Color(0xff252209);
   static const Color yellowSurface = Color(0xccfefbe6);
+  static const Color yellow1A = Color(0x06aaaa00);
+  static const Color yellow2A = Color(0x14f2d900);
+  static const Color yellow3A = Color(0x40ffe300);
+  static const Color yellow4A = Color(0x5ffcdc00);
+  static const Color yellow5A = Color(0x7cefd000);
+  static const Color yellow6A = Color(0x85d3b800);
+  static const Color yellow7A = Color(0x8bb69e00);
+  static const Color yellow8A = Color(0xb0a89200);
+  static const Color yellow9A = Color(0xd1ffe400);
+  static const Color yellow10A = Color(0xbaf1d300);
+  static const Color yellow11A = Color(0xff877800);
+  static const Color yellow12A = Color(0xdd241f00);
 
   static const Color amber1 = Color(0xfffefdfb);
   static const Color amber2 = Color(0xfffff9eb);
@@ -483,6 +831,18 @@ class FlyColorLight {
   static const Color amber12 = Color(0xff45391f);
   static const Color amberContrast = Color(0xff2b2009);
   static const Color amberSurface = Color(0xccfff8e6);
+  static const Color amber1A = Color(0x04bf8000);
+  static const Color amber2A = Color(0x14ffb200);
+  static const Color amber3A = Color(0x38ffc400);
+  static const Color amber4A = Color(0x59ffbd00);
+  static const Color amber5A = Color(0x79ffb700);
+  static const Color amber6A = Color(0x7ff3a300);
+  static const Color amber7A = Color(0x90d38e00);
+  static const Color amber8A = Color(0xb7c28400);
+  static const Color amber9A = Color(0xc0ffb300);
+  static const Color amber10A = Color(0xc4efa800);
+  static const Color amber11A = Color(0xff966d00);
+  static const Color amber12A = Color(0xe02b1e00);
 
   static const Color orange1 = Color(0xfffefcfb);
   static const Color orange2 = Color(0xfffff5ef);
@@ -498,6 +858,18 @@ class FlyColorLight {
   static const Color orange12 = Color(0xff562c19);
   static const Color orangeContrast = Color(0xffffffff);
   static const Color orangeSurface = Color(0xccfff3eb);
+  static const Color orange1A = Color(0x04bf4000);
+  static const Color orange2A = Color(0x10ff6000);
+  static const Color orange3A = Color(0x23ff6600);
+  static const Color orange4A = Color(0x48ff6700);
+  static const Color orange5A = Color(0x60ff6200);
+  static const Color orange6A = Color(0x6dff5900);
+  static const Color orange7A = Color(0x7ef74d00);
+  static const Color orange8A = Color(0x9ee54900);
+  static const Color orange9A = Color(0xeaf65e00);
+  static const Color orange10A = Color(0xfdeb5c00);
+  static const Color orange11A = Color(0xffce4900);
+  static const Color orange12A = Color(0xe6441500);
 
 }
 
@@ -519,6 +891,18 @@ class FlyColorDark {
   static const Color gray12 = Color(0xffeaeaea);
   static const Color grayContrast = Color(0xffffffff);
   static const Color graySurface = Color(0x09ffffff);
+  static const Color gray1A = Color(0x00000000);
+  static const Color gray2A = Color(0x09ffffff);
+  static const Color gray3A = Color(0x12ffffff);
+  static const Color gray4A = Color(0x1bffffff);
+  static const Color gray5A = Color(0x23ffffff);
+  static const Color gray6A = Color(0x2effffff);
+  static const Color gray7A = Color(0x3effffff);
+  static const Color gray8A = Color(0x57ffffff);
+  static const Color gray9A = Color(0x85ffffff);
+  static const Color gray10A = Color(0x78ffffff);
+  static const Color gray11A = Color(0xb2ffffff);
+  static const Color gray12A = Color(0xe9ffffff);
 
   static const Color mauve1 = Color(0xff111112);
   static const Color mauve2 = Color(0xff19191a);
@@ -534,6 +918,18 @@ class FlyColorDark {
   static const Color mauve12 = Color(0xffe7e6ec);
   static const Color mauveContrast = Color(0xffffffff);
   static const Color mauveSurface = Color(0x80202022);
+  static const Color mauve1A = Color(0x011111ff);
+  static const Color mauve2A = Color(0x0ae5e5ff);
+  static const Color mauve3A = Color(0x14e6e6ff);
+  static const Color mauve4A = Color(0x1ee6e6ff);
+  static const Color mauve5A = Color(0x28ece5ff);
+  static const Color mauve6A = Color(0x35ebe6fe);
+  static const Color mauve7A = Color(0x46ede9ff);
+  static const Color mauve8A = Color(0x62eae7fe);
+  static const Color mauve9A = Color(0x92ece8ff);
+  static const Color mauve10A = Color(0x85eae6ff);
+  static const Color mauve11A = Color(0xc0f2efff);
+  static const Color mauve12A = Color(0xebfaf9ff);
 
   static const Color slate1 = Color(0xff111112);
   static const Color slate2 = Color(0xff19191a);
@@ -549,6 +945,18 @@ class FlyColorDark {
   static const Color slate12 = Color(0xffe6e7ec);
   static const Color slateContrast = Color(0xffffffff);
   static const Color slateSurface = Color(0x80202022);
+  static const Color slate1A = Color(0x011111ff);
+  static const Color slate2A = Color(0x0ae5e5ff);
+  static const Color slate3A = Color(0x14e6e6ff);
+  static const Color slate4A = Color(0x1ee6e6ff);
+  static const Color slate5A = Color(0x28e5e5ff);
+  static const Color slate6A = Color(0x33e6ebff);
+  static const Color slate7A = Color(0x46e5e9ff);
+  static const Color slate8A = Color(0x60e7eaff);
+  static const Color slate9A = Color(0x91e8ecff);
+  static const Color slate10A = Color(0x84e6eaff);
+  static const Color slate11A = Color(0xbfeff2ff);
+  static const Color slate12A = Color(0xebf9faff);
 
   static const Color sage1 = Color(0xff111111);
   static const Color sage2 = Color(0xff181919);
@@ -564,6 +972,18 @@ class FlyColorDark {
   static const Color sage12 = Color(0xffe7ebe9);
   static const Color sageContrast = Color(0xffffffff);
   static const Color sageSurface = Color(0x801e2020);
+  static const Color sage1A = Color(0x00000000);
+  static const Color sage2A = Color(0x09e1ffff);
+  static const Color sage3A = Color(0x13e5fff2);
+  static const Color sage4A = Color(0x1cedfff6);
+  static const Color sage5A = Color(0x24eafff8);
+  static const Color sage6A = Color(0x2feffffa);
+  static const Color sage7A = Color(0x3feffffb);
+  static const Color sage8A = Color(0x59eefff9);
+  static const Color sage9A = Color(0x86f0fff9);
+  static const Color sage10A = Color(0x79eefff9);
+  static const Color sage11A = Color(0xb5f5fffb);
+  static const Color sage12A = Color(0xeafbfffd);
 
   static const Color olive1 = Color(0xff111111);
   static const Color olive2 = Color(0xff191918);
@@ -579,6 +999,18 @@ class FlyColorDark {
   static const Color olive12 = Color(0xffe7eae7);
   static const Color oliveContrast = Color(0xffffffff);
   static const Color oliveSurface = Color(0x8020201e);
+  static const Color olive1A = Color(0x00000000);
+  static const Color olive2A = Color(0x09ffffe1);
+  static const Color olive3A = Color(0x13f2fff2);
+  static const Color olive4A = Color(0x1cf6ffed);
+  static const Color olive5A = Color(0x24f1fff1);
+  static const Color olive6A = Color(0x2ff4ffef);
+  static const Color olive7A = Color(0x3ff7fff3);
+  static const Color olive8A = Color(0x59f6fff1);
+  static const Color olive9A = Color(0x86f5fff2);
+  static const Color olive10A = Color(0x79f4fff0);
+  static const Color olive11A = Color(0xb5f8fff7);
+  static const Color olive12A = Color(0xe9fbfefb);
 
   static const Color sand1 = Color(0xff111110);
   static const Color sand2 = Color(0xff191918);
@@ -594,6 +1026,18 @@ class FlyColorDark {
   static const Color sand12 = Color(0xffe9e9e6);
   static const Color sandContrast = Color(0xffffffff);
   static const Color sandSurface = Color(0x8020201e);
+  static const Color sand1A = Color(0x0f111100);
+  static const Color sand2A = Color(0x09ffffe1);
+  static const Color sand3A = Color(0x13ffffe5);
+  static const Color sand4A = Color(0x1bfffff5);
+  static const Color sand5A = Color(0x23fffff1);
+  static const Color sand6A = Color(0x2fffffef);
+  static const Color sand7A = Color(0x3fffffef);
+  static const Color sand8A = Color(0x58fffff0);
+  static const Color sand9A = Color(0x85fffff2);
+  static const Color sand10A = Color(0x78fffff0);
+  static const Color sand11A = Color(0xb3fffff6);
+  static const Color sand12A = Color(0xe7fffffb);
 
   static const Color tomato1 = Color(0xff170f0d);
   static const Color tomato2 = Color(0xff1f1411);
@@ -609,6 +1053,18 @@ class FlyColorDark {
   static const Color tomato12 = Color(0xfffdd5cc);
   static const Color tomatoContrast = Color(0xffffffff);
   static const Color tomatoSurface = Color(0x802c1610);
+  static const Color tomato1A = Color(0x06ff0000);
+  static const Color tomato2A = Color(0x0fff4411);
+  static const Color tomato3A = Color(0x29ff370b);
+  static const Color tomato4A = Color(0x40ff2100);
+  static const Color tomato5A = Color(0x4fff340b);
+  static const Color tomato6A = Color(0x60ff502b);
+  static const Color tomato7A = Color(0x7cff6342);
+  static const Color tomato8A = Color(0xa6ff694a);
+  static const Color tomato9A = Color(0xe3ff5431);
+  static const Color tomato10A = Color(0xd3ff4722);
+  static const Color tomato11A = Color(0xffff9077);
+  static const Color tomato12A = Color(0xfdffd7ce);
 
   static const Color red1 = Color(0xff170f0e);
   static const Color red2 = Color(0xff1f1413);
@@ -624,6 +1080,18 @@ class FlyColorDark {
   static const Color red12 = Color(0xfffed4d1);
   static const Color redContrast = Color(0xffffffff);
   static const Color redSurface = Color(0x802c1614);
+  static const Color red1A = Color(0x06ff0000);
+  static const Color red2A = Color(0x0fff4433);
+  static const Color red3A = Color(0x2aff3029);
+  static const Color red4A = Color(0x40ff1921);
+  static const Color red5A = Color(0x50ff2e34);
+  static const Color red6A = Color(0x60ff4b4b);
+  static const Color red7A = Color(0x7cff5f5d);
+  static const Color red8A = Color(0xa6ff6464);
+  static const Color red9A = Color(0xe3ff4f54);
+  static const Color red10A = Color(0xd3ff414b);
+  static const Color red11A = Color(0xffff8d89);
+  static const Color red12A = Color(0xfeffd5d2);
 
   static const Color ruby1 = Color(0xff170f0f);
   static const Color ruby2 = Color(0xff1f1314);
@@ -639,6 +1107,18 @@ class FlyColorDark {
   static const Color ruby12 = Color(0xfffed4d7);
   static const Color rubyContrast = Color(0xffffffff);
   static const Color rubySurface = Color(0x802c1416);
+  static const Color ruby1A = Color(0x06ff0000);
+  static const Color ruby2A = Color(0x0fff3344);
+  static const Color ruby3A = Color(0x29ff2a49);
+  static const Color ruby4A = Color(0x3fff1545);
+  static const Color ruby5A = Color(0x4fff2b55);
+  static const Color ruby6A = Color(0x60ff4865);
+  static const Color ruby7A = Color(0x7bff5e76);
+  static const Color ruby8A = Color(0xa6ff627b);
+  static const Color ruby9A = Color(0xe3ff4c70);
+  static const Color ruby10A = Color(0xd3ff3f69);
+  static const Color ruby11A = Color(0xffff8b9b);
+  static const Color ruby12A = Color(0xfeffd5d8);
 
   static const Color crimson1 = Color(0xff180e11);
   static const Color crimson2 = Color(0xff201316);
@@ -654,6 +1134,18 @@ class FlyColorDark {
   static const Color crimson12 = Color(0xffffd2de);
   static const Color crimsonContrast = Color(0xffffffff);
   static const Color crimsonSurface = Color(0x802e141a);
+  static const Color crimson1A = Color(0x08fe0010);
+  static const Color crimson2A = Color(0x10ff3160);
+  static const Color crimson3A = Color(0x2cff226e);
+  static const Color crimson4A = Color(0x44fe096b);
+  static const Color crimson5A = Color(0x54ff2176);
+  static const Color crimson6A = Color(0x65ff3f85);
+  static const Color crimson7A = Color(0x80fe5290);
+  static const Color crimson8A = Color(0xa8ff5893);
+  static const Color crimson9A = Color(0xe7ff418d);
+  static const Color crimson10A = Color(0xd7ff3188);
+  static const Color crimson11A = Color(0xffff87af);
+  static const Color crimson12A = Color(0xffffd2de);
 
   static const Color pink1 = Color(0xff160e12);
   static const Color pink2 = Color(0xff1e1319);
@@ -669,6 +1161,18 @@ class FlyColorDark {
   static const Color pink12 = Color(0xfffad3e7);
   static const Color pinkContrast = Color(0xffffffff);
   static const Color pinkSurface = Color(0x802a1420);
+  static const Color pink1A = Color(0x05ff0041);
+  static const Color pink2A = Color(0x0eff36a3);
+  static const Color pink3A = Color(0x27ff2ba9);
+  static const Color pink4A = Color(0x3cff15a6);
+  static const Color pink5A = Color(0x4bff29ad);
+  static const Color pink6A = Color(0x5bff49b6);
+  static const Color pink7A = Color(0x76ff5fbe);
+  static const Color pink8A = Color(0x9efe63c1);
+  static const Color pink9A = Color(0xd3ff4abd);
+  static const Color pink10A = Color(0xc3ff3aba);
+  static const Color pink11A = Color(0xfdff8ace);
+  static const Color pink12A = Color(0xfaffd8ec);
 
   static const Color plum1 = Color(0xff150e16);
   static const Color plum2 = Color(0xff1e1320);
@@ -684,6 +1188,18 @@ class FlyColorDark {
   static const Color plum12 = Color(0xfff0d6f3);
   static const Color plumContrast = Color(0xffffffff);
   static const Color plumSurface = Color(0x802a142e);
+  static const Color plum1A = Color(0x05cf00ff);
+  static const Color plum2A = Color(0x10df31ff);
+  static const Color plum3A = Color(0x29e649ff);
+  static const Color plum4A = Color(0x3de643ff);
+  static const Color plum5A = Color(0x4be755ff);
+  static const Color plum6A = Color(0x5aeb69ff);
+  static const Color plum7A = Color(0x6fec78ff);
+  static const Color plum8A = Color(0x8fed7cfe);
+  static const Color plum9A = Color(0xb5ea61ff);
+  static const Color plum10A = Color(0x92ee7fff);
+  static const Color plum11A = Color(0xeaf3a5ff);
+  static const Color plum12A = Color(0xf2fce0ff);
 
   static const Color purple1 = Color(0xff130e19);
   static const Color purple2 = Color(0xff1b1423);
@@ -699,6 +1215,18 @@ class FlyColorDark {
   static const Color purple12 = Color(0xffe8dbf9);
   static const Color purpleContrast = Color(0xffffffff);
   static const Color purpleSurface = Color(0x80241634);
+  static const Color purple1A = Color(0x094d00ff);
+  static const Color purple2A = Color(0x139539ff);
+  static const Color purple3A = Color(0x30a550ff);
+  static const Color purple4A = Color(0x46ab53ff);
+  static const Color purple5A = Color(0x56b25eff);
+  static const Color purple6A = Color(0x66b66bff);
+  static const Color purple7A = Color(0x7bbb76ff);
+  static const Color purple8A = Color(0x9cbd79ff);
+  static const Color purple9A = Color(0xc2b561ff);
+  static const Color purple10A = Color(0x9abd77ff);
+  static const Color purple11A = Color(0xfacfa2ff);
+  static const Color purple12A = Color(0xf9eee1ff);
 
   static const Color violet1 = Color(0xff100f1a);
   static const Color violet2 = Color(0xff171624);
@@ -714,6 +1242,18 @@ class FlyColorDark {
   static const Color violet12 = Color(0xffe0defa);
   static const Color violetContrast = Color(0xffffffff);
   static const Color violetSurface = Color(0x801c1a36);
+  static const Color violet1A = Color(0x0a0000ff);
+  static const Color violet2A = Color(0x145c50ff);
+  static const Color violet3A = Color(0x376e57ff);
+  static const Color violet4A = Color(0x4f785eff);
+  static const Color violet5A = Color(0x638167ff);
+  static const Color violet6A = Color(0x738973ff);
+  static const Color violet7A = Color(0x878e79ff);
+  static const Color violet8A = Color(0xa1907bff);
+  static const Color violet9A = Color(0xcc8668ff);
+  static const Color violet10A = Color(0xa08f7bff);
+  static const Color violet11A = Color(0xfbb5adff);
+  static const Color violet12A = Color(0xfae5e3ff);
 
   static const Color iris1 = Color(0xff0f101b);
   static const Color iris2 = Color(0xff151625);
@@ -729,6 +1269,18 @@ class FlyColorDark {
   static const Color iris12 = Color(0xffdbe0fc);
   static const Color irisContrast = Color(0xffffffff);
   static const Color irisSurface = Color(0x80181a38);
+  static const Color iris1A = Color(0x0b0000ff);
+  static const Color iris2A = Color(0x15414dff);
+  static const Color iris3A = Color(0x39545dff);
+  static const Color iris4A = Color(0x535b61fe);
+  static const Color iris5A = Color(0x66646bff);
+  static const Color iris6A = Color(0x776f76ff);
+  static const Color iris7A = Color(0x8c757cff);
+  static const Color iris8A = Color(0xa7777dff);
+  static const Color iris9A = Color(0xd36a6aff);
+  static const Color iris10A = Color(0xa5757cff);
+  static const Color iris11A = Color(0xffa5aeff);
+  static const Color iris12A = Color(0xfcdee3ff);
 
   static const Color indigo1 = Color(0xff0c111c);
   static const Color indigo2 = Color(0xff121725);
@@ -744,6 +1296,18 @@ class FlyColorDark {
   static const Color indigo12 = Color(0xffd6e2fe);
   static const Color indigoContrast = Color(0xffffffff);
   static const Color indigoSurface = Color(0x80121c38);
+  static const Color indigo1A = Color(0x0c0011ff);
+  static const Color indigo2A = Color(0x151d58ff);
+  static const Color indigo3A = Color(0x3b2b63ff);
+  static const Color indigo4A = Color(0x563567ff);
+  static const Color indigo5A = Color(0x693f70ff);
+  static const Color indigo6A = Color(0x7b4b7bff);
+  static const Color indigo7A = Color(0x905581ff);
+  static const Color indigo8A = Color(0xab5782ff);
+  static const Color indigo9A = Color(0xdb4671ff);
+  static const Color indigo10A = Color(0xaa5681ff);
+  static const Color indigo11A = Color(0xff93b3ff);
+  static const Color indigo12A = Color(0xfed7e3ff);
 
   static const Color blue1 = Color(0xff09121c);
   static const Color blue2 = Color(0xff0e1925);
@@ -759,6 +1323,18 @@ class FlyColorDark {
   static const Color blue12 = Color(0xffcbe4ff);
   static const Color blueContrast = Color(0xffffffff);
   static const Color blueSurface = Color(0x800b2038);
+  static const Color blue1A = Color(0x0c0027ff);
+  static const Color blue2A = Color(0x150070ff);
+  static const Color blue3A = Color(0x3a0076ff);
+  static const Color blue4A = Color(0x570072ff);
+  static const Color blue5A = Color(0x6a007dff);
+  static const Color blue6A = Color(0x7d118bff);
+  static const Color blue7A = Color(0x972593ff);
+  static const Color blue8A = Color(0xb92995ff);
+  static const Color blue9A = Color(0xff0090ff);
+  static const Color blue10A = Color(0xf0008aff);
+  static const Color blue11A = Color(0xff72b9ff);
+  static const Color blue12A = Color(0xffcbe4ff);
 
   static const Color cyan1 = Color(0xff0c1215);
   static const Color cyan2 = Color(0xff13191c);
@@ -774,6 +1350,18 @@ class FlyColorDark {
   static const Color cyan12 = Color(0xffb2eeff);
   static const Color cyanContrast = Color(0xffffffff);
   static const Color cyanSurface = Color(0x80142026);
+  static const Color cyan1A = Color(0x04004dff);
+  static const Color cyan2A = Color(0x0c3cbeff);
+  static const Color cyan3A = Color(0x2041cfff);
+  static const Color cyan4A = Color(0x352ecefe);
+  static const Color cyan5A = Color(0x4735d0ff);
+  static const Color cyan6A = Color(0x5a3ecfff);
+  static const Color cyan7A = Color(0x6d44d3ff);
+  static const Color cyan8A = Color(0x8543d3ff);
+  static const Color cyan9A = Color(0xc300cfff);
+  static const Color cyan10A = Color(0xb500ccff);
+  static const Color cyan11A = Color(0xef55d8ff);
+  static const Color cyan12A = Color(0xffb2eeff);
 
   static const Color teal1 = Color(0xff0c1311);
   static const Color teal2 = Color(0xff121b19);
@@ -789,6 +1377,18 @@ class FlyColorDark {
   static const Color teal12 = Color(0xffaef1e5);
   static const Color tealContrast = Color(0xffffffff);
   static const Color tealSurface = Color(0x80122420);
+  static const Color teal1A = Color(0x0200ff11);
+  static const Color teal2A = Color(0x0b29ffcf);
+  static const Color teal3A = Color(0x1d34ffdc);
+  static const Color teal4A = Color(0x2c17ffdc);
+  static const Color teal5A = Color(0x3c2bffdd);
+  static const Color teal6A = Color(0x4b3dffe4);
+  static const Color teal7A = Color(0x5d45ffe4);
+  static const Color teal8A = Color(0x7249ffe7);
+  static const Color teal9A = Color(0x9f13ffe4);
+  static const Color teal10A = Color(0x9100ffe3);
+  static const Color teal11A = Color(0xcf66ffe9);
+  static const Color teal12A = Color(0xf0b8fff2);
 
   static const Color jade1 = Color(0xff0c1310);
   static const Color jade2 = Color(0xff121b18);
@@ -804,6 +1404,18 @@ class FlyColorDark {
   static const Color jade12 = Color(0xffb1f1db);
   static const Color jadeContrast = Color(0xffffffff);
   static const Color jadeSurface = Color(0x8012241e);
+  static const Color jade1A = Color(0x0200ff00);
+  static const Color jade2A = Color(0x0b29ffb8);
+  static const Color jade3A = Color(0x1d3dffc1);
+  static const Color jade4A = Color(0x2d28ffbb);
+  static const Color jade5A = Color(0x3c3cffc4);
+  static const Color jade6A = Color(0x4b4effcc);
+  static const Color jade7A = Color(0x5e55ffcc);
+  static const Color jade8A = Color(0x735bffce);
+  static const Color jade9A = Color(0x9c38ffca);
+  static const Color jade10A = Color(0x8f10fec7);
+  static const Color jade11A = Color(0xcf75ffd5);
+  static const Color jade12A = Color(0xf0bbffe8);
 
   static const Color green1 = Color(0xff0d130f);
   static const Color green2 = Color(0xff111914);
@@ -819,6 +1431,18 @@ class FlyColorDark {
   static const Color green12 = Color(0xffcae6d4);
   static const Color greenContrast = Color(0xffffffff);
   static const Color greenSurface = Color(0x80102016);
+  static const Color green1A = Color(0x0200ff00);
+  static const Color green2A = Color(0x0911ff6a);
+  static const Color green3A = Color(0x1800ff5d);
+  static const Color green4A = Color(0x2400ff50);
+  static const Color green5A = Color(0x3200ff6c);
+  static const Color green6A = Color(0x4100ff86);
+  static const Color green7A = Color(0x572bff98);
+  static const Color green8A = Color(0x773cff9f);
+  static const Color green9A = Color(0x9e43fea4);
+  static const Color green10A = Color(0x9027ff9e);
+  static const Color green11A = Color(0xc884ffbb);
+  static const Color green12A = Color(0xe4e0ffeb);
 
   static const Color grass1 = Color(0xff0e130e);
   static const Color grass2 = Color(0xff121913);
@@ -834,6 +1458,18 @@ class FlyColorDark {
   static const Color grass12 = Color(0xffcde6cf);
   static const Color grassContrast = Color(0xffffffff);
   static const Color grassSurface = Color(0x80122014);
+  static const Color grass1A = Color(0x0200ff00);
+  static const Color grass2A = Color(0x092fff4d);
+  static const Color grass3A = Color(0x1800ff11);
+  static const Color grass4A = Color(0x2400ff03);
+  static const Color grass5A = Color(0x3200ff2f);
+  static const Color grass6A = Color(0x4128ff53);
+  static const Color grass7A = Color(0x574fff6f);
+  static const Color grass8A = Color(0x765bff79);
+  static const Color grass9A = Color(0xa165ff82);
+  static const Color grass10A = Color(0x9355ff77);
+  static const Color grass11A = Color(0xc892ffa2);
+  static const Color grass12A = Color(0xe4e3ffe5);
 
   static const Color brown1 = Color(0xff13100e);
   static const Color brown2 = Color(0xff1c1815);
@@ -849,6 +1485,18 @@ class FlyColorDark {
   static const Color brown12 = Color(0xfff9ddc7);
   static const Color brownContrast = Color(0xffffffff);
   static const Color brownSurface = Color(0x80261e18);
+  static const Color brown1A = Color(0x02ff0000);
+  static const Color brown2A = Color(0x0cffa868);
+  static const Color brown3A = Color(0x1cffad63);
+  static const Color brown4A = Color(0x28ffb271);
+  static const Color brown5A = Color(0x35feb676);
+  static const Color brown6A = Color(0x45ffb981);
+  static const Color brown7A = Color(0x5affbb82);
+  static const Color brown8A = Color(0x77ffba83);
+  static const Color brown9A = Color(0xa7ffb97d);
+  static const Color brown10A = Color(0x99ffb473);
+  static const Color brown11A = Color(0xdfffc89c);
+  static const Color brown12A = Color(0xf9ffe3cc);
 
   static const Color bronze1 = Color(0xff121110);
   static const Color bronze2 = Color(0xff1a1817);
@@ -864,6 +1512,18 @@ class FlyColorDark {
   static const Color bronze12 = Color(0xfff1e0d8);
   static const Color bronzeContrast = Color(0xffffffff);
   static const Color bronzeSurface = Color(0x80221e1c);
+  static const Color bronze1A = Color(0x01ff1100);
+  static const Color bronze2A = Color(0x0affcab0);
+  static const Color bronze3A = Color(0x17fec6af);
+  static const Color bronze4A = Color(0x21ffc9b2);
+  static const Color bronze5A = Color(0x2cffcbb9);
+  static const Color bronze6A = Color(0x3bffcbb5);
+  static const Color bronze7A = Color(0x4fffccb5);
+  static const Color bronze8A = Color(0x6bffcdb8);
+  static const Color bronze9A = Color(0x9affc8b1);
+  static const Color bronze10A = Color(0x8cffc5ab);
+  static const Color bronze11A = Color(0xcfffdbcd);
+  static const Color bronze12A = Color(0xf0ffede4);
 
   static const Color gold1 = Color(0xff12110f);
   static const Color gold2 = Color(0xff1a1916);
@@ -879,6 +1539,18 @@ class FlyColorDark {
   static const Color gold12 = Color(0xffeee4d6);
   static const Color goldContrast = Color(0xffffffff);
   static const Color goldSurface = Color(0x8022201a);
+  static const Color gold1A = Color(0x01ff1100);
+  static const Color gold2A = Color(0x0affe595);
+  static const Color gold3A = Color(0x15ffdbac);
+  static const Color gold4A = Color(0x1fffdead);
+  static const Color gold5A = Color(0x2affdaaa);
+  static const Color gold6A = Color(0x37ffdeab);
+  static const Color gold7A = Color(0x4affddac);
+  static const Color gold8A = Color(0x66ffdcaa);
+  static const Color gold9A = Color(0x90ffdca7);
+  static const Color gold10A = Color(0x82ffda9f);
+  static const Color gold11A = Color(0xc5ffe9c9);
+  static const Color gold12A = Color(0xedfff4e5);
 
   static const Color sky1 = Color(0xff021419);
   static const Color sky2 = Color(0xff051d23);
@@ -894,6 +1566,18 @@ class FlyColorDark {
   static const Color sky12 = Color(0xffc4f3ff);
   static const Color skyContrast = Color(0xff05262e);
   static const Color skySurface = Color(0x80002834);
+  static const Color sky1A = Color(0x09006aff);
+  static const Color sky2A = Color(0x1300b0ff);
+  static const Color sky3A = Color(0x2c00b4ff);
+  static const Color sky4A = Color(0x4000bcff);
+  static const Color sky5A = Color(0x5300c4fe);
+  static const Color sky6A = Color(0x6800c7ff);
+  static const Color sky7A = Color(0x8000c8fe);
+  static const Color sky8A = Color(0x9c00ccff);
+  static const Color sky9A = Color(0xfe7de3ff);
+  static const Color sky10A = Color(0xf276e2ff);
+  static const Color sky11A = Color(0xe66fe1ff);
+  static const Color sky12A = Color(0xffc4f3ff);
 
   static const Color mint1 = Color(0xff031511);
   static const Color mint2 = Color(0xff071e19);
@@ -909,6 +1593,18 @@ class FlyColorDark {
   static const Color mint12 = Color(0xffc7f5ea);
   static const Color mintContrast = Color(0xff062822);
   static const Color mintSurface = Color(0x80002a20);
+  static const Color mint1A = Color(0x0400ff11);
+  static const Color mint2A = Color(0x0e00ffa3);
+  static const Color mint3A = Color(0x2000ffb8);
+  static const Color mint4A = Color(0x3100ffc1);
+  static const Color mint5A = Color(0x4100ffcc);
+  static const Color mint6A = Color(0x5400ffce);
+  static const Color mint7A = Color(0x6800ffd3);
+  static const Color mint8A = Color(0x8200ffd4);
+  static const Color mint9A = Color(0xe991fee6);
+  static const Color mint10A = Color(0xde8cffe6);
+  static const Color mint11A = Color(0xcf83ffe5);
+  static const Color mint12A = Color(0xf4cffff3);
 
   static const Color lime1 = Color(0xff10120d);
   static const Color lime2 = Color(0xff161a11);
@@ -924,6 +1620,18 @@ class FlyColorDark {
   static const Color lime12 = Color(0xffdff3c3);
   static const Color limeContrast = Color(0xff1d250f);
   static const Color limeSurface = Color(0x801a2210);
+  static const Color lime1A = Color(0x0100ff00);
+  static const Color lime2A = Color(0x0a95ff11);
+  static const Color lime3A = Color(0x18a8ff27);
+  static const Color lime4A = Color(0x24a4ff0a);
+  static const Color lime5A = Color(0x30b0ff26);
+  static const Color lime6A = Color(0x3ec1ff57);
+  static const Color lime7A = Color(0x53cafe73);
+  static const Color lime8A = Color(0x6bcdff7c);
+  static const Color lime9A = Color(0xedcaff69);
+  static const Color lime10A = Color(0xdfd0ff7d);
+  static const Color lime11A = Color(0xe3d0ff7f);
+  static const Color lime12A = Color(0xf2eaffcc);
 
   static const Color yellow1 = Color(0xff12110b);
   static const Color yellow2 = Color(0xff19180f);
@@ -939,6 +1647,18 @@ class FlyColorDark {
   static const Color yellow12 = Color(0xfff5edb7);
   static const Color yellowContrast = Color(0xff262209);
   static const Color yellowSurface = Color(0x80201e0d);
+  static const Color yellow1A = Color(0x01ff1100);
+  static const Color yellow2A = Color(0x09ffe100);
+  static const Color yellow3A = Color(0x19ffd600);
+  static const Color yellow4A = Color(0x24ffce00);
+  static const Color yellow5A = Color(0x30ffda00);
+  static const Color yellow6A = Color(0x3fffdf05);
+  static const Color yellow7A = Color(0x54ffe43c);
+  static const Color yellow8A = Color(0x6effe84b);
+  static const Color yellow9A = Color(0xffffe629);
+  static const Color yellow10A = Color(0xf0ffea52);
+  static const Color yellow11A = Color(0xf1ffea54);
+  static const Color yellow12A = Color(0xf4fff6be);
 
   static const Color amber1 = Color(0xff13110b);
   static const Color amber2 = Color(0xff1c1810);
@@ -954,6 +1674,18 @@ class FlyColorDark {
   static const Color amber12 = Color(0xfffee7b8);
   static const Color amberContrast = Color(0xff2b2009);
   static const Color amberSurface = Color(0x80261e0f);
+  static const Color amber1A = Color(0x02ff1100);
+  static const Color amber2A = Color(0x0cffa800);
+  static const Color amber3A = Color(0x1dff9e00);
+  static const Color amber4A = Color(0x2dff9900);
+  static const Color amber5A = Color(0x3affa700);
+  static const Color amber6A = Color(0x49ffb60a);
+  static const Color amber7A = Color(0x5effc13c);
+  static const Color amber8A = Color(0x7bffc54b);
+  static const Color amber9A = Color(0xffffc53d);
+  static const Color amber10A = Color(0xf3ffc32f);
+  static const Color amber11A = Color(0xffffca46);
+  static const Color amber12A = Color(0xfeffe8b9);
 
   static const Color orange1 = Color(0xff15100d);
   static const Color orange2 = Color(0xff201511);
@@ -969,6 +1701,18 @@ class FlyColorDark {
   static const Color orange12 = Color(0xffffdbc9);
   static const Color orangeContrast = Color(0xffffffff);
   static const Color orangeSurface = Color(0x802e1810);
+  static const Color orange1A = Color(0x04ff0000);
+  static const Color orange2A = Color(0x10ff5011);
+  static const Color orange3A = Color(0x27ff5304);
+  static const Color orange4A = Color(0x3dff3b00);
+  static const Color orange5A = Color(0x4cff5100);
+  static const Color orange6A = Color(0x5dff691f);
+  static const Color orange7A = Color(0x77ff783a);
+  static const Color orange8A = Color(0x9cff7f42);
+  static const Color orange9A = Color(0xf6ff6e15);
+  static const Color orange10A = Color(0xe7ff6700);
+  static const Color orange11A = Color(0xffff955c);
+  static const Color orange12A = Color(0xffffdbc9);
 
 }
 
@@ -1070,6 +1814,18 @@ class FlyColor {
   static const Color gray12 = FlyColorLight.gray12;
   static const Color grayContrast = FlyColorLight.grayContrast;
   static const Color graySurface = FlyColorLight.graySurface;
+  static const Color gray1A = FlyColorLight.gray1A;
+  static const Color gray2A = FlyColorLight.gray2A;
+  static const Color gray3A = FlyColorLight.gray3A;
+  static const Color gray4A = FlyColorLight.gray4A;
+  static const Color gray5A = FlyColorLight.gray5A;
+  static const Color gray6A = FlyColorLight.gray6A;
+  static const Color gray7A = FlyColorLight.gray7A;
+  static const Color gray8A = FlyColorLight.gray8A;
+  static const Color gray9A = FlyColorLight.gray9A;
+  static const Color gray10A = FlyColorLight.gray10A;
+  static const Color gray11A = FlyColorLight.gray11A;
+  static const Color gray12A = FlyColorLight.gray12A;
 
   static const Color mauve1 = FlyColorLight.mauve1;
   static const Color mauve2 = FlyColorLight.mauve2;
@@ -1085,6 +1841,18 @@ class FlyColor {
   static const Color mauve12 = FlyColorLight.mauve12;
   static const Color mauveContrast = FlyColorLight.mauveContrast;
   static const Color mauveSurface = FlyColorLight.mauveSurface;
+  static const Color mauve1A = FlyColorLight.mauve1A;
+  static const Color mauve2A = FlyColorLight.mauve2A;
+  static const Color mauve3A = FlyColorLight.mauve3A;
+  static const Color mauve4A = FlyColorLight.mauve4A;
+  static const Color mauve5A = FlyColorLight.mauve5A;
+  static const Color mauve6A = FlyColorLight.mauve6A;
+  static const Color mauve7A = FlyColorLight.mauve7A;
+  static const Color mauve8A = FlyColorLight.mauve8A;
+  static const Color mauve9A = FlyColorLight.mauve9A;
+  static const Color mauve10A = FlyColorLight.mauve10A;
+  static const Color mauve11A = FlyColorLight.mauve11A;
+  static const Color mauve12A = FlyColorLight.mauve12A;
 
   static const Color slate1 = FlyColorLight.slate1;
   static const Color slate2 = FlyColorLight.slate2;
@@ -1100,6 +1868,18 @@ class FlyColor {
   static const Color slate12 = FlyColorLight.slate12;
   static const Color slateContrast = FlyColorLight.slateContrast;
   static const Color slateSurface = FlyColorLight.slateSurface;
+  static const Color slate1A = FlyColorLight.slate1A;
+  static const Color slate2A = FlyColorLight.slate2A;
+  static const Color slate3A = FlyColorLight.slate3A;
+  static const Color slate4A = FlyColorLight.slate4A;
+  static const Color slate5A = FlyColorLight.slate5A;
+  static const Color slate6A = FlyColorLight.slate6A;
+  static const Color slate7A = FlyColorLight.slate7A;
+  static const Color slate8A = FlyColorLight.slate8A;
+  static const Color slate9A = FlyColorLight.slate9A;
+  static const Color slate10A = FlyColorLight.slate10A;
+  static const Color slate11A = FlyColorLight.slate11A;
+  static const Color slate12A = FlyColorLight.slate12A;
 
   static const Color sage1 = FlyColorLight.sage1;
   static const Color sage2 = FlyColorLight.sage2;
@@ -1115,6 +1895,18 @@ class FlyColor {
   static const Color sage12 = FlyColorLight.sage12;
   static const Color sageContrast = FlyColorLight.sageContrast;
   static const Color sageSurface = FlyColorLight.sageSurface;
+  static const Color sage1A = FlyColorLight.sage1A;
+  static const Color sage2A = FlyColorLight.sage2A;
+  static const Color sage3A = FlyColorLight.sage3A;
+  static const Color sage4A = FlyColorLight.sage4A;
+  static const Color sage5A = FlyColorLight.sage5A;
+  static const Color sage6A = FlyColorLight.sage6A;
+  static const Color sage7A = FlyColorLight.sage7A;
+  static const Color sage8A = FlyColorLight.sage8A;
+  static const Color sage9A = FlyColorLight.sage9A;
+  static const Color sage10A = FlyColorLight.sage10A;
+  static const Color sage11A = FlyColorLight.sage11A;
+  static const Color sage12A = FlyColorLight.sage12A;
 
   static const Color olive1 = FlyColorLight.olive1;
   static const Color olive2 = FlyColorLight.olive2;
@@ -1130,6 +1922,18 @@ class FlyColor {
   static const Color olive12 = FlyColorLight.olive12;
   static const Color oliveContrast = FlyColorLight.oliveContrast;
   static const Color oliveSurface = FlyColorLight.oliveSurface;
+  static const Color olive1A = FlyColorLight.olive1A;
+  static const Color olive2A = FlyColorLight.olive2A;
+  static const Color olive3A = FlyColorLight.olive3A;
+  static const Color olive4A = FlyColorLight.olive4A;
+  static const Color olive5A = FlyColorLight.olive5A;
+  static const Color olive6A = FlyColorLight.olive6A;
+  static const Color olive7A = FlyColorLight.olive7A;
+  static const Color olive8A = FlyColorLight.olive8A;
+  static const Color olive9A = FlyColorLight.olive9A;
+  static const Color olive10A = FlyColorLight.olive10A;
+  static const Color olive11A = FlyColorLight.olive11A;
+  static const Color olive12A = FlyColorLight.olive12A;
 
   static const Color sand1 = FlyColorLight.sand1;
   static const Color sand2 = FlyColorLight.sand2;
@@ -1145,6 +1949,18 @@ class FlyColor {
   static const Color sand12 = FlyColorLight.sand12;
   static const Color sandContrast = FlyColorLight.sandContrast;
   static const Color sandSurface = FlyColorLight.sandSurface;
+  static const Color sand1A = FlyColorLight.sand1A;
+  static const Color sand2A = FlyColorLight.sand2A;
+  static const Color sand3A = FlyColorLight.sand3A;
+  static const Color sand4A = FlyColorLight.sand4A;
+  static const Color sand5A = FlyColorLight.sand5A;
+  static const Color sand6A = FlyColorLight.sand6A;
+  static const Color sand7A = FlyColorLight.sand7A;
+  static const Color sand8A = FlyColorLight.sand8A;
+  static const Color sand9A = FlyColorLight.sand9A;
+  static const Color sand10A = FlyColorLight.sand10A;
+  static const Color sand11A = FlyColorLight.sand11A;
+  static const Color sand12A = FlyColorLight.sand12A;
 
   static const Color tomato1 = FlyColorLight.tomato1;
   static const Color tomato2 = FlyColorLight.tomato2;
@@ -1160,6 +1976,18 @@ class FlyColor {
   static const Color tomato12 = FlyColorLight.tomato12;
   static const Color tomatoContrast = FlyColorLight.tomatoContrast;
   static const Color tomatoSurface = FlyColorLight.tomatoSurface;
+  static const Color tomato1A = FlyColorLight.tomato1A;
+  static const Color tomato2A = FlyColorLight.tomato2A;
+  static const Color tomato3A = FlyColorLight.tomato3A;
+  static const Color tomato4A = FlyColorLight.tomato4A;
+  static const Color tomato5A = FlyColorLight.tomato5A;
+  static const Color tomato6A = FlyColorLight.tomato6A;
+  static const Color tomato7A = FlyColorLight.tomato7A;
+  static const Color tomato8A = FlyColorLight.tomato8A;
+  static const Color tomato9A = FlyColorLight.tomato9A;
+  static const Color tomato10A = FlyColorLight.tomato10A;
+  static const Color tomato11A = FlyColorLight.tomato11A;
+  static const Color tomato12A = FlyColorLight.tomato12A;
 
   static const Color red1 = FlyColorLight.red1;
   static const Color red2 = FlyColorLight.red2;
@@ -1175,6 +2003,18 @@ class FlyColor {
   static const Color red12 = FlyColorLight.red12;
   static const Color redContrast = FlyColorLight.redContrast;
   static const Color redSurface = FlyColorLight.redSurface;
+  static const Color red1A = FlyColorLight.red1A;
+  static const Color red2A = FlyColorLight.red2A;
+  static const Color red3A = FlyColorLight.red3A;
+  static const Color red4A = FlyColorLight.red4A;
+  static const Color red5A = FlyColorLight.red5A;
+  static const Color red6A = FlyColorLight.red6A;
+  static const Color red7A = FlyColorLight.red7A;
+  static const Color red8A = FlyColorLight.red8A;
+  static const Color red9A = FlyColorLight.red9A;
+  static const Color red10A = FlyColorLight.red10A;
+  static const Color red11A = FlyColorLight.red11A;
+  static const Color red12A = FlyColorLight.red12A;
 
   static const Color ruby1 = FlyColorLight.ruby1;
   static const Color ruby2 = FlyColorLight.ruby2;
@@ -1190,6 +2030,18 @@ class FlyColor {
   static const Color ruby12 = FlyColorLight.ruby12;
   static const Color rubyContrast = FlyColorLight.rubyContrast;
   static const Color rubySurface = FlyColorLight.rubySurface;
+  static const Color ruby1A = FlyColorLight.ruby1A;
+  static const Color ruby2A = FlyColorLight.ruby2A;
+  static const Color ruby3A = FlyColorLight.ruby3A;
+  static const Color ruby4A = FlyColorLight.ruby4A;
+  static const Color ruby5A = FlyColorLight.ruby5A;
+  static const Color ruby6A = FlyColorLight.ruby6A;
+  static const Color ruby7A = FlyColorLight.ruby7A;
+  static const Color ruby8A = FlyColorLight.ruby8A;
+  static const Color ruby9A = FlyColorLight.ruby9A;
+  static const Color ruby10A = FlyColorLight.ruby10A;
+  static const Color ruby11A = FlyColorLight.ruby11A;
+  static const Color ruby12A = FlyColorLight.ruby12A;
 
   static const Color crimson1 = FlyColorLight.crimson1;
   static const Color crimson2 = FlyColorLight.crimson2;
@@ -1205,6 +2057,18 @@ class FlyColor {
   static const Color crimson12 = FlyColorLight.crimson12;
   static const Color crimsonContrast = FlyColorLight.crimsonContrast;
   static const Color crimsonSurface = FlyColorLight.crimsonSurface;
+  static const Color crimson1A = FlyColorLight.crimson1A;
+  static const Color crimson2A = FlyColorLight.crimson2A;
+  static const Color crimson3A = FlyColorLight.crimson3A;
+  static const Color crimson4A = FlyColorLight.crimson4A;
+  static const Color crimson5A = FlyColorLight.crimson5A;
+  static const Color crimson6A = FlyColorLight.crimson6A;
+  static const Color crimson7A = FlyColorLight.crimson7A;
+  static const Color crimson8A = FlyColorLight.crimson8A;
+  static const Color crimson9A = FlyColorLight.crimson9A;
+  static const Color crimson10A = FlyColorLight.crimson10A;
+  static const Color crimson11A = FlyColorLight.crimson11A;
+  static const Color crimson12A = FlyColorLight.crimson12A;
 
   static const Color pink1 = FlyColorLight.pink1;
   static const Color pink2 = FlyColorLight.pink2;
@@ -1220,6 +2084,18 @@ class FlyColor {
   static const Color pink12 = FlyColorLight.pink12;
   static const Color pinkContrast = FlyColorLight.pinkContrast;
   static const Color pinkSurface = FlyColorLight.pinkSurface;
+  static const Color pink1A = FlyColorLight.pink1A;
+  static const Color pink2A = FlyColorLight.pink2A;
+  static const Color pink3A = FlyColorLight.pink3A;
+  static const Color pink4A = FlyColorLight.pink4A;
+  static const Color pink5A = FlyColorLight.pink5A;
+  static const Color pink6A = FlyColorLight.pink6A;
+  static const Color pink7A = FlyColorLight.pink7A;
+  static const Color pink8A = FlyColorLight.pink8A;
+  static const Color pink9A = FlyColorLight.pink9A;
+  static const Color pink10A = FlyColorLight.pink10A;
+  static const Color pink11A = FlyColorLight.pink11A;
+  static const Color pink12A = FlyColorLight.pink12A;
 
   static const Color plum1 = FlyColorLight.plum1;
   static const Color plum2 = FlyColorLight.plum2;
@@ -1235,6 +2111,18 @@ class FlyColor {
   static const Color plum12 = FlyColorLight.plum12;
   static const Color plumContrast = FlyColorLight.plumContrast;
   static const Color plumSurface = FlyColorLight.plumSurface;
+  static const Color plum1A = FlyColorLight.plum1A;
+  static const Color plum2A = FlyColorLight.plum2A;
+  static const Color plum3A = FlyColorLight.plum3A;
+  static const Color plum4A = FlyColorLight.plum4A;
+  static const Color plum5A = FlyColorLight.plum5A;
+  static const Color plum6A = FlyColorLight.plum6A;
+  static const Color plum7A = FlyColorLight.plum7A;
+  static const Color plum8A = FlyColorLight.plum8A;
+  static const Color plum9A = FlyColorLight.plum9A;
+  static const Color plum10A = FlyColorLight.plum10A;
+  static const Color plum11A = FlyColorLight.plum11A;
+  static const Color plum12A = FlyColorLight.plum12A;
 
   static const Color purple1 = FlyColorLight.purple1;
   static const Color purple2 = FlyColorLight.purple2;
@@ -1250,6 +2138,18 @@ class FlyColor {
   static const Color purple12 = FlyColorLight.purple12;
   static const Color purpleContrast = FlyColorLight.purpleContrast;
   static const Color purpleSurface = FlyColorLight.purpleSurface;
+  static const Color purple1A = FlyColorLight.purple1A;
+  static const Color purple2A = FlyColorLight.purple2A;
+  static const Color purple3A = FlyColorLight.purple3A;
+  static const Color purple4A = FlyColorLight.purple4A;
+  static const Color purple5A = FlyColorLight.purple5A;
+  static const Color purple6A = FlyColorLight.purple6A;
+  static const Color purple7A = FlyColorLight.purple7A;
+  static const Color purple8A = FlyColorLight.purple8A;
+  static const Color purple9A = FlyColorLight.purple9A;
+  static const Color purple10A = FlyColorLight.purple10A;
+  static const Color purple11A = FlyColorLight.purple11A;
+  static const Color purple12A = FlyColorLight.purple12A;
 
   static const Color violet1 = FlyColorLight.violet1;
   static const Color violet2 = FlyColorLight.violet2;
@@ -1265,6 +2165,18 @@ class FlyColor {
   static const Color violet12 = FlyColorLight.violet12;
   static const Color violetContrast = FlyColorLight.violetContrast;
   static const Color violetSurface = FlyColorLight.violetSurface;
+  static const Color violet1A = FlyColorLight.violet1A;
+  static const Color violet2A = FlyColorLight.violet2A;
+  static const Color violet3A = FlyColorLight.violet3A;
+  static const Color violet4A = FlyColorLight.violet4A;
+  static const Color violet5A = FlyColorLight.violet5A;
+  static const Color violet6A = FlyColorLight.violet6A;
+  static const Color violet7A = FlyColorLight.violet7A;
+  static const Color violet8A = FlyColorLight.violet8A;
+  static const Color violet9A = FlyColorLight.violet9A;
+  static const Color violet10A = FlyColorLight.violet10A;
+  static const Color violet11A = FlyColorLight.violet11A;
+  static const Color violet12A = FlyColorLight.violet12A;
 
   static const Color iris1 = FlyColorLight.iris1;
   static const Color iris2 = FlyColorLight.iris2;
@@ -1280,6 +2192,18 @@ class FlyColor {
   static const Color iris12 = FlyColorLight.iris12;
   static const Color irisContrast = FlyColorLight.irisContrast;
   static const Color irisSurface = FlyColorLight.irisSurface;
+  static const Color iris1A = FlyColorLight.iris1A;
+  static const Color iris2A = FlyColorLight.iris2A;
+  static const Color iris3A = FlyColorLight.iris3A;
+  static const Color iris4A = FlyColorLight.iris4A;
+  static const Color iris5A = FlyColorLight.iris5A;
+  static const Color iris6A = FlyColorLight.iris6A;
+  static const Color iris7A = FlyColorLight.iris7A;
+  static const Color iris8A = FlyColorLight.iris8A;
+  static const Color iris9A = FlyColorLight.iris9A;
+  static const Color iris10A = FlyColorLight.iris10A;
+  static const Color iris11A = FlyColorLight.iris11A;
+  static const Color iris12A = FlyColorLight.iris12A;
 
   static const Color indigo1 = FlyColorLight.indigo1;
   static const Color indigo2 = FlyColorLight.indigo2;
@@ -1295,6 +2219,18 @@ class FlyColor {
   static const Color indigo12 = FlyColorLight.indigo12;
   static const Color indigoContrast = FlyColorLight.indigoContrast;
   static const Color indigoSurface = FlyColorLight.indigoSurface;
+  static const Color indigo1A = FlyColorLight.indigo1A;
+  static const Color indigo2A = FlyColorLight.indigo2A;
+  static const Color indigo3A = FlyColorLight.indigo3A;
+  static const Color indigo4A = FlyColorLight.indigo4A;
+  static const Color indigo5A = FlyColorLight.indigo5A;
+  static const Color indigo6A = FlyColorLight.indigo6A;
+  static const Color indigo7A = FlyColorLight.indigo7A;
+  static const Color indigo8A = FlyColorLight.indigo8A;
+  static const Color indigo9A = FlyColorLight.indigo9A;
+  static const Color indigo10A = FlyColorLight.indigo10A;
+  static const Color indigo11A = FlyColorLight.indigo11A;
+  static const Color indigo12A = FlyColorLight.indigo12A;
 
   static const Color blue1 = FlyColorLight.blue1;
   static const Color blue2 = FlyColorLight.blue2;
@@ -1310,6 +2246,18 @@ class FlyColor {
   static const Color blue12 = FlyColorLight.blue12;
   static const Color blueContrast = FlyColorLight.blueContrast;
   static const Color blueSurface = FlyColorLight.blueSurface;
+  static const Color blue1A = FlyColorLight.blue1A;
+  static const Color blue2A = FlyColorLight.blue2A;
+  static const Color blue3A = FlyColorLight.blue3A;
+  static const Color blue4A = FlyColorLight.blue4A;
+  static const Color blue5A = FlyColorLight.blue5A;
+  static const Color blue6A = FlyColorLight.blue6A;
+  static const Color blue7A = FlyColorLight.blue7A;
+  static const Color blue8A = FlyColorLight.blue8A;
+  static const Color blue9A = FlyColorLight.blue9A;
+  static const Color blue10A = FlyColorLight.blue10A;
+  static const Color blue11A = FlyColorLight.blue11A;
+  static const Color blue12A = FlyColorLight.blue12A;
 
   static const Color cyan1 = FlyColorLight.cyan1;
   static const Color cyan2 = FlyColorLight.cyan2;
@@ -1325,6 +2273,18 @@ class FlyColor {
   static const Color cyan12 = FlyColorLight.cyan12;
   static const Color cyanContrast = FlyColorLight.cyanContrast;
   static const Color cyanSurface = FlyColorLight.cyanSurface;
+  static const Color cyan1A = FlyColorLight.cyan1A;
+  static const Color cyan2A = FlyColorLight.cyan2A;
+  static const Color cyan3A = FlyColorLight.cyan3A;
+  static const Color cyan4A = FlyColorLight.cyan4A;
+  static const Color cyan5A = FlyColorLight.cyan5A;
+  static const Color cyan6A = FlyColorLight.cyan6A;
+  static const Color cyan7A = FlyColorLight.cyan7A;
+  static const Color cyan8A = FlyColorLight.cyan8A;
+  static const Color cyan9A = FlyColorLight.cyan9A;
+  static const Color cyan10A = FlyColorLight.cyan10A;
+  static const Color cyan11A = FlyColorLight.cyan11A;
+  static const Color cyan12A = FlyColorLight.cyan12A;
 
   static const Color teal1 = FlyColorLight.teal1;
   static const Color teal2 = FlyColorLight.teal2;
@@ -1340,6 +2300,18 @@ class FlyColor {
   static const Color teal12 = FlyColorLight.teal12;
   static const Color tealContrast = FlyColorLight.tealContrast;
   static const Color tealSurface = FlyColorLight.tealSurface;
+  static const Color teal1A = FlyColorLight.teal1A;
+  static const Color teal2A = FlyColorLight.teal2A;
+  static const Color teal3A = FlyColorLight.teal3A;
+  static const Color teal4A = FlyColorLight.teal4A;
+  static const Color teal5A = FlyColorLight.teal5A;
+  static const Color teal6A = FlyColorLight.teal6A;
+  static const Color teal7A = FlyColorLight.teal7A;
+  static const Color teal8A = FlyColorLight.teal8A;
+  static const Color teal9A = FlyColorLight.teal9A;
+  static const Color teal10A = FlyColorLight.teal10A;
+  static const Color teal11A = FlyColorLight.teal11A;
+  static const Color teal12A = FlyColorLight.teal12A;
 
   static const Color jade1 = FlyColorLight.jade1;
   static const Color jade2 = FlyColorLight.jade2;
@@ -1355,6 +2327,18 @@ class FlyColor {
   static const Color jade12 = FlyColorLight.jade12;
   static const Color jadeContrast = FlyColorLight.jadeContrast;
   static const Color jadeSurface = FlyColorLight.jadeSurface;
+  static const Color jade1A = FlyColorLight.jade1A;
+  static const Color jade2A = FlyColorLight.jade2A;
+  static const Color jade3A = FlyColorLight.jade3A;
+  static const Color jade4A = FlyColorLight.jade4A;
+  static const Color jade5A = FlyColorLight.jade5A;
+  static const Color jade6A = FlyColorLight.jade6A;
+  static const Color jade7A = FlyColorLight.jade7A;
+  static const Color jade8A = FlyColorLight.jade8A;
+  static const Color jade9A = FlyColorLight.jade9A;
+  static const Color jade10A = FlyColorLight.jade10A;
+  static const Color jade11A = FlyColorLight.jade11A;
+  static const Color jade12A = FlyColorLight.jade12A;
 
   static const Color green1 = FlyColorLight.green1;
   static const Color green2 = FlyColorLight.green2;
@@ -1370,6 +2354,18 @@ class FlyColor {
   static const Color green12 = FlyColorLight.green12;
   static const Color greenContrast = FlyColorLight.greenContrast;
   static const Color greenSurface = FlyColorLight.greenSurface;
+  static const Color green1A = FlyColorLight.green1A;
+  static const Color green2A = FlyColorLight.green2A;
+  static const Color green3A = FlyColorLight.green3A;
+  static const Color green4A = FlyColorLight.green4A;
+  static const Color green5A = FlyColorLight.green5A;
+  static const Color green6A = FlyColorLight.green6A;
+  static const Color green7A = FlyColorLight.green7A;
+  static const Color green8A = FlyColorLight.green8A;
+  static const Color green9A = FlyColorLight.green9A;
+  static const Color green10A = FlyColorLight.green10A;
+  static const Color green11A = FlyColorLight.green11A;
+  static const Color green12A = FlyColorLight.green12A;
 
   static const Color grass1 = FlyColorLight.grass1;
   static const Color grass2 = FlyColorLight.grass2;
@@ -1385,6 +2381,18 @@ class FlyColor {
   static const Color grass12 = FlyColorLight.grass12;
   static const Color grassContrast = FlyColorLight.grassContrast;
   static const Color grassSurface = FlyColorLight.grassSurface;
+  static const Color grass1A = FlyColorLight.grass1A;
+  static const Color grass2A = FlyColorLight.grass2A;
+  static const Color grass3A = FlyColorLight.grass3A;
+  static const Color grass4A = FlyColorLight.grass4A;
+  static const Color grass5A = FlyColorLight.grass5A;
+  static const Color grass6A = FlyColorLight.grass6A;
+  static const Color grass7A = FlyColorLight.grass7A;
+  static const Color grass8A = FlyColorLight.grass8A;
+  static const Color grass9A = FlyColorLight.grass9A;
+  static const Color grass10A = FlyColorLight.grass10A;
+  static const Color grass11A = FlyColorLight.grass11A;
+  static const Color grass12A = FlyColorLight.grass12A;
 
   static const Color brown1 = FlyColorLight.brown1;
   static const Color brown2 = FlyColorLight.brown2;
@@ -1400,6 +2408,18 @@ class FlyColor {
   static const Color brown12 = FlyColorLight.brown12;
   static const Color brownContrast = FlyColorLight.brownContrast;
   static const Color brownSurface = FlyColorLight.brownSurface;
+  static const Color brown1A = FlyColorLight.brown1A;
+  static const Color brown2A = FlyColorLight.brown2A;
+  static const Color brown3A = FlyColorLight.brown3A;
+  static const Color brown4A = FlyColorLight.brown4A;
+  static const Color brown5A = FlyColorLight.brown5A;
+  static const Color brown6A = FlyColorLight.brown6A;
+  static const Color brown7A = FlyColorLight.brown7A;
+  static const Color brown8A = FlyColorLight.brown8A;
+  static const Color brown9A = FlyColorLight.brown9A;
+  static const Color brown10A = FlyColorLight.brown10A;
+  static const Color brown11A = FlyColorLight.brown11A;
+  static const Color brown12A = FlyColorLight.brown12A;
 
   static const Color bronze1 = FlyColorLight.bronze1;
   static const Color bronze2 = FlyColorLight.bronze2;
@@ -1415,6 +2435,18 @@ class FlyColor {
   static const Color bronze12 = FlyColorLight.bronze12;
   static const Color bronzeContrast = FlyColorLight.bronzeContrast;
   static const Color bronzeSurface = FlyColorLight.bronzeSurface;
+  static const Color bronze1A = FlyColorLight.bronze1A;
+  static const Color bronze2A = FlyColorLight.bronze2A;
+  static const Color bronze3A = FlyColorLight.bronze3A;
+  static const Color bronze4A = FlyColorLight.bronze4A;
+  static const Color bronze5A = FlyColorLight.bronze5A;
+  static const Color bronze6A = FlyColorLight.bronze6A;
+  static const Color bronze7A = FlyColorLight.bronze7A;
+  static const Color bronze8A = FlyColorLight.bronze8A;
+  static const Color bronze9A = FlyColorLight.bronze9A;
+  static const Color bronze10A = FlyColorLight.bronze10A;
+  static const Color bronze11A = FlyColorLight.bronze11A;
+  static const Color bronze12A = FlyColorLight.bronze12A;
 
   static const Color gold1 = FlyColorLight.gold1;
   static const Color gold2 = FlyColorLight.gold2;
@@ -1430,6 +2462,18 @@ class FlyColor {
   static const Color gold12 = FlyColorLight.gold12;
   static const Color goldContrast = FlyColorLight.goldContrast;
   static const Color goldSurface = FlyColorLight.goldSurface;
+  static const Color gold1A = FlyColorLight.gold1A;
+  static const Color gold2A = FlyColorLight.gold2A;
+  static const Color gold3A = FlyColorLight.gold3A;
+  static const Color gold4A = FlyColorLight.gold4A;
+  static const Color gold5A = FlyColorLight.gold5A;
+  static const Color gold6A = FlyColorLight.gold6A;
+  static const Color gold7A = FlyColorLight.gold7A;
+  static const Color gold8A = FlyColorLight.gold8A;
+  static const Color gold9A = FlyColorLight.gold9A;
+  static const Color gold10A = FlyColorLight.gold10A;
+  static const Color gold11A = FlyColorLight.gold11A;
+  static const Color gold12A = FlyColorLight.gold12A;
 
   static const Color sky1 = FlyColorLight.sky1;
   static const Color sky2 = FlyColorLight.sky2;
@@ -1445,6 +2489,18 @@ class FlyColor {
   static const Color sky12 = FlyColorLight.sky12;
   static const Color skyContrast = FlyColorLight.skyContrast;
   static const Color skySurface = FlyColorLight.skySurface;
+  static const Color sky1A = FlyColorLight.sky1A;
+  static const Color sky2A = FlyColorLight.sky2A;
+  static const Color sky3A = FlyColorLight.sky3A;
+  static const Color sky4A = FlyColorLight.sky4A;
+  static const Color sky5A = FlyColorLight.sky5A;
+  static const Color sky6A = FlyColorLight.sky6A;
+  static const Color sky7A = FlyColorLight.sky7A;
+  static const Color sky8A = FlyColorLight.sky8A;
+  static const Color sky9A = FlyColorLight.sky9A;
+  static const Color sky10A = FlyColorLight.sky10A;
+  static const Color sky11A = FlyColorLight.sky11A;
+  static const Color sky12A = FlyColorLight.sky12A;
 
   static const Color mint1 = FlyColorLight.mint1;
   static const Color mint2 = FlyColorLight.mint2;
@@ -1460,6 +2516,18 @@ class FlyColor {
   static const Color mint12 = FlyColorLight.mint12;
   static const Color mintContrast = FlyColorLight.mintContrast;
   static const Color mintSurface = FlyColorLight.mintSurface;
+  static const Color mint1A = FlyColorLight.mint1A;
+  static const Color mint2A = FlyColorLight.mint2A;
+  static const Color mint3A = FlyColorLight.mint3A;
+  static const Color mint4A = FlyColorLight.mint4A;
+  static const Color mint5A = FlyColorLight.mint5A;
+  static const Color mint6A = FlyColorLight.mint6A;
+  static const Color mint7A = FlyColorLight.mint7A;
+  static const Color mint8A = FlyColorLight.mint8A;
+  static const Color mint9A = FlyColorLight.mint9A;
+  static const Color mint10A = FlyColorLight.mint10A;
+  static const Color mint11A = FlyColorLight.mint11A;
+  static const Color mint12A = FlyColorLight.mint12A;
 
   static const Color lime1 = FlyColorLight.lime1;
   static const Color lime2 = FlyColorLight.lime2;
@@ -1475,6 +2543,18 @@ class FlyColor {
   static const Color lime12 = FlyColorLight.lime12;
   static const Color limeContrast = FlyColorLight.limeContrast;
   static const Color limeSurface = FlyColorLight.limeSurface;
+  static const Color lime1A = FlyColorLight.lime1A;
+  static const Color lime2A = FlyColorLight.lime2A;
+  static const Color lime3A = FlyColorLight.lime3A;
+  static const Color lime4A = FlyColorLight.lime4A;
+  static const Color lime5A = FlyColorLight.lime5A;
+  static const Color lime6A = FlyColorLight.lime6A;
+  static const Color lime7A = FlyColorLight.lime7A;
+  static const Color lime8A = FlyColorLight.lime8A;
+  static const Color lime9A = FlyColorLight.lime9A;
+  static const Color lime10A = FlyColorLight.lime10A;
+  static const Color lime11A = FlyColorLight.lime11A;
+  static const Color lime12A = FlyColorLight.lime12A;
 
   static const Color yellow1 = FlyColorLight.yellow1;
   static const Color yellow2 = FlyColorLight.yellow2;
@@ -1490,6 +2570,18 @@ class FlyColor {
   static const Color yellow12 = FlyColorLight.yellow12;
   static const Color yellowContrast = FlyColorLight.yellowContrast;
   static const Color yellowSurface = FlyColorLight.yellowSurface;
+  static const Color yellow1A = FlyColorLight.yellow1A;
+  static const Color yellow2A = FlyColorLight.yellow2A;
+  static const Color yellow3A = FlyColorLight.yellow3A;
+  static const Color yellow4A = FlyColorLight.yellow4A;
+  static const Color yellow5A = FlyColorLight.yellow5A;
+  static const Color yellow6A = FlyColorLight.yellow6A;
+  static const Color yellow7A = FlyColorLight.yellow7A;
+  static const Color yellow8A = FlyColorLight.yellow8A;
+  static const Color yellow9A = FlyColorLight.yellow9A;
+  static const Color yellow10A = FlyColorLight.yellow10A;
+  static const Color yellow11A = FlyColorLight.yellow11A;
+  static const Color yellow12A = FlyColorLight.yellow12A;
 
   static const Color amber1 = FlyColorLight.amber1;
   static const Color amber2 = FlyColorLight.amber2;
@@ -1505,6 +2597,18 @@ class FlyColor {
   static const Color amber12 = FlyColorLight.amber12;
   static const Color amberContrast = FlyColorLight.amberContrast;
   static const Color amberSurface = FlyColorLight.amberSurface;
+  static const Color amber1A = FlyColorLight.amber1A;
+  static const Color amber2A = FlyColorLight.amber2A;
+  static const Color amber3A = FlyColorLight.amber3A;
+  static const Color amber4A = FlyColorLight.amber4A;
+  static const Color amber5A = FlyColorLight.amber5A;
+  static const Color amber6A = FlyColorLight.amber6A;
+  static const Color amber7A = FlyColorLight.amber7A;
+  static const Color amber8A = FlyColorLight.amber8A;
+  static const Color amber9A = FlyColorLight.amber9A;
+  static const Color amber10A = FlyColorLight.amber10A;
+  static const Color amber11A = FlyColorLight.amber11A;
+  static const Color amber12A = FlyColorLight.amber12A;
 
   static const Color orange1 = FlyColorLight.orange1;
   static const Color orange2 = FlyColorLight.orange2;
@@ -1520,6 +2624,18 @@ class FlyColor {
   static const Color orange12 = FlyColorLight.orange12;
   static const Color orangeContrast = FlyColorLight.orangeContrast;
   static const Color orangeSurface = FlyColorLight.orangeSurface;
+  static const Color orange1A = FlyColorLight.orange1A;
+  static const Color orange2A = FlyColorLight.orange2A;
+  static const Color orange3A = FlyColorLight.orange3A;
+  static const Color orange4A = FlyColorLight.orange4A;
+  static const Color orange5A = FlyColorLight.orange5A;
+  static const Color orange6A = FlyColorLight.orange6A;
+  static const Color orange7A = FlyColorLight.orange7A;
+  static const Color orange8A = FlyColorLight.orange8A;
+  static const Color orange9A = FlyColorLight.orange9A;
+  static const Color orange10A = FlyColorLight.orange10A;
+  static const Color orange11A = FlyColorLight.orange11A;
+  static const Color orange12A = FlyColorLight.orange12A;
 
   /// Dark mode colors (suffixed with Dark)
   static const Color gray1Dark = FlyColorDark.gray1;
@@ -1536,6 +2652,18 @@ class FlyColor {
   static const Color gray12Dark = FlyColorDark.gray12;
   static const Color grayContrastDark = FlyColorDark.grayContrast;
   static const Color graySurfaceDark = FlyColorDark.graySurface;
+  static const Color gray1DarkA = FlyColorDark.gray1A;
+  static const Color gray2DarkA = FlyColorDark.gray2A;
+  static const Color gray3DarkA = FlyColorDark.gray3A;
+  static const Color gray4DarkA = FlyColorDark.gray4A;
+  static const Color gray5DarkA = FlyColorDark.gray5A;
+  static const Color gray6DarkA = FlyColorDark.gray6A;
+  static const Color gray7DarkA = FlyColorDark.gray7A;
+  static const Color gray8DarkA = FlyColorDark.gray8A;
+  static const Color gray9DarkA = FlyColorDark.gray9A;
+  static const Color gray10DarkA = FlyColorDark.gray10A;
+  static const Color gray11DarkA = FlyColorDark.gray11A;
+  static const Color gray12DarkA = FlyColorDark.gray12A;
 
   static const Color mauve1Dark = FlyColorDark.mauve1;
   static const Color mauve2Dark = FlyColorDark.mauve2;
@@ -1551,6 +2679,18 @@ class FlyColor {
   static const Color mauve12Dark = FlyColorDark.mauve12;
   static const Color mauveContrastDark = FlyColorDark.mauveContrast;
   static const Color mauveSurfaceDark = FlyColorDark.mauveSurface;
+  static const Color mauve1DarkA = FlyColorDark.mauve1A;
+  static const Color mauve2DarkA = FlyColorDark.mauve2A;
+  static const Color mauve3DarkA = FlyColorDark.mauve3A;
+  static const Color mauve4DarkA = FlyColorDark.mauve4A;
+  static const Color mauve5DarkA = FlyColorDark.mauve5A;
+  static const Color mauve6DarkA = FlyColorDark.mauve6A;
+  static const Color mauve7DarkA = FlyColorDark.mauve7A;
+  static const Color mauve8DarkA = FlyColorDark.mauve8A;
+  static const Color mauve9DarkA = FlyColorDark.mauve9A;
+  static const Color mauve10DarkA = FlyColorDark.mauve10A;
+  static const Color mauve11DarkA = FlyColorDark.mauve11A;
+  static const Color mauve12DarkA = FlyColorDark.mauve12A;
 
   static const Color slate1Dark = FlyColorDark.slate1;
   static const Color slate2Dark = FlyColorDark.slate2;
@@ -1566,6 +2706,18 @@ class FlyColor {
   static const Color slate12Dark = FlyColorDark.slate12;
   static const Color slateContrastDark = FlyColorDark.slateContrast;
   static const Color slateSurfaceDark = FlyColorDark.slateSurface;
+  static const Color slate1DarkA = FlyColorDark.slate1A;
+  static const Color slate2DarkA = FlyColorDark.slate2A;
+  static const Color slate3DarkA = FlyColorDark.slate3A;
+  static const Color slate4DarkA = FlyColorDark.slate4A;
+  static const Color slate5DarkA = FlyColorDark.slate5A;
+  static const Color slate6DarkA = FlyColorDark.slate6A;
+  static const Color slate7DarkA = FlyColorDark.slate7A;
+  static const Color slate8DarkA = FlyColorDark.slate8A;
+  static const Color slate9DarkA = FlyColorDark.slate9A;
+  static const Color slate10DarkA = FlyColorDark.slate10A;
+  static const Color slate11DarkA = FlyColorDark.slate11A;
+  static const Color slate12DarkA = FlyColorDark.slate12A;
 
   static const Color sage1Dark = FlyColorDark.sage1;
   static const Color sage2Dark = FlyColorDark.sage2;
@@ -1581,6 +2733,18 @@ class FlyColor {
   static const Color sage12Dark = FlyColorDark.sage12;
   static const Color sageContrastDark = FlyColorDark.sageContrast;
   static const Color sageSurfaceDark = FlyColorDark.sageSurface;
+  static const Color sage1DarkA = FlyColorDark.sage1A;
+  static const Color sage2DarkA = FlyColorDark.sage2A;
+  static const Color sage3DarkA = FlyColorDark.sage3A;
+  static const Color sage4DarkA = FlyColorDark.sage4A;
+  static const Color sage5DarkA = FlyColorDark.sage5A;
+  static const Color sage6DarkA = FlyColorDark.sage6A;
+  static const Color sage7DarkA = FlyColorDark.sage7A;
+  static const Color sage8DarkA = FlyColorDark.sage8A;
+  static const Color sage9DarkA = FlyColorDark.sage9A;
+  static const Color sage10DarkA = FlyColorDark.sage10A;
+  static const Color sage11DarkA = FlyColorDark.sage11A;
+  static const Color sage12DarkA = FlyColorDark.sage12A;
 
   static const Color olive1Dark = FlyColorDark.olive1;
   static const Color olive2Dark = FlyColorDark.olive2;
@@ -1596,6 +2760,18 @@ class FlyColor {
   static const Color olive12Dark = FlyColorDark.olive12;
   static const Color oliveContrastDark = FlyColorDark.oliveContrast;
   static const Color oliveSurfaceDark = FlyColorDark.oliveSurface;
+  static const Color olive1DarkA = FlyColorDark.olive1A;
+  static const Color olive2DarkA = FlyColorDark.olive2A;
+  static const Color olive3DarkA = FlyColorDark.olive3A;
+  static const Color olive4DarkA = FlyColorDark.olive4A;
+  static const Color olive5DarkA = FlyColorDark.olive5A;
+  static const Color olive6DarkA = FlyColorDark.olive6A;
+  static const Color olive7DarkA = FlyColorDark.olive7A;
+  static const Color olive8DarkA = FlyColorDark.olive8A;
+  static const Color olive9DarkA = FlyColorDark.olive9A;
+  static const Color olive10DarkA = FlyColorDark.olive10A;
+  static const Color olive11DarkA = FlyColorDark.olive11A;
+  static const Color olive12DarkA = FlyColorDark.olive12A;
 
   static const Color sand1Dark = FlyColorDark.sand1;
   static const Color sand2Dark = FlyColorDark.sand2;
@@ -1611,6 +2787,18 @@ class FlyColor {
   static const Color sand12Dark = FlyColorDark.sand12;
   static const Color sandContrastDark = FlyColorDark.sandContrast;
   static const Color sandSurfaceDark = FlyColorDark.sandSurface;
+  static const Color sand1DarkA = FlyColorDark.sand1A;
+  static const Color sand2DarkA = FlyColorDark.sand2A;
+  static const Color sand3DarkA = FlyColorDark.sand3A;
+  static const Color sand4DarkA = FlyColorDark.sand4A;
+  static const Color sand5DarkA = FlyColorDark.sand5A;
+  static const Color sand6DarkA = FlyColorDark.sand6A;
+  static const Color sand7DarkA = FlyColorDark.sand7A;
+  static const Color sand8DarkA = FlyColorDark.sand8A;
+  static const Color sand9DarkA = FlyColorDark.sand9A;
+  static const Color sand10DarkA = FlyColorDark.sand10A;
+  static const Color sand11DarkA = FlyColorDark.sand11A;
+  static const Color sand12DarkA = FlyColorDark.sand12A;
 
   static const Color tomato1Dark = FlyColorDark.tomato1;
   static const Color tomato2Dark = FlyColorDark.tomato2;
@@ -1626,6 +2814,18 @@ class FlyColor {
   static const Color tomato12Dark = FlyColorDark.tomato12;
   static const Color tomatoContrastDark = FlyColorDark.tomatoContrast;
   static const Color tomatoSurfaceDark = FlyColorDark.tomatoSurface;
+  static const Color tomato1DarkA = FlyColorDark.tomato1A;
+  static const Color tomato2DarkA = FlyColorDark.tomato2A;
+  static const Color tomato3DarkA = FlyColorDark.tomato3A;
+  static const Color tomato4DarkA = FlyColorDark.tomato4A;
+  static const Color tomato5DarkA = FlyColorDark.tomato5A;
+  static const Color tomato6DarkA = FlyColorDark.tomato6A;
+  static const Color tomato7DarkA = FlyColorDark.tomato7A;
+  static const Color tomato8DarkA = FlyColorDark.tomato8A;
+  static const Color tomato9DarkA = FlyColorDark.tomato9A;
+  static const Color tomato10DarkA = FlyColorDark.tomato10A;
+  static const Color tomato11DarkA = FlyColorDark.tomato11A;
+  static const Color tomato12DarkA = FlyColorDark.tomato12A;
 
   static const Color red1Dark = FlyColorDark.red1;
   static const Color red2Dark = FlyColorDark.red2;
@@ -1641,6 +2841,18 @@ class FlyColor {
   static const Color red12Dark = FlyColorDark.red12;
   static const Color redContrastDark = FlyColorDark.redContrast;
   static const Color redSurfaceDark = FlyColorDark.redSurface;
+  static const Color red1DarkA = FlyColorDark.red1A;
+  static const Color red2DarkA = FlyColorDark.red2A;
+  static const Color red3DarkA = FlyColorDark.red3A;
+  static const Color red4DarkA = FlyColorDark.red4A;
+  static const Color red5DarkA = FlyColorDark.red5A;
+  static const Color red6DarkA = FlyColorDark.red6A;
+  static const Color red7DarkA = FlyColorDark.red7A;
+  static const Color red8DarkA = FlyColorDark.red8A;
+  static const Color red9DarkA = FlyColorDark.red9A;
+  static const Color red10DarkA = FlyColorDark.red10A;
+  static const Color red11DarkA = FlyColorDark.red11A;
+  static const Color red12DarkA = FlyColorDark.red12A;
 
   static const Color ruby1Dark = FlyColorDark.ruby1;
   static const Color ruby2Dark = FlyColorDark.ruby2;
@@ -1656,6 +2868,18 @@ class FlyColor {
   static const Color ruby12Dark = FlyColorDark.ruby12;
   static const Color rubyContrastDark = FlyColorDark.rubyContrast;
   static const Color rubySurfaceDark = FlyColorDark.rubySurface;
+  static const Color ruby1DarkA = FlyColorDark.ruby1A;
+  static const Color ruby2DarkA = FlyColorDark.ruby2A;
+  static const Color ruby3DarkA = FlyColorDark.ruby3A;
+  static const Color ruby4DarkA = FlyColorDark.ruby4A;
+  static const Color ruby5DarkA = FlyColorDark.ruby5A;
+  static const Color ruby6DarkA = FlyColorDark.ruby6A;
+  static const Color ruby7DarkA = FlyColorDark.ruby7A;
+  static const Color ruby8DarkA = FlyColorDark.ruby8A;
+  static const Color ruby9DarkA = FlyColorDark.ruby9A;
+  static const Color ruby10DarkA = FlyColorDark.ruby10A;
+  static const Color ruby11DarkA = FlyColorDark.ruby11A;
+  static const Color ruby12DarkA = FlyColorDark.ruby12A;
 
   static const Color crimson1Dark = FlyColorDark.crimson1;
   static const Color crimson2Dark = FlyColorDark.crimson2;
@@ -1671,6 +2895,18 @@ class FlyColor {
   static const Color crimson12Dark = FlyColorDark.crimson12;
   static const Color crimsonContrastDark = FlyColorDark.crimsonContrast;
   static const Color crimsonSurfaceDark = FlyColorDark.crimsonSurface;
+  static const Color crimson1DarkA = FlyColorDark.crimson1A;
+  static const Color crimson2DarkA = FlyColorDark.crimson2A;
+  static const Color crimson3DarkA = FlyColorDark.crimson3A;
+  static const Color crimson4DarkA = FlyColorDark.crimson4A;
+  static const Color crimson5DarkA = FlyColorDark.crimson5A;
+  static const Color crimson6DarkA = FlyColorDark.crimson6A;
+  static const Color crimson7DarkA = FlyColorDark.crimson7A;
+  static const Color crimson8DarkA = FlyColorDark.crimson8A;
+  static const Color crimson9DarkA = FlyColorDark.crimson9A;
+  static const Color crimson10DarkA = FlyColorDark.crimson10A;
+  static const Color crimson11DarkA = FlyColorDark.crimson11A;
+  static const Color crimson12DarkA = FlyColorDark.crimson12A;
 
   static const Color pink1Dark = FlyColorDark.pink1;
   static const Color pink2Dark = FlyColorDark.pink2;
@@ -1686,6 +2922,18 @@ class FlyColor {
   static const Color pink12Dark = FlyColorDark.pink12;
   static const Color pinkContrastDark = FlyColorDark.pinkContrast;
   static const Color pinkSurfaceDark = FlyColorDark.pinkSurface;
+  static const Color pink1DarkA = FlyColorDark.pink1A;
+  static const Color pink2DarkA = FlyColorDark.pink2A;
+  static const Color pink3DarkA = FlyColorDark.pink3A;
+  static const Color pink4DarkA = FlyColorDark.pink4A;
+  static const Color pink5DarkA = FlyColorDark.pink5A;
+  static const Color pink6DarkA = FlyColorDark.pink6A;
+  static const Color pink7DarkA = FlyColorDark.pink7A;
+  static const Color pink8DarkA = FlyColorDark.pink8A;
+  static const Color pink9DarkA = FlyColorDark.pink9A;
+  static const Color pink10DarkA = FlyColorDark.pink10A;
+  static const Color pink11DarkA = FlyColorDark.pink11A;
+  static const Color pink12DarkA = FlyColorDark.pink12A;
 
   static const Color plum1Dark = FlyColorDark.plum1;
   static const Color plum2Dark = FlyColorDark.plum2;
@@ -1701,6 +2949,18 @@ class FlyColor {
   static const Color plum12Dark = FlyColorDark.plum12;
   static const Color plumContrastDark = FlyColorDark.plumContrast;
   static const Color plumSurfaceDark = FlyColorDark.plumSurface;
+  static const Color plum1DarkA = FlyColorDark.plum1A;
+  static const Color plum2DarkA = FlyColorDark.plum2A;
+  static const Color plum3DarkA = FlyColorDark.plum3A;
+  static const Color plum4DarkA = FlyColorDark.plum4A;
+  static const Color plum5DarkA = FlyColorDark.plum5A;
+  static const Color plum6DarkA = FlyColorDark.plum6A;
+  static const Color plum7DarkA = FlyColorDark.plum7A;
+  static const Color plum8DarkA = FlyColorDark.plum8A;
+  static const Color plum9DarkA = FlyColorDark.plum9A;
+  static const Color plum10DarkA = FlyColorDark.plum10A;
+  static const Color plum11DarkA = FlyColorDark.plum11A;
+  static const Color plum12DarkA = FlyColorDark.plum12A;
 
   static const Color purple1Dark = FlyColorDark.purple1;
   static const Color purple2Dark = FlyColorDark.purple2;
@@ -1716,6 +2976,18 @@ class FlyColor {
   static const Color purple12Dark = FlyColorDark.purple12;
   static const Color purpleContrastDark = FlyColorDark.purpleContrast;
   static const Color purpleSurfaceDark = FlyColorDark.purpleSurface;
+  static const Color purple1DarkA = FlyColorDark.purple1A;
+  static const Color purple2DarkA = FlyColorDark.purple2A;
+  static const Color purple3DarkA = FlyColorDark.purple3A;
+  static const Color purple4DarkA = FlyColorDark.purple4A;
+  static const Color purple5DarkA = FlyColorDark.purple5A;
+  static const Color purple6DarkA = FlyColorDark.purple6A;
+  static const Color purple7DarkA = FlyColorDark.purple7A;
+  static const Color purple8DarkA = FlyColorDark.purple8A;
+  static const Color purple9DarkA = FlyColorDark.purple9A;
+  static const Color purple10DarkA = FlyColorDark.purple10A;
+  static const Color purple11DarkA = FlyColorDark.purple11A;
+  static const Color purple12DarkA = FlyColorDark.purple12A;
 
   static const Color violet1Dark = FlyColorDark.violet1;
   static const Color violet2Dark = FlyColorDark.violet2;
@@ -1731,6 +3003,18 @@ class FlyColor {
   static const Color violet12Dark = FlyColorDark.violet12;
   static const Color violetContrastDark = FlyColorDark.violetContrast;
   static const Color violetSurfaceDark = FlyColorDark.violetSurface;
+  static const Color violet1DarkA = FlyColorDark.violet1A;
+  static const Color violet2DarkA = FlyColorDark.violet2A;
+  static const Color violet3DarkA = FlyColorDark.violet3A;
+  static const Color violet4DarkA = FlyColorDark.violet4A;
+  static const Color violet5DarkA = FlyColorDark.violet5A;
+  static const Color violet6DarkA = FlyColorDark.violet6A;
+  static const Color violet7DarkA = FlyColorDark.violet7A;
+  static const Color violet8DarkA = FlyColorDark.violet8A;
+  static const Color violet9DarkA = FlyColorDark.violet9A;
+  static const Color violet10DarkA = FlyColorDark.violet10A;
+  static const Color violet11DarkA = FlyColorDark.violet11A;
+  static const Color violet12DarkA = FlyColorDark.violet12A;
 
   static const Color iris1Dark = FlyColorDark.iris1;
   static const Color iris2Dark = FlyColorDark.iris2;
@@ -1746,6 +3030,18 @@ class FlyColor {
   static const Color iris12Dark = FlyColorDark.iris12;
   static const Color irisContrastDark = FlyColorDark.irisContrast;
   static const Color irisSurfaceDark = FlyColorDark.irisSurface;
+  static const Color iris1DarkA = FlyColorDark.iris1A;
+  static const Color iris2DarkA = FlyColorDark.iris2A;
+  static const Color iris3DarkA = FlyColorDark.iris3A;
+  static const Color iris4DarkA = FlyColorDark.iris4A;
+  static const Color iris5DarkA = FlyColorDark.iris5A;
+  static const Color iris6DarkA = FlyColorDark.iris6A;
+  static const Color iris7DarkA = FlyColorDark.iris7A;
+  static const Color iris8DarkA = FlyColorDark.iris8A;
+  static const Color iris9DarkA = FlyColorDark.iris9A;
+  static const Color iris10DarkA = FlyColorDark.iris10A;
+  static const Color iris11DarkA = FlyColorDark.iris11A;
+  static const Color iris12DarkA = FlyColorDark.iris12A;
 
   static const Color indigo1Dark = FlyColorDark.indigo1;
   static const Color indigo2Dark = FlyColorDark.indigo2;
@@ -1761,6 +3057,18 @@ class FlyColor {
   static const Color indigo12Dark = FlyColorDark.indigo12;
   static const Color indigoContrastDark = FlyColorDark.indigoContrast;
   static const Color indigoSurfaceDark = FlyColorDark.indigoSurface;
+  static const Color indigo1DarkA = FlyColorDark.indigo1A;
+  static const Color indigo2DarkA = FlyColorDark.indigo2A;
+  static const Color indigo3DarkA = FlyColorDark.indigo3A;
+  static const Color indigo4DarkA = FlyColorDark.indigo4A;
+  static const Color indigo5DarkA = FlyColorDark.indigo5A;
+  static const Color indigo6DarkA = FlyColorDark.indigo6A;
+  static const Color indigo7DarkA = FlyColorDark.indigo7A;
+  static const Color indigo8DarkA = FlyColorDark.indigo8A;
+  static const Color indigo9DarkA = FlyColorDark.indigo9A;
+  static const Color indigo10DarkA = FlyColorDark.indigo10A;
+  static const Color indigo11DarkA = FlyColorDark.indigo11A;
+  static const Color indigo12DarkA = FlyColorDark.indigo12A;
 
   static const Color blue1Dark = FlyColorDark.blue1;
   static const Color blue2Dark = FlyColorDark.blue2;
@@ -1776,6 +3084,18 @@ class FlyColor {
   static const Color blue12Dark = FlyColorDark.blue12;
   static const Color blueContrastDark = FlyColorDark.blueContrast;
   static const Color blueSurfaceDark = FlyColorDark.blueSurface;
+  static const Color blue1DarkA = FlyColorDark.blue1A;
+  static const Color blue2DarkA = FlyColorDark.blue2A;
+  static const Color blue3DarkA = FlyColorDark.blue3A;
+  static const Color blue4DarkA = FlyColorDark.blue4A;
+  static const Color blue5DarkA = FlyColorDark.blue5A;
+  static const Color blue6DarkA = FlyColorDark.blue6A;
+  static const Color blue7DarkA = FlyColorDark.blue7A;
+  static const Color blue8DarkA = FlyColorDark.blue8A;
+  static const Color blue9DarkA = FlyColorDark.blue9A;
+  static const Color blue10DarkA = FlyColorDark.blue10A;
+  static const Color blue11DarkA = FlyColorDark.blue11A;
+  static const Color blue12DarkA = FlyColorDark.blue12A;
 
   static const Color cyan1Dark = FlyColorDark.cyan1;
   static const Color cyan2Dark = FlyColorDark.cyan2;
@@ -1791,6 +3111,18 @@ class FlyColor {
   static const Color cyan12Dark = FlyColorDark.cyan12;
   static const Color cyanContrastDark = FlyColorDark.cyanContrast;
   static const Color cyanSurfaceDark = FlyColorDark.cyanSurface;
+  static const Color cyan1DarkA = FlyColorDark.cyan1A;
+  static const Color cyan2DarkA = FlyColorDark.cyan2A;
+  static const Color cyan3DarkA = FlyColorDark.cyan3A;
+  static const Color cyan4DarkA = FlyColorDark.cyan4A;
+  static const Color cyan5DarkA = FlyColorDark.cyan5A;
+  static const Color cyan6DarkA = FlyColorDark.cyan6A;
+  static const Color cyan7DarkA = FlyColorDark.cyan7A;
+  static const Color cyan8DarkA = FlyColorDark.cyan8A;
+  static const Color cyan9DarkA = FlyColorDark.cyan9A;
+  static const Color cyan10DarkA = FlyColorDark.cyan10A;
+  static const Color cyan11DarkA = FlyColorDark.cyan11A;
+  static const Color cyan12DarkA = FlyColorDark.cyan12A;
 
   static const Color teal1Dark = FlyColorDark.teal1;
   static const Color teal2Dark = FlyColorDark.teal2;
@@ -1806,6 +3138,18 @@ class FlyColor {
   static const Color teal12Dark = FlyColorDark.teal12;
   static const Color tealContrastDark = FlyColorDark.tealContrast;
   static const Color tealSurfaceDark = FlyColorDark.tealSurface;
+  static const Color teal1DarkA = FlyColorDark.teal1A;
+  static const Color teal2DarkA = FlyColorDark.teal2A;
+  static const Color teal3DarkA = FlyColorDark.teal3A;
+  static const Color teal4DarkA = FlyColorDark.teal4A;
+  static const Color teal5DarkA = FlyColorDark.teal5A;
+  static const Color teal6DarkA = FlyColorDark.teal6A;
+  static const Color teal7DarkA = FlyColorDark.teal7A;
+  static const Color teal8DarkA = FlyColorDark.teal8A;
+  static const Color teal9DarkA = FlyColorDark.teal9A;
+  static const Color teal10DarkA = FlyColorDark.teal10A;
+  static const Color teal11DarkA = FlyColorDark.teal11A;
+  static const Color teal12DarkA = FlyColorDark.teal12A;
 
   static const Color jade1Dark = FlyColorDark.jade1;
   static const Color jade2Dark = FlyColorDark.jade2;
@@ -1821,6 +3165,18 @@ class FlyColor {
   static const Color jade12Dark = FlyColorDark.jade12;
   static const Color jadeContrastDark = FlyColorDark.jadeContrast;
   static const Color jadeSurfaceDark = FlyColorDark.jadeSurface;
+  static const Color jade1DarkA = FlyColorDark.jade1A;
+  static const Color jade2DarkA = FlyColorDark.jade2A;
+  static const Color jade3DarkA = FlyColorDark.jade3A;
+  static const Color jade4DarkA = FlyColorDark.jade4A;
+  static const Color jade5DarkA = FlyColorDark.jade5A;
+  static const Color jade6DarkA = FlyColorDark.jade6A;
+  static const Color jade7DarkA = FlyColorDark.jade7A;
+  static const Color jade8DarkA = FlyColorDark.jade8A;
+  static const Color jade9DarkA = FlyColorDark.jade9A;
+  static const Color jade10DarkA = FlyColorDark.jade10A;
+  static const Color jade11DarkA = FlyColorDark.jade11A;
+  static const Color jade12DarkA = FlyColorDark.jade12A;
 
   static const Color green1Dark = FlyColorDark.green1;
   static const Color green2Dark = FlyColorDark.green2;
@@ -1836,6 +3192,18 @@ class FlyColor {
   static const Color green12Dark = FlyColorDark.green12;
   static const Color greenContrastDark = FlyColorDark.greenContrast;
   static const Color greenSurfaceDark = FlyColorDark.greenSurface;
+  static const Color green1DarkA = FlyColorDark.green1A;
+  static const Color green2DarkA = FlyColorDark.green2A;
+  static const Color green3DarkA = FlyColorDark.green3A;
+  static const Color green4DarkA = FlyColorDark.green4A;
+  static const Color green5DarkA = FlyColorDark.green5A;
+  static const Color green6DarkA = FlyColorDark.green6A;
+  static const Color green7DarkA = FlyColorDark.green7A;
+  static const Color green8DarkA = FlyColorDark.green8A;
+  static const Color green9DarkA = FlyColorDark.green9A;
+  static const Color green10DarkA = FlyColorDark.green10A;
+  static const Color green11DarkA = FlyColorDark.green11A;
+  static const Color green12DarkA = FlyColorDark.green12A;
 
   static const Color grass1Dark = FlyColorDark.grass1;
   static const Color grass2Dark = FlyColorDark.grass2;
@@ -1851,6 +3219,18 @@ class FlyColor {
   static const Color grass12Dark = FlyColorDark.grass12;
   static const Color grassContrastDark = FlyColorDark.grassContrast;
   static const Color grassSurfaceDark = FlyColorDark.grassSurface;
+  static const Color grass1DarkA = FlyColorDark.grass1A;
+  static const Color grass2DarkA = FlyColorDark.grass2A;
+  static const Color grass3DarkA = FlyColorDark.grass3A;
+  static const Color grass4DarkA = FlyColorDark.grass4A;
+  static const Color grass5DarkA = FlyColorDark.grass5A;
+  static const Color grass6DarkA = FlyColorDark.grass6A;
+  static const Color grass7DarkA = FlyColorDark.grass7A;
+  static const Color grass8DarkA = FlyColorDark.grass8A;
+  static const Color grass9DarkA = FlyColorDark.grass9A;
+  static const Color grass10DarkA = FlyColorDark.grass10A;
+  static const Color grass11DarkA = FlyColorDark.grass11A;
+  static const Color grass12DarkA = FlyColorDark.grass12A;
 
   static const Color brown1Dark = FlyColorDark.brown1;
   static const Color brown2Dark = FlyColorDark.brown2;
@@ -1866,6 +3246,18 @@ class FlyColor {
   static const Color brown12Dark = FlyColorDark.brown12;
   static const Color brownContrastDark = FlyColorDark.brownContrast;
   static const Color brownSurfaceDark = FlyColorDark.brownSurface;
+  static const Color brown1DarkA = FlyColorDark.brown1A;
+  static const Color brown2DarkA = FlyColorDark.brown2A;
+  static const Color brown3DarkA = FlyColorDark.brown3A;
+  static const Color brown4DarkA = FlyColorDark.brown4A;
+  static const Color brown5DarkA = FlyColorDark.brown5A;
+  static const Color brown6DarkA = FlyColorDark.brown6A;
+  static const Color brown7DarkA = FlyColorDark.brown7A;
+  static const Color brown8DarkA = FlyColorDark.brown8A;
+  static const Color brown9DarkA = FlyColorDark.brown9A;
+  static const Color brown10DarkA = FlyColorDark.brown10A;
+  static const Color brown11DarkA = FlyColorDark.brown11A;
+  static const Color brown12DarkA = FlyColorDark.brown12A;
 
   static const Color bronze1Dark = FlyColorDark.bronze1;
   static const Color bronze2Dark = FlyColorDark.bronze2;
@@ -1881,6 +3273,18 @@ class FlyColor {
   static const Color bronze12Dark = FlyColorDark.bronze12;
   static const Color bronzeContrastDark = FlyColorDark.bronzeContrast;
   static const Color bronzeSurfaceDark = FlyColorDark.bronzeSurface;
+  static const Color bronze1DarkA = FlyColorDark.bronze1A;
+  static const Color bronze2DarkA = FlyColorDark.bronze2A;
+  static const Color bronze3DarkA = FlyColorDark.bronze3A;
+  static const Color bronze4DarkA = FlyColorDark.bronze4A;
+  static const Color bronze5DarkA = FlyColorDark.bronze5A;
+  static const Color bronze6DarkA = FlyColorDark.bronze6A;
+  static const Color bronze7DarkA = FlyColorDark.bronze7A;
+  static const Color bronze8DarkA = FlyColorDark.bronze8A;
+  static const Color bronze9DarkA = FlyColorDark.bronze9A;
+  static const Color bronze10DarkA = FlyColorDark.bronze10A;
+  static const Color bronze11DarkA = FlyColorDark.bronze11A;
+  static const Color bronze12DarkA = FlyColorDark.bronze12A;
 
   static const Color gold1Dark = FlyColorDark.gold1;
   static const Color gold2Dark = FlyColorDark.gold2;
@@ -1896,6 +3300,18 @@ class FlyColor {
   static const Color gold12Dark = FlyColorDark.gold12;
   static const Color goldContrastDark = FlyColorDark.goldContrast;
   static const Color goldSurfaceDark = FlyColorDark.goldSurface;
+  static const Color gold1DarkA = FlyColorDark.gold1A;
+  static const Color gold2DarkA = FlyColorDark.gold2A;
+  static const Color gold3DarkA = FlyColorDark.gold3A;
+  static const Color gold4DarkA = FlyColorDark.gold4A;
+  static const Color gold5DarkA = FlyColorDark.gold5A;
+  static const Color gold6DarkA = FlyColorDark.gold6A;
+  static const Color gold7DarkA = FlyColorDark.gold7A;
+  static const Color gold8DarkA = FlyColorDark.gold8A;
+  static const Color gold9DarkA = FlyColorDark.gold9A;
+  static const Color gold10DarkA = FlyColorDark.gold10A;
+  static const Color gold11DarkA = FlyColorDark.gold11A;
+  static const Color gold12DarkA = FlyColorDark.gold12A;
 
   static const Color sky1Dark = FlyColorDark.sky1;
   static const Color sky2Dark = FlyColorDark.sky2;
@@ -1911,6 +3327,18 @@ class FlyColor {
   static const Color sky12Dark = FlyColorDark.sky12;
   static const Color skyContrastDark = FlyColorDark.skyContrast;
   static const Color skySurfaceDark = FlyColorDark.skySurface;
+  static const Color sky1DarkA = FlyColorDark.sky1A;
+  static const Color sky2DarkA = FlyColorDark.sky2A;
+  static const Color sky3DarkA = FlyColorDark.sky3A;
+  static const Color sky4DarkA = FlyColorDark.sky4A;
+  static const Color sky5DarkA = FlyColorDark.sky5A;
+  static const Color sky6DarkA = FlyColorDark.sky6A;
+  static const Color sky7DarkA = FlyColorDark.sky7A;
+  static const Color sky8DarkA = FlyColorDark.sky8A;
+  static const Color sky9DarkA = FlyColorDark.sky9A;
+  static const Color sky10DarkA = FlyColorDark.sky10A;
+  static const Color sky11DarkA = FlyColorDark.sky11A;
+  static const Color sky12DarkA = FlyColorDark.sky12A;
 
   static const Color mint1Dark = FlyColorDark.mint1;
   static const Color mint2Dark = FlyColorDark.mint2;
@@ -1926,6 +3354,18 @@ class FlyColor {
   static const Color mint12Dark = FlyColorDark.mint12;
   static const Color mintContrastDark = FlyColorDark.mintContrast;
   static const Color mintSurfaceDark = FlyColorDark.mintSurface;
+  static const Color mint1DarkA = FlyColorDark.mint1A;
+  static const Color mint2DarkA = FlyColorDark.mint2A;
+  static const Color mint3DarkA = FlyColorDark.mint3A;
+  static const Color mint4DarkA = FlyColorDark.mint4A;
+  static const Color mint5DarkA = FlyColorDark.mint5A;
+  static const Color mint6DarkA = FlyColorDark.mint6A;
+  static const Color mint7DarkA = FlyColorDark.mint7A;
+  static const Color mint8DarkA = FlyColorDark.mint8A;
+  static const Color mint9DarkA = FlyColorDark.mint9A;
+  static const Color mint10DarkA = FlyColorDark.mint10A;
+  static const Color mint11DarkA = FlyColorDark.mint11A;
+  static const Color mint12DarkA = FlyColorDark.mint12A;
 
   static const Color lime1Dark = FlyColorDark.lime1;
   static const Color lime2Dark = FlyColorDark.lime2;
@@ -1941,6 +3381,18 @@ class FlyColor {
   static const Color lime12Dark = FlyColorDark.lime12;
   static const Color limeContrastDark = FlyColorDark.limeContrast;
   static const Color limeSurfaceDark = FlyColorDark.limeSurface;
+  static const Color lime1DarkA = FlyColorDark.lime1A;
+  static const Color lime2DarkA = FlyColorDark.lime2A;
+  static const Color lime3DarkA = FlyColorDark.lime3A;
+  static const Color lime4DarkA = FlyColorDark.lime4A;
+  static const Color lime5DarkA = FlyColorDark.lime5A;
+  static const Color lime6DarkA = FlyColorDark.lime6A;
+  static const Color lime7DarkA = FlyColorDark.lime7A;
+  static const Color lime8DarkA = FlyColorDark.lime8A;
+  static const Color lime9DarkA = FlyColorDark.lime9A;
+  static const Color lime10DarkA = FlyColorDark.lime10A;
+  static const Color lime11DarkA = FlyColorDark.lime11A;
+  static const Color lime12DarkA = FlyColorDark.lime12A;
 
   static const Color yellow1Dark = FlyColorDark.yellow1;
   static const Color yellow2Dark = FlyColorDark.yellow2;
@@ -1956,6 +3408,18 @@ class FlyColor {
   static const Color yellow12Dark = FlyColorDark.yellow12;
   static const Color yellowContrastDark = FlyColorDark.yellowContrast;
   static const Color yellowSurfaceDark = FlyColorDark.yellowSurface;
+  static const Color yellow1DarkA = FlyColorDark.yellow1A;
+  static const Color yellow2DarkA = FlyColorDark.yellow2A;
+  static const Color yellow3DarkA = FlyColorDark.yellow3A;
+  static const Color yellow4DarkA = FlyColorDark.yellow4A;
+  static const Color yellow5DarkA = FlyColorDark.yellow5A;
+  static const Color yellow6DarkA = FlyColorDark.yellow6A;
+  static const Color yellow7DarkA = FlyColorDark.yellow7A;
+  static const Color yellow8DarkA = FlyColorDark.yellow8A;
+  static const Color yellow9DarkA = FlyColorDark.yellow9A;
+  static const Color yellow10DarkA = FlyColorDark.yellow10A;
+  static const Color yellow11DarkA = FlyColorDark.yellow11A;
+  static const Color yellow12DarkA = FlyColorDark.yellow12A;
 
   static const Color amber1Dark = FlyColorDark.amber1;
   static const Color amber2Dark = FlyColorDark.amber2;
@@ -1971,6 +3435,18 @@ class FlyColor {
   static const Color amber12Dark = FlyColorDark.amber12;
   static const Color amberContrastDark = FlyColorDark.amberContrast;
   static const Color amberSurfaceDark = FlyColorDark.amberSurface;
+  static const Color amber1DarkA = FlyColorDark.amber1A;
+  static const Color amber2DarkA = FlyColorDark.amber2A;
+  static const Color amber3DarkA = FlyColorDark.amber3A;
+  static const Color amber4DarkA = FlyColorDark.amber4A;
+  static const Color amber5DarkA = FlyColorDark.amber5A;
+  static const Color amber6DarkA = FlyColorDark.amber6A;
+  static const Color amber7DarkA = FlyColorDark.amber7A;
+  static const Color amber8DarkA = FlyColorDark.amber8A;
+  static const Color amber9DarkA = FlyColorDark.amber9A;
+  static const Color amber10DarkA = FlyColorDark.amber10A;
+  static const Color amber11DarkA = FlyColorDark.amber11A;
+  static const Color amber12DarkA = FlyColorDark.amber12A;
 
   static const Color orange1Dark = FlyColorDark.orange1;
   static const Color orange2Dark = FlyColorDark.orange2;
@@ -1986,6 +3462,18 @@ class FlyColor {
   static const Color orange12Dark = FlyColorDark.orange12;
   static const Color orangeContrastDark = FlyColorDark.orangeContrast;
   static const Color orangeSurfaceDark = FlyColorDark.orangeSurface;
+  static const Color orange1DarkA = FlyColorDark.orange1A;
+  static const Color orange2DarkA = FlyColorDark.orange2A;
+  static const Color orange3DarkA = FlyColorDark.orange3A;
+  static const Color orange4DarkA = FlyColorDark.orange4A;
+  static const Color orange5DarkA = FlyColorDark.orange5A;
+  static const Color orange6DarkA = FlyColorDark.orange6A;
+  static const Color orange7DarkA = FlyColorDark.orange7A;
+  static const Color orange8DarkA = FlyColorDark.orange8A;
+  static const Color orange9DarkA = FlyColorDark.orange9A;
+  static const Color orange10DarkA = FlyColorDark.orange10A;
+  static const Color orange11DarkA = FlyColorDark.orange11A;
+  static const Color orange12DarkA = FlyColorDark.orange12A;
 
 }
 
@@ -2022,6 +3510,18 @@ class FlyColorScheme {
   Color get gray12 => _isLight ? FlyColorLight.gray12 : FlyColorDark.gray12;
   Color get grayContrast => _isLight ? FlyColorLight.grayContrast : FlyColorDark.grayContrast;
   Color get graySurface => _isLight ? FlyColorLight.graySurface : FlyColorDark.graySurface;
+  Color get gray1A => _isLight ? FlyColorLight.gray1A : FlyColorDark.gray1A;
+  Color get gray2A => _isLight ? FlyColorLight.gray2A : FlyColorDark.gray2A;
+  Color get gray3A => _isLight ? FlyColorLight.gray3A : FlyColorDark.gray3A;
+  Color get gray4A => _isLight ? FlyColorLight.gray4A : FlyColorDark.gray4A;
+  Color get gray5A => _isLight ? FlyColorLight.gray5A : FlyColorDark.gray5A;
+  Color get gray6A => _isLight ? FlyColorLight.gray6A : FlyColorDark.gray6A;
+  Color get gray7A => _isLight ? FlyColorLight.gray7A : FlyColorDark.gray7A;
+  Color get gray8A => _isLight ? FlyColorLight.gray8A : FlyColorDark.gray8A;
+  Color get gray9A => _isLight ? FlyColorLight.gray9A : FlyColorDark.gray9A;
+  Color get gray10A => _isLight ? FlyColorLight.gray10A : FlyColorDark.gray10A;
+  Color get gray11A => _isLight ? FlyColorLight.gray11A : FlyColorDark.gray11A;
+  Color get gray12A => _isLight ? FlyColorLight.gray12A : FlyColorDark.gray12A;
 
   Color get mauve1 => _isLight ? FlyColorLight.mauve1 : FlyColorDark.mauve1;
   Color get mauve2 => _isLight ? FlyColorLight.mauve2 : FlyColorDark.mauve2;
@@ -2037,6 +3537,18 @@ class FlyColorScheme {
   Color get mauve12 => _isLight ? FlyColorLight.mauve12 : FlyColorDark.mauve12;
   Color get mauveContrast => _isLight ? FlyColorLight.mauveContrast : FlyColorDark.mauveContrast;
   Color get mauveSurface => _isLight ? FlyColorLight.mauveSurface : FlyColorDark.mauveSurface;
+  Color get mauve1A => _isLight ? FlyColorLight.mauve1A : FlyColorDark.mauve1A;
+  Color get mauve2A => _isLight ? FlyColorLight.mauve2A : FlyColorDark.mauve2A;
+  Color get mauve3A => _isLight ? FlyColorLight.mauve3A : FlyColorDark.mauve3A;
+  Color get mauve4A => _isLight ? FlyColorLight.mauve4A : FlyColorDark.mauve4A;
+  Color get mauve5A => _isLight ? FlyColorLight.mauve5A : FlyColorDark.mauve5A;
+  Color get mauve6A => _isLight ? FlyColorLight.mauve6A : FlyColorDark.mauve6A;
+  Color get mauve7A => _isLight ? FlyColorLight.mauve7A : FlyColorDark.mauve7A;
+  Color get mauve8A => _isLight ? FlyColorLight.mauve8A : FlyColorDark.mauve8A;
+  Color get mauve9A => _isLight ? FlyColorLight.mauve9A : FlyColorDark.mauve9A;
+  Color get mauve10A => _isLight ? FlyColorLight.mauve10A : FlyColorDark.mauve10A;
+  Color get mauve11A => _isLight ? FlyColorLight.mauve11A : FlyColorDark.mauve11A;
+  Color get mauve12A => _isLight ? FlyColorLight.mauve12A : FlyColorDark.mauve12A;
 
   Color get slate1 => _isLight ? FlyColorLight.slate1 : FlyColorDark.slate1;
   Color get slate2 => _isLight ? FlyColorLight.slate2 : FlyColorDark.slate2;
@@ -2052,6 +3564,18 @@ class FlyColorScheme {
   Color get slate12 => _isLight ? FlyColorLight.slate12 : FlyColorDark.slate12;
   Color get slateContrast => _isLight ? FlyColorLight.slateContrast : FlyColorDark.slateContrast;
   Color get slateSurface => _isLight ? FlyColorLight.slateSurface : FlyColorDark.slateSurface;
+  Color get slate1A => _isLight ? FlyColorLight.slate1A : FlyColorDark.slate1A;
+  Color get slate2A => _isLight ? FlyColorLight.slate2A : FlyColorDark.slate2A;
+  Color get slate3A => _isLight ? FlyColorLight.slate3A : FlyColorDark.slate3A;
+  Color get slate4A => _isLight ? FlyColorLight.slate4A : FlyColorDark.slate4A;
+  Color get slate5A => _isLight ? FlyColorLight.slate5A : FlyColorDark.slate5A;
+  Color get slate6A => _isLight ? FlyColorLight.slate6A : FlyColorDark.slate6A;
+  Color get slate7A => _isLight ? FlyColorLight.slate7A : FlyColorDark.slate7A;
+  Color get slate8A => _isLight ? FlyColorLight.slate8A : FlyColorDark.slate8A;
+  Color get slate9A => _isLight ? FlyColorLight.slate9A : FlyColorDark.slate9A;
+  Color get slate10A => _isLight ? FlyColorLight.slate10A : FlyColorDark.slate10A;
+  Color get slate11A => _isLight ? FlyColorLight.slate11A : FlyColorDark.slate11A;
+  Color get slate12A => _isLight ? FlyColorLight.slate12A : FlyColorDark.slate12A;
 
   Color get sage1 => _isLight ? FlyColorLight.sage1 : FlyColorDark.sage1;
   Color get sage2 => _isLight ? FlyColorLight.sage2 : FlyColorDark.sage2;
@@ -2067,6 +3591,18 @@ class FlyColorScheme {
   Color get sage12 => _isLight ? FlyColorLight.sage12 : FlyColorDark.sage12;
   Color get sageContrast => _isLight ? FlyColorLight.sageContrast : FlyColorDark.sageContrast;
   Color get sageSurface => _isLight ? FlyColorLight.sageSurface : FlyColorDark.sageSurface;
+  Color get sage1A => _isLight ? FlyColorLight.sage1A : FlyColorDark.sage1A;
+  Color get sage2A => _isLight ? FlyColorLight.sage2A : FlyColorDark.sage2A;
+  Color get sage3A => _isLight ? FlyColorLight.sage3A : FlyColorDark.sage3A;
+  Color get sage4A => _isLight ? FlyColorLight.sage4A : FlyColorDark.sage4A;
+  Color get sage5A => _isLight ? FlyColorLight.sage5A : FlyColorDark.sage5A;
+  Color get sage6A => _isLight ? FlyColorLight.sage6A : FlyColorDark.sage6A;
+  Color get sage7A => _isLight ? FlyColorLight.sage7A : FlyColorDark.sage7A;
+  Color get sage8A => _isLight ? FlyColorLight.sage8A : FlyColorDark.sage8A;
+  Color get sage9A => _isLight ? FlyColorLight.sage9A : FlyColorDark.sage9A;
+  Color get sage10A => _isLight ? FlyColorLight.sage10A : FlyColorDark.sage10A;
+  Color get sage11A => _isLight ? FlyColorLight.sage11A : FlyColorDark.sage11A;
+  Color get sage12A => _isLight ? FlyColorLight.sage12A : FlyColorDark.sage12A;
 
   Color get olive1 => _isLight ? FlyColorLight.olive1 : FlyColorDark.olive1;
   Color get olive2 => _isLight ? FlyColorLight.olive2 : FlyColorDark.olive2;
@@ -2082,6 +3618,18 @@ class FlyColorScheme {
   Color get olive12 => _isLight ? FlyColorLight.olive12 : FlyColorDark.olive12;
   Color get oliveContrast => _isLight ? FlyColorLight.oliveContrast : FlyColorDark.oliveContrast;
   Color get oliveSurface => _isLight ? FlyColorLight.oliveSurface : FlyColorDark.oliveSurface;
+  Color get olive1A => _isLight ? FlyColorLight.olive1A : FlyColorDark.olive1A;
+  Color get olive2A => _isLight ? FlyColorLight.olive2A : FlyColorDark.olive2A;
+  Color get olive3A => _isLight ? FlyColorLight.olive3A : FlyColorDark.olive3A;
+  Color get olive4A => _isLight ? FlyColorLight.olive4A : FlyColorDark.olive4A;
+  Color get olive5A => _isLight ? FlyColorLight.olive5A : FlyColorDark.olive5A;
+  Color get olive6A => _isLight ? FlyColorLight.olive6A : FlyColorDark.olive6A;
+  Color get olive7A => _isLight ? FlyColorLight.olive7A : FlyColorDark.olive7A;
+  Color get olive8A => _isLight ? FlyColorLight.olive8A : FlyColorDark.olive8A;
+  Color get olive9A => _isLight ? FlyColorLight.olive9A : FlyColorDark.olive9A;
+  Color get olive10A => _isLight ? FlyColorLight.olive10A : FlyColorDark.olive10A;
+  Color get olive11A => _isLight ? FlyColorLight.olive11A : FlyColorDark.olive11A;
+  Color get olive12A => _isLight ? FlyColorLight.olive12A : FlyColorDark.olive12A;
 
   Color get sand1 => _isLight ? FlyColorLight.sand1 : FlyColorDark.sand1;
   Color get sand2 => _isLight ? FlyColorLight.sand2 : FlyColorDark.sand2;
@@ -2097,6 +3645,18 @@ class FlyColorScheme {
   Color get sand12 => _isLight ? FlyColorLight.sand12 : FlyColorDark.sand12;
   Color get sandContrast => _isLight ? FlyColorLight.sandContrast : FlyColorDark.sandContrast;
   Color get sandSurface => _isLight ? FlyColorLight.sandSurface : FlyColorDark.sandSurface;
+  Color get sand1A => _isLight ? FlyColorLight.sand1A : FlyColorDark.sand1A;
+  Color get sand2A => _isLight ? FlyColorLight.sand2A : FlyColorDark.sand2A;
+  Color get sand3A => _isLight ? FlyColorLight.sand3A : FlyColorDark.sand3A;
+  Color get sand4A => _isLight ? FlyColorLight.sand4A : FlyColorDark.sand4A;
+  Color get sand5A => _isLight ? FlyColorLight.sand5A : FlyColorDark.sand5A;
+  Color get sand6A => _isLight ? FlyColorLight.sand6A : FlyColorDark.sand6A;
+  Color get sand7A => _isLight ? FlyColorLight.sand7A : FlyColorDark.sand7A;
+  Color get sand8A => _isLight ? FlyColorLight.sand8A : FlyColorDark.sand8A;
+  Color get sand9A => _isLight ? FlyColorLight.sand9A : FlyColorDark.sand9A;
+  Color get sand10A => _isLight ? FlyColorLight.sand10A : FlyColorDark.sand10A;
+  Color get sand11A => _isLight ? FlyColorLight.sand11A : FlyColorDark.sand11A;
+  Color get sand12A => _isLight ? FlyColorLight.sand12A : FlyColorDark.sand12A;
 
   Color get tomato1 => _isLight ? FlyColorLight.tomato1 : FlyColorDark.tomato1;
   Color get tomato2 => _isLight ? FlyColorLight.tomato2 : FlyColorDark.tomato2;
@@ -2112,6 +3672,18 @@ class FlyColorScheme {
   Color get tomato12 => _isLight ? FlyColorLight.tomato12 : FlyColorDark.tomato12;
   Color get tomatoContrast => _isLight ? FlyColorLight.tomatoContrast : FlyColorDark.tomatoContrast;
   Color get tomatoSurface => _isLight ? FlyColorLight.tomatoSurface : FlyColorDark.tomatoSurface;
+  Color get tomato1A => _isLight ? FlyColorLight.tomato1A : FlyColorDark.tomato1A;
+  Color get tomato2A => _isLight ? FlyColorLight.tomato2A : FlyColorDark.tomato2A;
+  Color get tomato3A => _isLight ? FlyColorLight.tomato3A : FlyColorDark.tomato3A;
+  Color get tomato4A => _isLight ? FlyColorLight.tomato4A : FlyColorDark.tomato4A;
+  Color get tomato5A => _isLight ? FlyColorLight.tomato5A : FlyColorDark.tomato5A;
+  Color get tomato6A => _isLight ? FlyColorLight.tomato6A : FlyColorDark.tomato6A;
+  Color get tomato7A => _isLight ? FlyColorLight.tomato7A : FlyColorDark.tomato7A;
+  Color get tomato8A => _isLight ? FlyColorLight.tomato8A : FlyColorDark.tomato8A;
+  Color get tomato9A => _isLight ? FlyColorLight.tomato9A : FlyColorDark.tomato9A;
+  Color get tomato10A => _isLight ? FlyColorLight.tomato10A : FlyColorDark.tomato10A;
+  Color get tomato11A => _isLight ? FlyColorLight.tomato11A : FlyColorDark.tomato11A;
+  Color get tomato12A => _isLight ? FlyColorLight.tomato12A : FlyColorDark.tomato12A;
 
   Color get red1 => _isLight ? FlyColorLight.red1 : FlyColorDark.red1;
   Color get red2 => _isLight ? FlyColorLight.red2 : FlyColorDark.red2;
@@ -2127,6 +3699,18 @@ class FlyColorScheme {
   Color get red12 => _isLight ? FlyColorLight.red12 : FlyColorDark.red12;
   Color get redContrast => _isLight ? FlyColorLight.redContrast : FlyColorDark.redContrast;
   Color get redSurface => _isLight ? FlyColorLight.redSurface : FlyColorDark.redSurface;
+  Color get red1A => _isLight ? FlyColorLight.red1A : FlyColorDark.red1A;
+  Color get red2A => _isLight ? FlyColorLight.red2A : FlyColorDark.red2A;
+  Color get red3A => _isLight ? FlyColorLight.red3A : FlyColorDark.red3A;
+  Color get red4A => _isLight ? FlyColorLight.red4A : FlyColorDark.red4A;
+  Color get red5A => _isLight ? FlyColorLight.red5A : FlyColorDark.red5A;
+  Color get red6A => _isLight ? FlyColorLight.red6A : FlyColorDark.red6A;
+  Color get red7A => _isLight ? FlyColorLight.red7A : FlyColorDark.red7A;
+  Color get red8A => _isLight ? FlyColorLight.red8A : FlyColorDark.red8A;
+  Color get red9A => _isLight ? FlyColorLight.red9A : FlyColorDark.red9A;
+  Color get red10A => _isLight ? FlyColorLight.red10A : FlyColorDark.red10A;
+  Color get red11A => _isLight ? FlyColorLight.red11A : FlyColorDark.red11A;
+  Color get red12A => _isLight ? FlyColorLight.red12A : FlyColorDark.red12A;
 
   Color get ruby1 => _isLight ? FlyColorLight.ruby1 : FlyColorDark.ruby1;
   Color get ruby2 => _isLight ? FlyColorLight.ruby2 : FlyColorDark.ruby2;
@@ -2142,6 +3726,18 @@ class FlyColorScheme {
   Color get ruby12 => _isLight ? FlyColorLight.ruby12 : FlyColorDark.ruby12;
   Color get rubyContrast => _isLight ? FlyColorLight.rubyContrast : FlyColorDark.rubyContrast;
   Color get rubySurface => _isLight ? FlyColorLight.rubySurface : FlyColorDark.rubySurface;
+  Color get ruby1A => _isLight ? FlyColorLight.ruby1A : FlyColorDark.ruby1A;
+  Color get ruby2A => _isLight ? FlyColorLight.ruby2A : FlyColorDark.ruby2A;
+  Color get ruby3A => _isLight ? FlyColorLight.ruby3A : FlyColorDark.ruby3A;
+  Color get ruby4A => _isLight ? FlyColorLight.ruby4A : FlyColorDark.ruby4A;
+  Color get ruby5A => _isLight ? FlyColorLight.ruby5A : FlyColorDark.ruby5A;
+  Color get ruby6A => _isLight ? FlyColorLight.ruby6A : FlyColorDark.ruby6A;
+  Color get ruby7A => _isLight ? FlyColorLight.ruby7A : FlyColorDark.ruby7A;
+  Color get ruby8A => _isLight ? FlyColorLight.ruby8A : FlyColorDark.ruby8A;
+  Color get ruby9A => _isLight ? FlyColorLight.ruby9A : FlyColorDark.ruby9A;
+  Color get ruby10A => _isLight ? FlyColorLight.ruby10A : FlyColorDark.ruby10A;
+  Color get ruby11A => _isLight ? FlyColorLight.ruby11A : FlyColorDark.ruby11A;
+  Color get ruby12A => _isLight ? FlyColorLight.ruby12A : FlyColorDark.ruby12A;
 
   Color get crimson1 => _isLight ? FlyColorLight.crimson1 : FlyColorDark.crimson1;
   Color get crimson2 => _isLight ? FlyColorLight.crimson2 : FlyColorDark.crimson2;
@@ -2157,6 +3753,18 @@ class FlyColorScheme {
   Color get crimson12 => _isLight ? FlyColorLight.crimson12 : FlyColorDark.crimson12;
   Color get crimsonContrast => _isLight ? FlyColorLight.crimsonContrast : FlyColorDark.crimsonContrast;
   Color get crimsonSurface => _isLight ? FlyColorLight.crimsonSurface : FlyColorDark.crimsonSurface;
+  Color get crimson1A => _isLight ? FlyColorLight.crimson1A : FlyColorDark.crimson1A;
+  Color get crimson2A => _isLight ? FlyColorLight.crimson2A : FlyColorDark.crimson2A;
+  Color get crimson3A => _isLight ? FlyColorLight.crimson3A : FlyColorDark.crimson3A;
+  Color get crimson4A => _isLight ? FlyColorLight.crimson4A : FlyColorDark.crimson4A;
+  Color get crimson5A => _isLight ? FlyColorLight.crimson5A : FlyColorDark.crimson5A;
+  Color get crimson6A => _isLight ? FlyColorLight.crimson6A : FlyColorDark.crimson6A;
+  Color get crimson7A => _isLight ? FlyColorLight.crimson7A : FlyColorDark.crimson7A;
+  Color get crimson8A => _isLight ? FlyColorLight.crimson8A : FlyColorDark.crimson8A;
+  Color get crimson9A => _isLight ? FlyColorLight.crimson9A : FlyColorDark.crimson9A;
+  Color get crimson10A => _isLight ? FlyColorLight.crimson10A : FlyColorDark.crimson10A;
+  Color get crimson11A => _isLight ? FlyColorLight.crimson11A : FlyColorDark.crimson11A;
+  Color get crimson12A => _isLight ? FlyColorLight.crimson12A : FlyColorDark.crimson12A;
 
   Color get pink1 => _isLight ? FlyColorLight.pink1 : FlyColorDark.pink1;
   Color get pink2 => _isLight ? FlyColorLight.pink2 : FlyColorDark.pink2;
@@ -2172,6 +3780,18 @@ class FlyColorScheme {
   Color get pink12 => _isLight ? FlyColorLight.pink12 : FlyColorDark.pink12;
   Color get pinkContrast => _isLight ? FlyColorLight.pinkContrast : FlyColorDark.pinkContrast;
   Color get pinkSurface => _isLight ? FlyColorLight.pinkSurface : FlyColorDark.pinkSurface;
+  Color get pink1A => _isLight ? FlyColorLight.pink1A : FlyColorDark.pink1A;
+  Color get pink2A => _isLight ? FlyColorLight.pink2A : FlyColorDark.pink2A;
+  Color get pink3A => _isLight ? FlyColorLight.pink3A : FlyColorDark.pink3A;
+  Color get pink4A => _isLight ? FlyColorLight.pink4A : FlyColorDark.pink4A;
+  Color get pink5A => _isLight ? FlyColorLight.pink5A : FlyColorDark.pink5A;
+  Color get pink6A => _isLight ? FlyColorLight.pink6A : FlyColorDark.pink6A;
+  Color get pink7A => _isLight ? FlyColorLight.pink7A : FlyColorDark.pink7A;
+  Color get pink8A => _isLight ? FlyColorLight.pink8A : FlyColorDark.pink8A;
+  Color get pink9A => _isLight ? FlyColorLight.pink9A : FlyColorDark.pink9A;
+  Color get pink10A => _isLight ? FlyColorLight.pink10A : FlyColorDark.pink10A;
+  Color get pink11A => _isLight ? FlyColorLight.pink11A : FlyColorDark.pink11A;
+  Color get pink12A => _isLight ? FlyColorLight.pink12A : FlyColorDark.pink12A;
 
   Color get plum1 => _isLight ? FlyColorLight.plum1 : FlyColorDark.plum1;
   Color get plum2 => _isLight ? FlyColorLight.plum2 : FlyColorDark.plum2;
@@ -2187,6 +3807,18 @@ class FlyColorScheme {
   Color get plum12 => _isLight ? FlyColorLight.plum12 : FlyColorDark.plum12;
   Color get plumContrast => _isLight ? FlyColorLight.plumContrast : FlyColorDark.plumContrast;
   Color get plumSurface => _isLight ? FlyColorLight.plumSurface : FlyColorDark.plumSurface;
+  Color get plum1A => _isLight ? FlyColorLight.plum1A : FlyColorDark.plum1A;
+  Color get plum2A => _isLight ? FlyColorLight.plum2A : FlyColorDark.plum2A;
+  Color get plum3A => _isLight ? FlyColorLight.plum3A : FlyColorDark.plum3A;
+  Color get plum4A => _isLight ? FlyColorLight.plum4A : FlyColorDark.plum4A;
+  Color get plum5A => _isLight ? FlyColorLight.plum5A : FlyColorDark.plum5A;
+  Color get plum6A => _isLight ? FlyColorLight.plum6A : FlyColorDark.plum6A;
+  Color get plum7A => _isLight ? FlyColorLight.plum7A : FlyColorDark.plum7A;
+  Color get plum8A => _isLight ? FlyColorLight.plum8A : FlyColorDark.plum8A;
+  Color get plum9A => _isLight ? FlyColorLight.plum9A : FlyColorDark.plum9A;
+  Color get plum10A => _isLight ? FlyColorLight.plum10A : FlyColorDark.plum10A;
+  Color get plum11A => _isLight ? FlyColorLight.plum11A : FlyColorDark.plum11A;
+  Color get plum12A => _isLight ? FlyColorLight.plum12A : FlyColorDark.plum12A;
 
   Color get purple1 => _isLight ? FlyColorLight.purple1 : FlyColorDark.purple1;
   Color get purple2 => _isLight ? FlyColorLight.purple2 : FlyColorDark.purple2;
@@ -2202,6 +3834,18 @@ class FlyColorScheme {
   Color get purple12 => _isLight ? FlyColorLight.purple12 : FlyColorDark.purple12;
   Color get purpleContrast => _isLight ? FlyColorLight.purpleContrast : FlyColorDark.purpleContrast;
   Color get purpleSurface => _isLight ? FlyColorLight.purpleSurface : FlyColorDark.purpleSurface;
+  Color get purple1A => _isLight ? FlyColorLight.purple1A : FlyColorDark.purple1A;
+  Color get purple2A => _isLight ? FlyColorLight.purple2A : FlyColorDark.purple2A;
+  Color get purple3A => _isLight ? FlyColorLight.purple3A : FlyColorDark.purple3A;
+  Color get purple4A => _isLight ? FlyColorLight.purple4A : FlyColorDark.purple4A;
+  Color get purple5A => _isLight ? FlyColorLight.purple5A : FlyColorDark.purple5A;
+  Color get purple6A => _isLight ? FlyColorLight.purple6A : FlyColorDark.purple6A;
+  Color get purple7A => _isLight ? FlyColorLight.purple7A : FlyColorDark.purple7A;
+  Color get purple8A => _isLight ? FlyColorLight.purple8A : FlyColorDark.purple8A;
+  Color get purple9A => _isLight ? FlyColorLight.purple9A : FlyColorDark.purple9A;
+  Color get purple10A => _isLight ? FlyColorLight.purple10A : FlyColorDark.purple10A;
+  Color get purple11A => _isLight ? FlyColorLight.purple11A : FlyColorDark.purple11A;
+  Color get purple12A => _isLight ? FlyColorLight.purple12A : FlyColorDark.purple12A;
 
   Color get violet1 => _isLight ? FlyColorLight.violet1 : FlyColorDark.violet1;
   Color get violet2 => _isLight ? FlyColorLight.violet2 : FlyColorDark.violet2;
@@ -2217,6 +3861,18 @@ class FlyColorScheme {
   Color get violet12 => _isLight ? FlyColorLight.violet12 : FlyColorDark.violet12;
   Color get violetContrast => _isLight ? FlyColorLight.violetContrast : FlyColorDark.violetContrast;
   Color get violetSurface => _isLight ? FlyColorLight.violetSurface : FlyColorDark.violetSurface;
+  Color get violet1A => _isLight ? FlyColorLight.violet1A : FlyColorDark.violet1A;
+  Color get violet2A => _isLight ? FlyColorLight.violet2A : FlyColorDark.violet2A;
+  Color get violet3A => _isLight ? FlyColorLight.violet3A : FlyColorDark.violet3A;
+  Color get violet4A => _isLight ? FlyColorLight.violet4A : FlyColorDark.violet4A;
+  Color get violet5A => _isLight ? FlyColorLight.violet5A : FlyColorDark.violet5A;
+  Color get violet6A => _isLight ? FlyColorLight.violet6A : FlyColorDark.violet6A;
+  Color get violet7A => _isLight ? FlyColorLight.violet7A : FlyColorDark.violet7A;
+  Color get violet8A => _isLight ? FlyColorLight.violet8A : FlyColorDark.violet8A;
+  Color get violet9A => _isLight ? FlyColorLight.violet9A : FlyColorDark.violet9A;
+  Color get violet10A => _isLight ? FlyColorLight.violet10A : FlyColorDark.violet10A;
+  Color get violet11A => _isLight ? FlyColorLight.violet11A : FlyColorDark.violet11A;
+  Color get violet12A => _isLight ? FlyColorLight.violet12A : FlyColorDark.violet12A;
 
   Color get iris1 => _isLight ? FlyColorLight.iris1 : FlyColorDark.iris1;
   Color get iris2 => _isLight ? FlyColorLight.iris2 : FlyColorDark.iris2;
@@ -2232,6 +3888,18 @@ class FlyColorScheme {
   Color get iris12 => _isLight ? FlyColorLight.iris12 : FlyColorDark.iris12;
   Color get irisContrast => _isLight ? FlyColorLight.irisContrast : FlyColorDark.irisContrast;
   Color get irisSurface => _isLight ? FlyColorLight.irisSurface : FlyColorDark.irisSurface;
+  Color get iris1A => _isLight ? FlyColorLight.iris1A : FlyColorDark.iris1A;
+  Color get iris2A => _isLight ? FlyColorLight.iris2A : FlyColorDark.iris2A;
+  Color get iris3A => _isLight ? FlyColorLight.iris3A : FlyColorDark.iris3A;
+  Color get iris4A => _isLight ? FlyColorLight.iris4A : FlyColorDark.iris4A;
+  Color get iris5A => _isLight ? FlyColorLight.iris5A : FlyColorDark.iris5A;
+  Color get iris6A => _isLight ? FlyColorLight.iris6A : FlyColorDark.iris6A;
+  Color get iris7A => _isLight ? FlyColorLight.iris7A : FlyColorDark.iris7A;
+  Color get iris8A => _isLight ? FlyColorLight.iris8A : FlyColorDark.iris8A;
+  Color get iris9A => _isLight ? FlyColorLight.iris9A : FlyColorDark.iris9A;
+  Color get iris10A => _isLight ? FlyColorLight.iris10A : FlyColorDark.iris10A;
+  Color get iris11A => _isLight ? FlyColorLight.iris11A : FlyColorDark.iris11A;
+  Color get iris12A => _isLight ? FlyColorLight.iris12A : FlyColorDark.iris12A;
 
   Color get indigo1 => _isLight ? FlyColorLight.indigo1 : FlyColorDark.indigo1;
   Color get indigo2 => _isLight ? FlyColorLight.indigo2 : FlyColorDark.indigo2;
@@ -2247,6 +3915,18 @@ class FlyColorScheme {
   Color get indigo12 => _isLight ? FlyColorLight.indigo12 : FlyColorDark.indigo12;
   Color get indigoContrast => _isLight ? FlyColorLight.indigoContrast : FlyColorDark.indigoContrast;
   Color get indigoSurface => _isLight ? FlyColorLight.indigoSurface : FlyColorDark.indigoSurface;
+  Color get indigo1A => _isLight ? FlyColorLight.indigo1A : FlyColorDark.indigo1A;
+  Color get indigo2A => _isLight ? FlyColorLight.indigo2A : FlyColorDark.indigo2A;
+  Color get indigo3A => _isLight ? FlyColorLight.indigo3A : FlyColorDark.indigo3A;
+  Color get indigo4A => _isLight ? FlyColorLight.indigo4A : FlyColorDark.indigo4A;
+  Color get indigo5A => _isLight ? FlyColorLight.indigo5A : FlyColorDark.indigo5A;
+  Color get indigo6A => _isLight ? FlyColorLight.indigo6A : FlyColorDark.indigo6A;
+  Color get indigo7A => _isLight ? FlyColorLight.indigo7A : FlyColorDark.indigo7A;
+  Color get indigo8A => _isLight ? FlyColorLight.indigo8A : FlyColorDark.indigo8A;
+  Color get indigo9A => _isLight ? FlyColorLight.indigo9A : FlyColorDark.indigo9A;
+  Color get indigo10A => _isLight ? FlyColorLight.indigo10A : FlyColorDark.indigo10A;
+  Color get indigo11A => _isLight ? FlyColorLight.indigo11A : FlyColorDark.indigo11A;
+  Color get indigo12A => _isLight ? FlyColorLight.indigo12A : FlyColorDark.indigo12A;
 
   Color get blue1 => _isLight ? FlyColorLight.blue1 : FlyColorDark.blue1;
   Color get blue2 => _isLight ? FlyColorLight.blue2 : FlyColorDark.blue2;
@@ -2262,6 +3942,18 @@ class FlyColorScheme {
   Color get blue12 => _isLight ? FlyColorLight.blue12 : FlyColorDark.blue12;
   Color get blueContrast => _isLight ? FlyColorLight.blueContrast : FlyColorDark.blueContrast;
   Color get blueSurface => _isLight ? FlyColorLight.blueSurface : FlyColorDark.blueSurface;
+  Color get blue1A => _isLight ? FlyColorLight.blue1A : FlyColorDark.blue1A;
+  Color get blue2A => _isLight ? FlyColorLight.blue2A : FlyColorDark.blue2A;
+  Color get blue3A => _isLight ? FlyColorLight.blue3A : FlyColorDark.blue3A;
+  Color get blue4A => _isLight ? FlyColorLight.blue4A : FlyColorDark.blue4A;
+  Color get blue5A => _isLight ? FlyColorLight.blue5A : FlyColorDark.blue5A;
+  Color get blue6A => _isLight ? FlyColorLight.blue6A : FlyColorDark.blue6A;
+  Color get blue7A => _isLight ? FlyColorLight.blue7A : FlyColorDark.blue7A;
+  Color get blue8A => _isLight ? FlyColorLight.blue8A : FlyColorDark.blue8A;
+  Color get blue9A => _isLight ? FlyColorLight.blue9A : FlyColorDark.blue9A;
+  Color get blue10A => _isLight ? FlyColorLight.blue10A : FlyColorDark.blue10A;
+  Color get blue11A => _isLight ? FlyColorLight.blue11A : FlyColorDark.blue11A;
+  Color get blue12A => _isLight ? FlyColorLight.blue12A : FlyColorDark.blue12A;
 
   Color get cyan1 => _isLight ? FlyColorLight.cyan1 : FlyColorDark.cyan1;
   Color get cyan2 => _isLight ? FlyColorLight.cyan2 : FlyColorDark.cyan2;
@@ -2277,6 +3969,18 @@ class FlyColorScheme {
   Color get cyan12 => _isLight ? FlyColorLight.cyan12 : FlyColorDark.cyan12;
   Color get cyanContrast => _isLight ? FlyColorLight.cyanContrast : FlyColorDark.cyanContrast;
   Color get cyanSurface => _isLight ? FlyColorLight.cyanSurface : FlyColorDark.cyanSurface;
+  Color get cyan1A => _isLight ? FlyColorLight.cyan1A : FlyColorDark.cyan1A;
+  Color get cyan2A => _isLight ? FlyColorLight.cyan2A : FlyColorDark.cyan2A;
+  Color get cyan3A => _isLight ? FlyColorLight.cyan3A : FlyColorDark.cyan3A;
+  Color get cyan4A => _isLight ? FlyColorLight.cyan4A : FlyColorDark.cyan4A;
+  Color get cyan5A => _isLight ? FlyColorLight.cyan5A : FlyColorDark.cyan5A;
+  Color get cyan6A => _isLight ? FlyColorLight.cyan6A : FlyColorDark.cyan6A;
+  Color get cyan7A => _isLight ? FlyColorLight.cyan7A : FlyColorDark.cyan7A;
+  Color get cyan8A => _isLight ? FlyColorLight.cyan8A : FlyColorDark.cyan8A;
+  Color get cyan9A => _isLight ? FlyColorLight.cyan9A : FlyColorDark.cyan9A;
+  Color get cyan10A => _isLight ? FlyColorLight.cyan10A : FlyColorDark.cyan10A;
+  Color get cyan11A => _isLight ? FlyColorLight.cyan11A : FlyColorDark.cyan11A;
+  Color get cyan12A => _isLight ? FlyColorLight.cyan12A : FlyColorDark.cyan12A;
 
   Color get teal1 => _isLight ? FlyColorLight.teal1 : FlyColorDark.teal1;
   Color get teal2 => _isLight ? FlyColorLight.teal2 : FlyColorDark.teal2;
@@ -2292,6 +3996,18 @@ class FlyColorScheme {
   Color get teal12 => _isLight ? FlyColorLight.teal12 : FlyColorDark.teal12;
   Color get tealContrast => _isLight ? FlyColorLight.tealContrast : FlyColorDark.tealContrast;
   Color get tealSurface => _isLight ? FlyColorLight.tealSurface : FlyColorDark.tealSurface;
+  Color get teal1A => _isLight ? FlyColorLight.teal1A : FlyColorDark.teal1A;
+  Color get teal2A => _isLight ? FlyColorLight.teal2A : FlyColorDark.teal2A;
+  Color get teal3A => _isLight ? FlyColorLight.teal3A : FlyColorDark.teal3A;
+  Color get teal4A => _isLight ? FlyColorLight.teal4A : FlyColorDark.teal4A;
+  Color get teal5A => _isLight ? FlyColorLight.teal5A : FlyColorDark.teal5A;
+  Color get teal6A => _isLight ? FlyColorLight.teal6A : FlyColorDark.teal6A;
+  Color get teal7A => _isLight ? FlyColorLight.teal7A : FlyColorDark.teal7A;
+  Color get teal8A => _isLight ? FlyColorLight.teal8A : FlyColorDark.teal8A;
+  Color get teal9A => _isLight ? FlyColorLight.teal9A : FlyColorDark.teal9A;
+  Color get teal10A => _isLight ? FlyColorLight.teal10A : FlyColorDark.teal10A;
+  Color get teal11A => _isLight ? FlyColorLight.teal11A : FlyColorDark.teal11A;
+  Color get teal12A => _isLight ? FlyColorLight.teal12A : FlyColorDark.teal12A;
 
   Color get jade1 => _isLight ? FlyColorLight.jade1 : FlyColorDark.jade1;
   Color get jade2 => _isLight ? FlyColorLight.jade2 : FlyColorDark.jade2;
@@ -2307,6 +4023,18 @@ class FlyColorScheme {
   Color get jade12 => _isLight ? FlyColorLight.jade12 : FlyColorDark.jade12;
   Color get jadeContrast => _isLight ? FlyColorLight.jadeContrast : FlyColorDark.jadeContrast;
   Color get jadeSurface => _isLight ? FlyColorLight.jadeSurface : FlyColorDark.jadeSurface;
+  Color get jade1A => _isLight ? FlyColorLight.jade1A : FlyColorDark.jade1A;
+  Color get jade2A => _isLight ? FlyColorLight.jade2A : FlyColorDark.jade2A;
+  Color get jade3A => _isLight ? FlyColorLight.jade3A : FlyColorDark.jade3A;
+  Color get jade4A => _isLight ? FlyColorLight.jade4A : FlyColorDark.jade4A;
+  Color get jade5A => _isLight ? FlyColorLight.jade5A : FlyColorDark.jade5A;
+  Color get jade6A => _isLight ? FlyColorLight.jade6A : FlyColorDark.jade6A;
+  Color get jade7A => _isLight ? FlyColorLight.jade7A : FlyColorDark.jade7A;
+  Color get jade8A => _isLight ? FlyColorLight.jade8A : FlyColorDark.jade8A;
+  Color get jade9A => _isLight ? FlyColorLight.jade9A : FlyColorDark.jade9A;
+  Color get jade10A => _isLight ? FlyColorLight.jade10A : FlyColorDark.jade10A;
+  Color get jade11A => _isLight ? FlyColorLight.jade11A : FlyColorDark.jade11A;
+  Color get jade12A => _isLight ? FlyColorLight.jade12A : FlyColorDark.jade12A;
 
   Color get green1 => _isLight ? FlyColorLight.green1 : FlyColorDark.green1;
   Color get green2 => _isLight ? FlyColorLight.green2 : FlyColorDark.green2;
@@ -2322,6 +4050,18 @@ class FlyColorScheme {
   Color get green12 => _isLight ? FlyColorLight.green12 : FlyColorDark.green12;
   Color get greenContrast => _isLight ? FlyColorLight.greenContrast : FlyColorDark.greenContrast;
   Color get greenSurface => _isLight ? FlyColorLight.greenSurface : FlyColorDark.greenSurface;
+  Color get green1A => _isLight ? FlyColorLight.green1A : FlyColorDark.green1A;
+  Color get green2A => _isLight ? FlyColorLight.green2A : FlyColorDark.green2A;
+  Color get green3A => _isLight ? FlyColorLight.green3A : FlyColorDark.green3A;
+  Color get green4A => _isLight ? FlyColorLight.green4A : FlyColorDark.green4A;
+  Color get green5A => _isLight ? FlyColorLight.green5A : FlyColorDark.green5A;
+  Color get green6A => _isLight ? FlyColorLight.green6A : FlyColorDark.green6A;
+  Color get green7A => _isLight ? FlyColorLight.green7A : FlyColorDark.green7A;
+  Color get green8A => _isLight ? FlyColorLight.green8A : FlyColorDark.green8A;
+  Color get green9A => _isLight ? FlyColorLight.green9A : FlyColorDark.green9A;
+  Color get green10A => _isLight ? FlyColorLight.green10A : FlyColorDark.green10A;
+  Color get green11A => _isLight ? FlyColorLight.green11A : FlyColorDark.green11A;
+  Color get green12A => _isLight ? FlyColorLight.green12A : FlyColorDark.green12A;
 
   Color get grass1 => _isLight ? FlyColorLight.grass1 : FlyColorDark.grass1;
   Color get grass2 => _isLight ? FlyColorLight.grass2 : FlyColorDark.grass2;
@@ -2337,6 +4077,18 @@ class FlyColorScheme {
   Color get grass12 => _isLight ? FlyColorLight.grass12 : FlyColorDark.grass12;
   Color get grassContrast => _isLight ? FlyColorLight.grassContrast : FlyColorDark.grassContrast;
   Color get grassSurface => _isLight ? FlyColorLight.grassSurface : FlyColorDark.grassSurface;
+  Color get grass1A => _isLight ? FlyColorLight.grass1A : FlyColorDark.grass1A;
+  Color get grass2A => _isLight ? FlyColorLight.grass2A : FlyColorDark.grass2A;
+  Color get grass3A => _isLight ? FlyColorLight.grass3A : FlyColorDark.grass3A;
+  Color get grass4A => _isLight ? FlyColorLight.grass4A : FlyColorDark.grass4A;
+  Color get grass5A => _isLight ? FlyColorLight.grass5A : FlyColorDark.grass5A;
+  Color get grass6A => _isLight ? FlyColorLight.grass6A : FlyColorDark.grass6A;
+  Color get grass7A => _isLight ? FlyColorLight.grass7A : FlyColorDark.grass7A;
+  Color get grass8A => _isLight ? FlyColorLight.grass8A : FlyColorDark.grass8A;
+  Color get grass9A => _isLight ? FlyColorLight.grass9A : FlyColorDark.grass9A;
+  Color get grass10A => _isLight ? FlyColorLight.grass10A : FlyColorDark.grass10A;
+  Color get grass11A => _isLight ? FlyColorLight.grass11A : FlyColorDark.grass11A;
+  Color get grass12A => _isLight ? FlyColorLight.grass12A : FlyColorDark.grass12A;
 
   Color get brown1 => _isLight ? FlyColorLight.brown1 : FlyColorDark.brown1;
   Color get brown2 => _isLight ? FlyColorLight.brown2 : FlyColorDark.brown2;
@@ -2352,6 +4104,18 @@ class FlyColorScheme {
   Color get brown12 => _isLight ? FlyColorLight.brown12 : FlyColorDark.brown12;
   Color get brownContrast => _isLight ? FlyColorLight.brownContrast : FlyColorDark.brownContrast;
   Color get brownSurface => _isLight ? FlyColorLight.brownSurface : FlyColorDark.brownSurface;
+  Color get brown1A => _isLight ? FlyColorLight.brown1A : FlyColorDark.brown1A;
+  Color get brown2A => _isLight ? FlyColorLight.brown2A : FlyColorDark.brown2A;
+  Color get brown3A => _isLight ? FlyColorLight.brown3A : FlyColorDark.brown3A;
+  Color get brown4A => _isLight ? FlyColorLight.brown4A : FlyColorDark.brown4A;
+  Color get brown5A => _isLight ? FlyColorLight.brown5A : FlyColorDark.brown5A;
+  Color get brown6A => _isLight ? FlyColorLight.brown6A : FlyColorDark.brown6A;
+  Color get brown7A => _isLight ? FlyColorLight.brown7A : FlyColorDark.brown7A;
+  Color get brown8A => _isLight ? FlyColorLight.brown8A : FlyColorDark.brown8A;
+  Color get brown9A => _isLight ? FlyColorLight.brown9A : FlyColorDark.brown9A;
+  Color get brown10A => _isLight ? FlyColorLight.brown10A : FlyColorDark.brown10A;
+  Color get brown11A => _isLight ? FlyColorLight.brown11A : FlyColorDark.brown11A;
+  Color get brown12A => _isLight ? FlyColorLight.brown12A : FlyColorDark.brown12A;
 
   Color get bronze1 => _isLight ? FlyColorLight.bronze1 : FlyColorDark.bronze1;
   Color get bronze2 => _isLight ? FlyColorLight.bronze2 : FlyColorDark.bronze2;
@@ -2367,6 +4131,18 @@ class FlyColorScheme {
   Color get bronze12 => _isLight ? FlyColorLight.bronze12 : FlyColorDark.bronze12;
   Color get bronzeContrast => _isLight ? FlyColorLight.bronzeContrast : FlyColorDark.bronzeContrast;
   Color get bronzeSurface => _isLight ? FlyColorLight.bronzeSurface : FlyColorDark.bronzeSurface;
+  Color get bronze1A => _isLight ? FlyColorLight.bronze1A : FlyColorDark.bronze1A;
+  Color get bronze2A => _isLight ? FlyColorLight.bronze2A : FlyColorDark.bronze2A;
+  Color get bronze3A => _isLight ? FlyColorLight.bronze3A : FlyColorDark.bronze3A;
+  Color get bronze4A => _isLight ? FlyColorLight.bronze4A : FlyColorDark.bronze4A;
+  Color get bronze5A => _isLight ? FlyColorLight.bronze5A : FlyColorDark.bronze5A;
+  Color get bronze6A => _isLight ? FlyColorLight.bronze6A : FlyColorDark.bronze6A;
+  Color get bronze7A => _isLight ? FlyColorLight.bronze7A : FlyColorDark.bronze7A;
+  Color get bronze8A => _isLight ? FlyColorLight.bronze8A : FlyColorDark.bronze8A;
+  Color get bronze9A => _isLight ? FlyColorLight.bronze9A : FlyColorDark.bronze9A;
+  Color get bronze10A => _isLight ? FlyColorLight.bronze10A : FlyColorDark.bronze10A;
+  Color get bronze11A => _isLight ? FlyColorLight.bronze11A : FlyColorDark.bronze11A;
+  Color get bronze12A => _isLight ? FlyColorLight.bronze12A : FlyColorDark.bronze12A;
 
   Color get gold1 => _isLight ? FlyColorLight.gold1 : FlyColorDark.gold1;
   Color get gold2 => _isLight ? FlyColorLight.gold2 : FlyColorDark.gold2;
@@ -2382,6 +4158,18 @@ class FlyColorScheme {
   Color get gold12 => _isLight ? FlyColorLight.gold12 : FlyColorDark.gold12;
   Color get goldContrast => _isLight ? FlyColorLight.goldContrast : FlyColorDark.goldContrast;
   Color get goldSurface => _isLight ? FlyColorLight.goldSurface : FlyColorDark.goldSurface;
+  Color get gold1A => _isLight ? FlyColorLight.gold1A : FlyColorDark.gold1A;
+  Color get gold2A => _isLight ? FlyColorLight.gold2A : FlyColorDark.gold2A;
+  Color get gold3A => _isLight ? FlyColorLight.gold3A : FlyColorDark.gold3A;
+  Color get gold4A => _isLight ? FlyColorLight.gold4A : FlyColorDark.gold4A;
+  Color get gold5A => _isLight ? FlyColorLight.gold5A : FlyColorDark.gold5A;
+  Color get gold6A => _isLight ? FlyColorLight.gold6A : FlyColorDark.gold6A;
+  Color get gold7A => _isLight ? FlyColorLight.gold7A : FlyColorDark.gold7A;
+  Color get gold8A => _isLight ? FlyColorLight.gold8A : FlyColorDark.gold8A;
+  Color get gold9A => _isLight ? FlyColorLight.gold9A : FlyColorDark.gold9A;
+  Color get gold10A => _isLight ? FlyColorLight.gold10A : FlyColorDark.gold10A;
+  Color get gold11A => _isLight ? FlyColorLight.gold11A : FlyColorDark.gold11A;
+  Color get gold12A => _isLight ? FlyColorLight.gold12A : FlyColorDark.gold12A;
 
   Color get sky1 => _isLight ? FlyColorLight.sky1 : FlyColorDark.sky1;
   Color get sky2 => _isLight ? FlyColorLight.sky2 : FlyColorDark.sky2;
@@ -2397,6 +4185,18 @@ class FlyColorScheme {
   Color get sky12 => _isLight ? FlyColorLight.sky12 : FlyColorDark.sky12;
   Color get skyContrast => _isLight ? FlyColorLight.skyContrast : FlyColorDark.skyContrast;
   Color get skySurface => _isLight ? FlyColorLight.skySurface : FlyColorDark.skySurface;
+  Color get sky1A => _isLight ? FlyColorLight.sky1A : FlyColorDark.sky1A;
+  Color get sky2A => _isLight ? FlyColorLight.sky2A : FlyColorDark.sky2A;
+  Color get sky3A => _isLight ? FlyColorLight.sky3A : FlyColorDark.sky3A;
+  Color get sky4A => _isLight ? FlyColorLight.sky4A : FlyColorDark.sky4A;
+  Color get sky5A => _isLight ? FlyColorLight.sky5A : FlyColorDark.sky5A;
+  Color get sky6A => _isLight ? FlyColorLight.sky6A : FlyColorDark.sky6A;
+  Color get sky7A => _isLight ? FlyColorLight.sky7A : FlyColorDark.sky7A;
+  Color get sky8A => _isLight ? FlyColorLight.sky8A : FlyColorDark.sky8A;
+  Color get sky9A => _isLight ? FlyColorLight.sky9A : FlyColorDark.sky9A;
+  Color get sky10A => _isLight ? FlyColorLight.sky10A : FlyColorDark.sky10A;
+  Color get sky11A => _isLight ? FlyColorLight.sky11A : FlyColorDark.sky11A;
+  Color get sky12A => _isLight ? FlyColorLight.sky12A : FlyColorDark.sky12A;
 
   Color get mint1 => _isLight ? FlyColorLight.mint1 : FlyColorDark.mint1;
   Color get mint2 => _isLight ? FlyColorLight.mint2 : FlyColorDark.mint2;
@@ -2412,6 +4212,18 @@ class FlyColorScheme {
   Color get mint12 => _isLight ? FlyColorLight.mint12 : FlyColorDark.mint12;
   Color get mintContrast => _isLight ? FlyColorLight.mintContrast : FlyColorDark.mintContrast;
   Color get mintSurface => _isLight ? FlyColorLight.mintSurface : FlyColorDark.mintSurface;
+  Color get mint1A => _isLight ? FlyColorLight.mint1A : FlyColorDark.mint1A;
+  Color get mint2A => _isLight ? FlyColorLight.mint2A : FlyColorDark.mint2A;
+  Color get mint3A => _isLight ? FlyColorLight.mint3A : FlyColorDark.mint3A;
+  Color get mint4A => _isLight ? FlyColorLight.mint4A : FlyColorDark.mint4A;
+  Color get mint5A => _isLight ? FlyColorLight.mint5A : FlyColorDark.mint5A;
+  Color get mint6A => _isLight ? FlyColorLight.mint6A : FlyColorDark.mint6A;
+  Color get mint7A => _isLight ? FlyColorLight.mint7A : FlyColorDark.mint7A;
+  Color get mint8A => _isLight ? FlyColorLight.mint8A : FlyColorDark.mint8A;
+  Color get mint9A => _isLight ? FlyColorLight.mint9A : FlyColorDark.mint9A;
+  Color get mint10A => _isLight ? FlyColorLight.mint10A : FlyColorDark.mint10A;
+  Color get mint11A => _isLight ? FlyColorLight.mint11A : FlyColorDark.mint11A;
+  Color get mint12A => _isLight ? FlyColorLight.mint12A : FlyColorDark.mint12A;
 
   Color get lime1 => _isLight ? FlyColorLight.lime1 : FlyColorDark.lime1;
   Color get lime2 => _isLight ? FlyColorLight.lime2 : FlyColorDark.lime2;
@@ -2427,6 +4239,18 @@ class FlyColorScheme {
   Color get lime12 => _isLight ? FlyColorLight.lime12 : FlyColorDark.lime12;
   Color get limeContrast => _isLight ? FlyColorLight.limeContrast : FlyColorDark.limeContrast;
   Color get limeSurface => _isLight ? FlyColorLight.limeSurface : FlyColorDark.limeSurface;
+  Color get lime1A => _isLight ? FlyColorLight.lime1A : FlyColorDark.lime1A;
+  Color get lime2A => _isLight ? FlyColorLight.lime2A : FlyColorDark.lime2A;
+  Color get lime3A => _isLight ? FlyColorLight.lime3A : FlyColorDark.lime3A;
+  Color get lime4A => _isLight ? FlyColorLight.lime4A : FlyColorDark.lime4A;
+  Color get lime5A => _isLight ? FlyColorLight.lime5A : FlyColorDark.lime5A;
+  Color get lime6A => _isLight ? FlyColorLight.lime6A : FlyColorDark.lime6A;
+  Color get lime7A => _isLight ? FlyColorLight.lime7A : FlyColorDark.lime7A;
+  Color get lime8A => _isLight ? FlyColorLight.lime8A : FlyColorDark.lime8A;
+  Color get lime9A => _isLight ? FlyColorLight.lime9A : FlyColorDark.lime9A;
+  Color get lime10A => _isLight ? FlyColorLight.lime10A : FlyColorDark.lime10A;
+  Color get lime11A => _isLight ? FlyColorLight.lime11A : FlyColorDark.lime11A;
+  Color get lime12A => _isLight ? FlyColorLight.lime12A : FlyColorDark.lime12A;
 
   Color get yellow1 => _isLight ? FlyColorLight.yellow1 : FlyColorDark.yellow1;
   Color get yellow2 => _isLight ? FlyColorLight.yellow2 : FlyColorDark.yellow2;
@@ -2442,6 +4266,18 @@ class FlyColorScheme {
   Color get yellow12 => _isLight ? FlyColorLight.yellow12 : FlyColorDark.yellow12;
   Color get yellowContrast => _isLight ? FlyColorLight.yellowContrast : FlyColorDark.yellowContrast;
   Color get yellowSurface => _isLight ? FlyColorLight.yellowSurface : FlyColorDark.yellowSurface;
+  Color get yellow1A => _isLight ? FlyColorLight.yellow1A : FlyColorDark.yellow1A;
+  Color get yellow2A => _isLight ? FlyColorLight.yellow2A : FlyColorDark.yellow2A;
+  Color get yellow3A => _isLight ? FlyColorLight.yellow3A : FlyColorDark.yellow3A;
+  Color get yellow4A => _isLight ? FlyColorLight.yellow4A : FlyColorDark.yellow4A;
+  Color get yellow5A => _isLight ? FlyColorLight.yellow5A : FlyColorDark.yellow5A;
+  Color get yellow6A => _isLight ? FlyColorLight.yellow6A : FlyColorDark.yellow6A;
+  Color get yellow7A => _isLight ? FlyColorLight.yellow7A : FlyColorDark.yellow7A;
+  Color get yellow8A => _isLight ? FlyColorLight.yellow8A : FlyColorDark.yellow8A;
+  Color get yellow9A => _isLight ? FlyColorLight.yellow9A : FlyColorDark.yellow9A;
+  Color get yellow10A => _isLight ? FlyColorLight.yellow10A : FlyColorDark.yellow10A;
+  Color get yellow11A => _isLight ? FlyColorLight.yellow11A : FlyColorDark.yellow11A;
+  Color get yellow12A => _isLight ? FlyColorLight.yellow12A : FlyColorDark.yellow12A;
 
   Color get amber1 => _isLight ? FlyColorLight.amber1 : FlyColorDark.amber1;
   Color get amber2 => _isLight ? FlyColorLight.amber2 : FlyColorDark.amber2;
@@ -2457,6 +4293,18 @@ class FlyColorScheme {
   Color get amber12 => _isLight ? FlyColorLight.amber12 : FlyColorDark.amber12;
   Color get amberContrast => _isLight ? FlyColorLight.amberContrast : FlyColorDark.amberContrast;
   Color get amberSurface => _isLight ? FlyColorLight.amberSurface : FlyColorDark.amberSurface;
+  Color get amber1A => _isLight ? FlyColorLight.amber1A : FlyColorDark.amber1A;
+  Color get amber2A => _isLight ? FlyColorLight.amber2A : FlyColorDark.amber2A;
+  Color get amber3A => _isLight ? FlyColorLight.amber3A : FlyColorDark.amber3A;
+  Color get amber4A => _isLight ? FlyColorLight.amber4A : FlyColorDark.amber4A;
+  Color get amber5A => _isLight ? FlyColorLight.amber5A : FlyColorDark.amber5A;
+  Color get amber6A => _isLight ? FlyColorLight.amber6A : FlyColorDark.amber6A;
+  Color get amber7A => _isLight ? FlyColorLight.amber7A : FlyColorDark.amber7A;
+  Color get amber8A => _isLight ? FlyColorLight.amber8A : FlyColorDark.amber8A;
+  Color get amber9A => _isLight ? FlyColorLight.amber9A : FlyColorDark.amber9A;
+  Color get amber10A => _isLight ? FlyColorLight.amber10A : FlyColorDark.amber10A;
+  Color get amber11A => _isLight ? FlyColorLight.amber11A : FlyColorDark.amber11A;
+  Color get amber12A => _isLight ? FlyColorLight.amber12A : FlyColorDark.amber12A;
 
   Color get orange1 => _isLight ? FlyColorLight.orange1 : FlyColorDark.orange1;
   Color get orange2 => _isLight ? FlyColorLight.orange2 : FlyColorDark.orange2;
@@ -2472,6 +4320,18 @@ class FlyColorScheme {
   Color get orange12 => _isLight ? FlyColorLight.orange12 : FlyColorDark.orange12;
   Color get orangeContrast => _isLight ? FlyColorLight.orangeContrast : FlyColorDark.orangeContrast;
   Color get orangeSurface => _isLight ? FlyColorLight.orangeSurface : FlyColorDark.orangeSurface;
+  Color get orange1A => _isLight ? FlyColorLight.orange1A : FlyColorDark.orange1A;
+  Color get orange2A => _isLight ? FlyColorLight.orange2A : FlyColorDark.orange2A;
+  Color get orange3A => _isLight ? FlyColorLight.orange3A : FlyColorDark.orange3A;
+  Color get orange4A => _isLight ? FlyColorLight.orange4A : FlyColorDark.orange4A;
+  Color get orange5A => _isLight ? FlyColorLight.orange5A : FlyColorDark.orange5A;
+  Color get orange6A => _isLight ? FlyColorLight.orange6A : FlyColorDark.orange6A;
+  Color get orange7A => _isLight ? FlyColorLight.orange7A : FlyColorDark.orange7A;
+  Color get orange8A => _isLight ? FlyColorLight.orange8A : FlyColorDark.orange8A;
+  Color get orange9A => _isLight ? FlyColorLight.orange9A : FlyColorDark.orange9A;
+  Color get orange10A => _isLight ? FlyColorLight.orange10A : FlyColorDark.orange10A;
+  Color get orange11A => _isLight ? FlyColorLight.orange11A : FlyColorDark.orange11A;
+  Color get orange12A => _isLight ? FlyColorLight.orange12A : FlyColorDark.orange12A;
 
 }
 

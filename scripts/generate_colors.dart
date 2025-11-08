@@ -61,6 +61,7 @@ void main() {
   final lightScales = <String, List<Color>>{};
   final lightContrasts = <String, Color>{};
   final lightSurfaces = <String, Color>{};
+  final lightAlphaScales = <String, List<Color>>{};
   for (final entry in colors.entries) {
     final scaleName = entry.key;
     final baseColor = entry.value;
@@ -76,12 +77,14 @@ void main() {
     lightScales[scaleName] = generated.accentScale;
     lightContrasts[scaleName] = generated.accentContrast;
     lightSurfaces[scaleName] = generated.accentSurface;
+    lightAlphaScales[scaleName] = generated.accentScaleAlpha;
   }
 
   // Generate dark scales with contrast and surface
   final darkScales = <String, List<Color>>{};
   final darkContrasts = <String, Color>{};
   final darkSurfaces = <String, Color>{};
+  final darkAlphaScales = <String, List<Color>>{};
   for (final entry in colors.entries) {
     final scaleName = entry.key;
     final baseColor = entry.value;
@@ -97,6 +100,7 @@ void main() {
     darkScales[scaleName] = generated.accentScale;
     darkContrasts[scaleName] = generated.accentContrast;
     darkSurfaces[scaleName] = generated.accentSurface;
+    darkAlphaScales[scaleName] = generated.accentScaleAlpha;
   }
 
   print(
@@ -111,6 +115,8 @@ void main() {
     darkContrasts,
     lightSurfaces,
     darkSurfaces,
+    lightAlphaScales,
+    darkAlphaScales,
   );
 
   // Write to file
@@ -130,6 +136,8 @@ String _generateFlyColorsFile(
   Map<String, Color> darkContrasts,
   Map<String, Color> lightSurfaces,
   Map<String, Color> darkSurfaces,
+  Map<String, List<Color>> lightAlphaScales,
+  Map<String, List<Color>> darkAlphaScales,
 ) {
   final buffer = StringBuffer();
 
@@ -179,6 +187,7 @@ String _generateFlyColorsFile(
   for (final entry in lightScales.entries) {
     final scaleName = entry.key;
     final colors = entry.value;
+    final alphaColors = lightAlphaScales[scaleName]!;
 
     for (int i = 0; i < 12; i++) {
       final stepNum = i + 1;
@@ -196,6 +205,15 @@ String _generateFlyColorsFile(
     buffer.writeln(
       '  static const Color ${scaleName}Surface = Color(0x${surface.value.toRadixString(16).padLeft(8, '0')});',
     );
+
+    // Alpha variants
+    for (int i = 0; i < 12; i++) {
+      final stepNum = i + 1;
+      final alphaColor = alphaColors[i];
+      buffer.writeln(
+        '  static const Color $scaleName$stepNum${'A'} = Color(0x${alphaColor.value.toRadixString(16).padLeft(8, '0')});',
+      );
+    }
     buffer.writeln('');
   }
   buffer.writeln('}');
@@ -209,6 +227,7 @@ String _generateFlyColorsFile(
   for (final entry in darkScales.entries) {
     final scaleName = entry.key;
     final colors = entry.value;
+    final alphaColors = darkAlphaScales[scaleName]!;
 
     for (int i = 0; i < 12; i++) {
       final stepNum = i + 1;
@@ -226,6 +245,15 @@ String _generateFlyColorsFile(
     buffer.writeln(
       '  static const Color ${scaleName}Surface = Color(0x${surface.value.toRadixString(16).padLeft(8, '0')});',
     );
+
+    // Alpha variants
+    for (int i = 0; i < 12; i++) {
+      final stepNum = i + 1;
+      final alphaColor = alphaColors[i];
+      buffer.writeln(
+        '  static const Color $scaleName$stepNum${'A'} = Color(0x${alphaColor.value.toRadixString(16).padLeft(8, '0')});',
+      );
+    }
     buffer.writeln('');
   }
   buffer.writeln('}');
@@ -296,6 +324,10 @@ String _generateFlyColorsFile(
     }
     buffer.writeln('  static const Color ${scaleName}Contrast = FlyColorLight.${scaleName}Contrast;');
     buffer.writeln('  static const Color ${scaleName}Surface = FlyColorLight.${scaleName}Surface;');
+    // Alpha variants (light mode)
+    for (int i = 1; i <= 12; i++) {
+      buffer.writeln('  static const Color ${scaleName}$i${'A'} = FlyColorLight.${scaleName}$i${'A'};');
+    }
     buffer.writeln('');
   }
   buffer.writeln('  /// Dark mode colors (suffixed with Dark)');
@@ -306,6 +338,10 @@ String _generateFlyColorsFile(
     }
     buffer.writeln('  static const Color ${scaleName}Contrast${'Dark'} = FlyColorDark.${scaleName}Contrast;');
     buffer.writeln('  static const Color ${scaleName}Surface${'Dark'} = FlyColorDark.${scaleName}Surface;');
+    // Alpha variants (dark mode)
+    for (int i = 1; i <= 12; i++) {
+      buffer.writeln('  static const Color ${scaleName}$i${'DarkA'} = FlyColorDark.${scaleName}$i${'A'};');
+    }
     buffer.writeln('');
   }
   buffer.writeln('}');
@@ -349,6 +385,14 @@ String _generateFlyColorsFile(
     buffer.writeln(
       '  Color get ${scaleName}Surface => _isLight ? FlyColorLight.${scaleName}Surface : FlyColorDark.${scaleName}Surface;',
     );
+
+    // Alpha variants (context-aware)
+    for (int i = 0; i < 12; i++) {
+      final stepNum = i + 1;
+      buffer.writeln(
+        '  Color get $scaleName$stepNum${'A'} => _isLight ? FlyColorLight.$scaleName$stepNum${'A'} : FlyColorDark.$scaleName$stepNum${'A'};',
+      );
+    }
     buffer.writeln('');
   }
   buffer.writeln('}');

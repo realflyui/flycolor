@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'generator.dart';
 import 'colors.dart';
 
@@ -21,6 +22,7 @@ class _FlyColorExampleState extends State<FlyColorExample> {
   String _grayColor = '#8B8D98';
   String _backgroundColor = '#FFFFFF';
   bool _backgroundColorManuallySet = false;
+  bool _showAlpha = false;
 
   late GeneratedColors _generatedColors;
   late TextEditingController _accentColorController;
@@ -75,7 +77,6 @@ class _FlyColorExampleState extends State<FlyColorExample> {
         gray: _grayColor,
         background: _backgroundColor,
       );
-      print(_generatedColors.toMap());
     });
   }
 
@@ -96,6 +97,8 @@ class _FlyColorExampleState extends State<FlyColorExample> {
   @override
   Widget build(BuildContext context) {
     final textColor = FlyColor.of(context).gray12;
+    final brightness = Theme.of(context).brightness;
+    final isDark = brightness == Brightness.dark;
     
     return Scaffold(
       appBar: AppBar(
@@ -104,11 +107,62 @@ class _FlyColorExampleState extends State<FlyColorExample> {
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: SegmentedButton<bool>(
+              showSelectedIcon: false,
+              segments: [
+                ButtonSegment(
+                  value: false,
+                  icon: Container(
+                    width: 16,
+                    height: 16,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[800],
+                      border: Border.all(color: Colors.grey[600]!, width: 1),
+                    ),
+                  ),
+                ),
+                ButtonSegment(
+                  value: true,
+                  icon: Container(
+                    width: 16,
+                    height: 16,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey[600]!, width: 1),
+                    ),
+                    child: CustomPaint(
+                      painter: _CheckerboardPainter(
+                        color1: isDark ? const Color(0xFF404040) : const Color(0xFFE0E0E0),
+                        color2: isDark ? const Color(0xFF505050) : const Color(0xFFF5F5F5),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+              selected: {_showAlpha},
+              onSelectionChanged: (Set<bool> newSelection) {
+                setState(() {
+                  _showAlpha = newSelection.first;
+                });
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: SegmentedButton<ThemeMode>(
+              showSelectedIcon: false,
               segments: const [
-                ButtonSegment(value: ThemeMode.light, label: Text('Light')),
-                ButtonSegment(value: ThemeMode.dark, label: Text('Dark')),
-                ButtonSegment(value: ThemeMode.system, label: Text('System')),
+                ButtonSegment(
+                  value: ThemeMode.light,
+                  icon: Icon(Icons.light_mode, size: 18),
+                ),
+                ButtonSegment(
+                  value: ThemeMode.dark,
+                  icon: Icon(Icons.dark_mode, size: 18),
+                ),
+                ButtonSegment(
+                  value: ThemeMode.system,
+                  icon: Icon(Icons.brightness_auto, size: 18),
+                ),
               ],
               selected: {widget.currentThemeMode},
               onSelectionChanged: (Set<ThemeMode> newSelection) {
@@ -136,19 +190,31 @@ class _FlyColorExampleState extends State<FlyColorExample> {
 
             // Color Scales
             _buildColorScaleHeaders(textColor),
-            _buildColorScaleRow(
-              _generatedColors.accentScale,
-              'Accent',
-              textColor,
-              contrastColor: _generatedColors.accentContrast,
-              surfaceColor: _generatedColors.accentSurface,
-            ),
+            _showAlpha
+                ? _buildAlphaColorScaleRow(
+                  _generatedColors.accentScaleAlpha,
+                  'Accent',
+                  textColor,
+                  isDark: isDark,
+                  contrastColor: _generatedColors.accentContrast,
+                  surfaceColor: _generatedColors.accentSurface,
+                )
+                : _buildColorScaleRow(
+                  _generatedColors.accentScale,
+                  'Accent',
+                  textColor,
+                  contrastColor: _generatedColors.accentContrast,
+                  surfaceColor: _generatedColors.accentSurface,
+                ),
             const SizedBox(height: 4),
-            _buildAlphaColorScaleRow(_generatedColors.accentScaleAlpha, 'Accent', textColor),
-            const SizedBox(height: 4),
-            _buildColorScaleRow(_generatedColors.grayScale, 'Gray', textColor),
-            const SizedBox(height: 4),
-            _buildAlphaColorScaleRow(_generatedColors.grayScaleAlpha, 'Gray', textColor),
+            _showAlpha
+                ? _buildAlphaColorScaleRow(
+                  _generatedColors.grayScaleAlpha,
+                  'Gray',
+                  textColor,
+                  isDark: isDark,
+                )
+                : _buildColorScaleRow(_generatedColors.grayScale, 'Gray', textColor),
             const SizedBox(height: 24),
           ],
         ),
@@ -345,6 +411,261 @@ class _FlyColorExampleState extends State<FlyColorExample> {
     );
   }
 
+  void _showColorInfoDialog(
+    BuildContext context,
+    Color color,
+    String colorName,
+    int? step,
+    bool isAlpha,
+  ) {
+    final hex = color.toHex();
+    final r = color.red;
+    final g = color.green;
+    final b = color.blue;
+    final a = color.alpha;
+    final opacity = (a / 255).toStringAsFixed(2);
+    final brightness = Theme.of(context).brightness;
+    final isDark = brightness == Brightness.dark;
+    final textColor = isDark ? Colors.white : Colors.black;
+
+    // Generate usage examples
+    String? usageCode;
+    String? contextAwareUsage;
+    
+    if (step != null) {
+      // Regular color step
+      final suffix = isAlpha ? 'A' : '';
+      // Current mode usage - show dark variant if in dark mode, light variant if in light mode
+      if (isDark) {
+        usageCode = 'FlyColor.$colorName$step${isAlpha ? 'DarkA' : 'Dark'}';
+      } else {
+        usageCode = 'FlyColor.$colorName$step$suffix';
+      }
+      contextAwareUsage = 'FlyColor.of(context).$colorName$step$suffix';
+    } else {
+      // Contrast or Surface
+      if (colorName.endsWith(' Contrast')) {
+        final baseName = colorName.replaceAll(' Contrast', '');
+        usageCode = isDark 
+            ? 'FlyColor.${baseName}ContrastDark'
+            : 'FlyColor.${baseName}Contrast';
+        contextAwareUsage = 'FlyColor.of(context).${baseName}Contrast';
+      } else if (colorName.endsWith(' Surface')) {
+        final baseName = colorName.replaceAll(' Surface', '');
+        usageCode = isDark
+            ? 'FlyColor.${baseName}SurfaceDark'
+            : 'FlyColor.${baseName}Surface';
+        contextAwareUsage = 'FlyColor.of(context).${baseName}Surface';
+      }
+    }
+
+    showDialog(
+      context: context,
+      builder: (context) => Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Container(
+          padding: const EdgeInsets.all(24),
+          constraints: const BoxConstraints(maxWidth: 400),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Color preview
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  width: double.infinity,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.grey.withOpacity(0.3),
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: isAlpha
+                      ? Stack(
+                          children: [
+                            // Checkerboard background
+                            CustomPaint(
+                              painter: _CheckerboardPainter(
+                                color1: isDark ? const Color(0xFF404040) : const Color(0xFFE0E0E0),
+                                color2: isDark ? const Color(0xFF505050) : const Color(0xFFF5F5F5),
+                              ),
+                              child: Container(),
+                            ),
+                            // Color overlay
+                            Container(color: color),
+                          ],
+                        )
+                      : Container(color: color),
+                ),
+              ),
+              const SizedBox(height: 20),
+              // Color name and step
+              Text(
+                step != null ? '$colorName $step${isAlpha ? 'A' : ''}' : colorName,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: textColor,
+                ),
+              ),
+              const SizedBox(height: 16),
+              // Hex code
+              _buildInfoRow(
+                context,
+                'Hex',
+                hex,
+                onCopy: () {
+                  Clipboard.setData(ClipboardData(text: hex));
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Copied $hex to clipboard')),
+                  );
+                },
+              ),
+              const SizedBox(height: 8),
+              // RGB
+              _buildInfoRow(
+                context,
+                'RGB',
+                'rgb($r, $g, $b)',
+                onCopy: () {
+                  Clipboard.setData(ClipboardData(text: 'rgb($r, $g, $b)'));
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Copied RGB to clipboard')),
+                  );
+                },
+              ),
+              if (isAlpha || a < 255) ...[
+                const SizedBox(height: 8),
+                // Alpha
+                _buildInfoRow(
+                  context,
+                  'Alpha',
+                  '$a / 255 ($opacity)',
+                  onCopy: () {
+                    Clipboard.setData(ClipboardData(text: a.toString()));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Copied alpha to clipboard')),
+                    );
+                  },
+                ),
+              ],
+              if (usageCode != null) ...[
+                const SizedBox(height: 20),
+                Divider(color: textColor.withOpacity(0.2)),
+                const SizedBox(height: 16),
+                Text(
+                  'Usage',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: textColor,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                // Direct access
+                Builder(
+                  builder: (context) {
+                    final code = usageCode!;
+                    final contextCode = contextAwareUsage;
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _buildInfoRow(
+                          context,
+                          'Direct',
+                          code,
+                          onCopy: () {
+                            Clipboard.setData(ClipboardData(text: code));
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('Copied $code to clipboard')),
+                            );
+                          },
+                        ),
+                        if (contextCode != null) ...[
+                          const SizedBox(height: 8),
+                          _buildInfoRow(
+                            context,
+                            'Context',
+                            contextCode,
+                            onCopy: () {
+                              Clipboard.setData(ClipboardData(text: contextCode));
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('Copied $contextCode to clipboard')),
+                              );
+                            },
+                          ),
+                        ],
+                      ],
+                    );
+                  },
+                ),
+              ],
+              const SizedBox(height: 20),
+              // Close button
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: const Text('Close'),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildInfoRow(
+    BuildContext context,
+    String label,
+    String value, {
+    VoidCallback? onCopy,
+  }) {
+    final brightness = Theme.of(context).brightness;
+    final isDark = brightness == Brightness.dark;
+    final textColor = isDark ? Colors.white : Colors.black;
+
+    return Row(
+      children: [
+        SizedBox(
+          width: 60,
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+              color: textColor.withOpacity(0.7),
+            ),
+          ),
+        ),
+        Expanded(
+          child: SelectableText(
+            value,
+            style: TextStyle(
+              fontSize: 14,
+              fontFamily: 'monospace',
+              color: textColor,
+            ),
+          ),
+        ),
+        if (onCopy != null)
+          IconButton(
+            icon: const Icon(Icons.copy, size: 18),
+            onPressed: onCopy,
+            tooltip: 'Copy to clipboard',
+            padding: EdgeInsets.zero,
+            constraints: const BoxConstraints(),
+          ),
+      ],
+    );
+  }
+
   Widget _buildColorScaleHeaders(Color textColor) {
     return Column(
       children: [
@@ -537,28 +858,123 @@ class _FlyColorExampleState extends State<FlyColorExample> {
           child: Row(
             children: [
               // 12 step colors
-              ...colors.map((color) {
+              ...colors.asMap().entries.map((entry) {
+                final index = entry.key;
+                final color = entry.value;
+                final step = index + 1;
                 return Expanded(
-                  child: Container(
-                    height: 80,
-                    color: color,
+                  child: GestureDetector(
+                    onTap: () => _showColorInfoDialog(
+                      context,
+                      color,
+                      label,
+                      step,
+                      false,
+                    ),
+                    child: Container(
+                      height: 80,
+                      color: color,
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: () => _showColorInfoDialog(
+                            context,
+                            color,
+                            label,
+                            step,
+                            false,
+                          ),
+                          child: Container(),
+                        ),
+                      ),
+                    ),
                   ),
                 );
               }),
               // Contrast color
-              Expanded(
-                child: Container(
-                  height: 80,
-                  color: contrastColor ?? Colors.transparent,
+              if (contrastColor != null)
+                Expanded(
+                  child: Builder(
+                    builder: (context) {
+                      final color = contrastColor;
+                      return GestureDetector(
+                        onTap: () => _showColorInfoDialog(
+                          context,
+                          color,
+                          '$label Contrast',
+                          null,
+                          false,
+                        ),
+                        child: Container(
+                          height: 80,
+                          color: color,
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () => _showColorInfoDialog(
+                                context,
+                                color,
+                                '$label Contrast',
+                                null,
+                                false,
+                              ),
+                              child: Container(),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                )
+              else
+                Expanded(
+                  child: Container(
+                    height: 80,
+                    color: Colors.transparent,
+                  ),
                 ),
-              ),
               // Surface color
-              Expanded(
-                child: Container(
-                  height: 80,
-                  color: surfaceColor ?? Colors.transparent,
+              if (surfaceColor != null)
+                Expanded(
+                  child: Builder(
+                    builder: (context) {
+                      final color = surfaceColor;
+                      return GestureDetector(
+                        onTap: () => _showColorInfoDialog(
+                          context,
+                          color,
+                          '$label Surface',
+                          null,
+                          false,
+                        ),
+                        child: Container(
+                          height: 80,
+                          color: color,
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () => _showColorInfoDialog(
+                                context,
+                                color,
+                                '$label Surface',
+                                null,
+                                false,
+                              ),
+                              child: Container(),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                )
+              else
+                Expanded(
+                  child: Container(
+                    height: 80,
+                    color: Colors.transparent,
+                  ),
                 ),
-              ),
             ],
           ),
         ),
@@ -569,44 +985,148 @@ class _FlyColorExampleState extends State<FlyColorExample> {
   Widget _buildAlphaColorScaleRow(
     List<Color> colors,
     String label,
-    Color textColor,
-  ) {
+    Color textColor, {
+    bool isDark = false,
+    Color? contrastColor,
+    Color? surfaceColor,
+  }) {
     return Row(
       children: [
-        // Empty label column for alignment
-        const SizedBox(width: 60),
+        // Label column
+        SizedBox(
+          width: 60,
+          child: Text(
+            label,
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+          ),
+        ),
         // Color swatches with background pattern
         Expanded(
           child: Row(
             children: [
               // 12 step colors with checkerboard background
-              ...colors.map((color) {
+              ...colors.asMap().entries.map((entry) {
+                final index = entry.key;
+                final color = entry.value;
+                final step = index + 1;
                 return Expanded(
-                  child: Container(
-                    height: 80,
-                    child: CustomPaint(
-                      painter: _CheckerboardPainter(),
-                      child: Container(
-                        color: color,
+                  child: GestureDetector(
+                    onTap: () => _showColorInfoDialog(
+                      context,
+                      color,
+                      label,
+                      step,
+                      true,
+                    ),
+                    child: Container(
+                      height: 80,
+                      child: CustomPaint(
+                        painter: _CheckerboardPainter(
+                          color1: isDark ? const Color(0xFF404040) : const Color(0xFFE0E0E0),
+                          color2: isDark ? const Color(0xFF505050) : const Color(0xFFF5F5F5),
+                        ),
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            onTap: () => _showColorInfoDialog(
+                              context,
+                              color,
+                              label,
+                              step,
+                              true,
+                            ),
+                            child: Container(color: color),
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 );
               }),
-              // Empty contrast column
-              Expanded(
-                child: Container(
-                  height: 80,
-                  color: Colors.transparent,
+              // Contrast color
+              if (contrastColor != null)
+                Expanded(
+                  child: Builder(
+                    builder: (context) {
+                      final color = contrastColor;
+                      return GestureDetector(
+                        onTap: () => _showColorInfoDialog(
+                          context,
+                          color,
+                          '$label Contrast',
+                          null,
+                          false,
+                        ),
+                        child: Container(
+                          height: 80,
+                          color: color,
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () => _showColorInfoDialog(
+                                context,
+                                color,
+                                '$label Contrast',
+                                null,
+                                false,
+                              ),
+                              child: Container(),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                )
+              else
+                Expanded(
+                  child: Container(
+                    height: 80,
+                    color: Colors.transparent,
+                  ),
                 ),
-              ),
-              // Empty surface column
-              Expanded(
-                child: Container(
-                  height: 80,
-                  color: Colors.transparent,
+              // Surface color
+              if (surfaceColor != null)
+                Expanded(
+                  child: Builder(
+                    builder: (context) {
+                      final color = surfaceColor;
+                      return GestureDetector(
+                        onTap: () => _showColorInfoDialog(
+                          context,
+                          color,
+                          '$label Surface',
+                          null,
+                          false,
+                        ),
+                        child: Container(
+                          height: 80,
+                          color: color,
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () => _showColorInfoDialog(
+                                context,
+                                color,
+                                '$label Surface',
+                                null,
+                                false,
+                              ),
+                              child: Container(),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                )
+              else
+                Expanded(
+                  child: Container(
+                    height: 80,
+                    color: Colors.transparent,
+                  ),
                 ),
-              ),
             ],
           ),
         ),
@@ -619,6 +1139,130 @@ class _FlyColorExampleState extends State<FlyColorExample> {
   Widget _buildAllColors(BuildContext context, Color textColor) {
     final brightness = Theme.of(context).brightness;
     final isLight = brightness == Brightness.light;
+
+    // Helper function to get alpha color for a step
+    Color getAlphaColor(String name, int step) {
+      switch (name) {
+        case 'gray':
+          return isLight
+              ? [FlyColor.gray1A, FlyColor.gray2A, FlyColor.gray3A, FlyColor.gray4A, FlyColor.gray5A, FlyColor.gray6A, FlyColor.gray7A, FlyColor.gray8A, FlyColor.gray9A, FlyColor.gray10A, FlyColor.gray11A, FlyColor.gray12A][step - 1]
+              : [FlyColor.gray1DarkA, FlyColor.gray2DarkA, FlyColor.gray3DarkA, FlyColor.gray4DarkA, FlyColor.gray5DarkA, FlyColor.gray6DarkA, FlyColor.gray7DarkA, FlyColor.gray8DarkA, FlyColor.gray9DarkA, FlyColor.gray10DarkA, FlyColor.gray11DarkA, FlyColor.gray12DarkA][step - 1];
+        case 'mauve':
+          return isLight
+              ? [FlyColor.mauve1A, FlyColor.mauve2A, FlyColor.mauve3A, FlyColor.mauve4A, FlyColor.mauve5A, FlyColor.mauve6A, FlyColor.mauve7A, FlyColor.mauve8A, FlyColor.mauve9A, FlyColor.mauve10A, FlyColor.mauve11A, FlyColor.mauve12A][step - 1]
+              : [FlyColor.mauve1DarkA, FlyColor.mauve2DarkA, FlyColor.mauve3DarkA, FlyColor.mauve4DarkA, FlyColor.mauve5DarkA, FlyColor.mauve6DarkA, FlyColor.mauve7DarkA, FlyColor.mauve8DarkA, FlyColor.mauve9DarkA, FlyColor.mauve10DarkA, FlyColor.mauve11DarkA, FlyColor.mauve12DarkA][step - 1];
+        case 'slate':
+          return isLight
+              ? [FlyColor.slate1A, FlyColor.slate2A, FlyColor.slate3A, FlyColor.slate4A, FlyColor.slate5A, FlyColor.slate6A, FlyColor.slate7A, FlyColor.slate8A, FlyColor.slate9A, FlyColor.slate10A, FlyColor.slate11A, FlyColor.slate12A][step - 1]
+              : [FlyColor.slate1DarkA, FlyColor.slate2DarkA, FlyColor.slate3DarkA, FlyColor.slate4DarkA, FlyColor.slate5DarkA, FlyColor.slate6DarkA, FlyColor.slate7DarkA, FlyColor.slate8DarkA, FlyColor.slate9DarkA, FlyColor.slate10DarkA, FlyColor.slate11DarkA, FlyColor.slate12DarkA][step - 1];
+        case 'sage':
+          return isLight
+              ? [FlyColor.sage1A, FlyColor.sage2A, FlyColor.sage3A, FlyColor.sage4A, FlyColor.sage5A, FlyColor.sage6A, FlyColor.sage7A, FlyColor.sage8A, FlyColor.sage9A, FlyColor.sage10A, FlyColor.sage11A, FlyColor.sage12A][step - 1]
+              : [FlyColor.sage1DarkA, FlyColor.sage2DarkA, FlyColor.sage3DarkA, FlyColor.sage4DarkA, FlyColor.sage5DarkA, FlyColor.sage6DarkA, FlyColor.sage7DarkA, FlyColor.sage8DarkA, FlyColor.sage9DarkA, FlyColor.sage10DarkA, FlyColor.sage11DarkA, FlyColor.sage12DarkA][step - 1];
+        case 'olive':
+          return isLight
+              ? [FlyColor.olive1A, FlyColor.olive2A, FlyColor.olive3A, FlyColor.olive4A, FlyColor.olive5A, FlyColor.olive6A, FlyColor.olive7A, FlyColor.olive8A, FlyColor.olive9A, FlyColor.olive10A, FlyColor.olive11A, FlyColor.olive12A][step - 1]
+              : [FlyColor.olive1DarkA, FlyColor.olive2DarkA, FlyColor.olive3DarkA, FlyColor.olive4DarkA, FlyColor.olive5DarkA, FlyColor.olive6DarkA, FlyColor.olive7DarkA, FlyColor.olive8DarkA, FlyColor.olive9DarkA, FlyColor.olive10DarkA, FlyColor.olive11DarkA, FlyColor.olive12DarkA][step - 1];
+        case 'sand':
+          return isLight
+              ? [FlyColor.sand1A, FlyColor.sand2A, FlyColor.sand3A, FlyColor.sand4A, FlyColor.sand5A, FlyColor.sand6A, FlyColor.sand7A, FlyColor.sand8A, FlyColor.sand9A, FlyColor.sand10A, FlyColor.sand11A, FlyColor.sand12A][step - 1]
+              : [FlyColor.sand1DarkA, FlyColor.sand2DarkA, FlyColor.sand3DarkA, FlyColor.sand4DarkA, FlyColor.sand5DarkA, FlyColor.sand6DarkA, FlyColor.sand7DarkA, FlyColor.sand8DarkA, FlyColor.sand9DarkA, FlyColor.sand10DarkA, FlyColor.sand11DarkA, FlyColor.sand12DarkA][step - 1];
+        case 'tomato':
+          return isLight
+              ? [FlyColor.tomato1A, FlyColor.tomato2A, FlyColor.tomato3A, FlyColor.tomato4A, FlyColor.tomato5A, FlyColor.tomato6A, FlyColor.tomato7A, FlyColor.tomato8A, FlyColor.tomato9A, FlyColor.tomato10A, FlyColor.tomato11A, FlyColor.tomato12A][step - 1]
+              : [FlyColor.tomato1DarkA, FlyColor.tomato2DarkA, FlyColor.tomato3DarkA, FlyColor.tomato4DarkA, FlyColor.tomato5DarkA, FlyColor.tomato6DarkA, FlyColor.tomato7DarkA, FlyColor.tomato8DarkA, FlyColor.tomato9DarkA, FlyColor.tomato10DarkA, FlyColor.tomato11DarkA, FlyColor.tomato12DarkA][step - 1];
+        case 'red':
+          return isLight
+              ? [FlyColor.red1A, FlyColor.red2A, FlyColor.red3A, FlyColor.red4A, FlyColor.red5A, FlyColor.red6A, FlyColor.red7A, FlyColor.red8A, FlyColor.red9A, FlyColor.red10A, FlyColor.red11A, FlyColor.red12A][step - 1]
+              : [FlyColor.red1DarkA, FlyColor.red2DarkA, FlyColor.red3DarkA, FlyColor.red4DarkA, FlyColor.red5DarkA, FlyColor.red6DarkA, FlyColor.red7DarkA, FlyColor.red8DarkA, FlyColor.red9DarkA, FlyColor.red10DarkA, FlyColor.red11DarkA, FlyColor.red12DarkA][step - 1];
+        case 'ruby':
+          return isLight
+              ? [FlyColor.ruby1A, FlyColor.ruby2A, FlyColor.ruby3A, FlyColor.ruby4A, FlyColor.ruby5A, FlyColor.ruby6A, FlyColor.ruby7A, FlyColor.ruby8A, FlyColor.ruby9A, FlyColor.ruby10A, FlyColor.ruby11A, FlyColor.ruby12A][step - 1]
+              : [FlyColor.ruby1DarkA, FlyColor.ruby2DarkA, FlyColor.ruby3DarkA, FlyColor.ruby4DarkA, FlyColor.ruby5DarkA, FlyColor.ruby6DarkA, FlyColor.ruby7DarkA, FlyColor.ruby8DarkA, FlyColor.ruby9DarkA, FlyColor.ruby10DarkA, FlyColor.ruby11DarkA, FlyColor.ruby12DarkA][step - 1];
+        case 'crimson':
+          return isLight
+              ? [FlyColor.crimson1A, FlyColor.crimson2A, FlyColor.crimson3A, FlyColor.crimson4A, FlyColor.crimson5A, FlyColor.crimson6A, FlyColor.crimson7A, FlyColor.crimson8A, FlyColor.crimson9A, FlyColor.crimson10A, FlyColor.crimson11A, FlyColor.crimson12A][step - 1]
+              : [FlyColor.crimson1DarkA, FlyColor.crimson2DarkA, FlyColor.crimson3DarkA, FlyColor.crimson4DarkA, FlyColor.crimson5DarkA, FlyColor.crimson6DarkA, FlyColor.crimson7DarkA, FlyColor.crimson8DarkA, FlyColor.crimson9DarkA, FlyColor.crimson10DarkA, FlyColor.crimson11DarkA, FlyColor.crimson12DarkA][step - 1];
+        case 'pink':
+          return isLight
+              ? [FlyColor.pink1A, FlyColor.pink2A, FlyColor.pink3A, FlyColor.pink4A, FlyColor.pink5A, FlyColor.pink6A, FlyColor.pink7A, FlyColor.pink8A, FlyColor.pink9A, FlyColor.pink10A, FlyColor.pink11A, FlyColor.pink12A][step - 1]
+              : [FlyColor.pink1DarkA, FlyColor.pink2DarkA, FlyColor.pink3DarkA, FlyColor.pink4DarkA, FlyColor.pink5DarkA, FlyColor.pink6DarkA, FlyColor.pink7DarkA, FlyColor.pink8DarkA, FlyColor.pink9DarkA, FlyColor.pink10DarkA, FlyColor.pink11DarkA, FlyColor.pink12DarkA][step - 1];
+        case 'plum':
+          return isLight
+              ? [FlyColor.plum1A, FlyColor.plum2A, FlyColor.plum3A, FlyColor.plum4A, FlyColor.plum5A, FlyColor.plum6A, FlyColor.plum7A, FlyColor.plum8A, FlyColor.plum9A, FlyColor.plum10A, FlyColor.plum11A, FlyColor.plum12A][step - 1]
+              : [FlyColor.plum1DarkA, FlyColor.plum2DarkA, FlyColor.plum3DarkA, FlyColor.plum4DarkA, FlyColor.plum5DarkA, FlyColor.plum6DarkA, FlyColor.plum7DarkA, FlyColor.plum8DarkA, FlyColor.plum9DarkA, FlyColor.plum10DarkA, FlyColor.plum11DarkA, FlyColor.plum12DarkA][step - 1];
+        case 'purple':
+          return isLight
+              ? [FlyColor.purple1A, FlyColor.purple2A, FlyColor.purple3A, FlyColor.purple4A, FlyColor.purple5A, FlyColor.purple6A, FlyColor.purple7A, FlyColor.purple8A, FlyColor.purple9A, FlyColor.purple10A, FlyColor.purple11A, FlyColor.purple12A][step - 1]
+              : [FlyColor.purple1DarkA, FlyColor.purple2DarkA, FlyColor.purple3DarkA, FlyColor.purple4DarkA, FlyColor.purple5DarkA, FlyColor.purple6DarkA, FlyColor.purple7DarkA, FlyColor.purple8DarkA, FlyColor.purple9DarkA, FlyColor.purple10DarkA, FlyColor.purple11DarkA, FlyColor.purple12DarkA][step - 1];
+        case 'violet':
+          return isLight
+              ? [FlyColor.violet1A, FlyColor.violet2A, FlyColor.violet3A, FlyColor.violet4A, FlyColor.violet5A, FlyColor.violet6A, FlyColor.violet7A, FlyColor.violet8A, FlyColor.violet9A, FlyColor.violet10A, FlyColor.violet11A, FlyColor.violet12A][step - 1]
+              : [FlyColor.violet1DarkA, FlyColor.violet2DarkA, FlyColor.violet3DarkA, FlyColor.violet4DarkA, FlyColor.violet5DarkA, FlyColor.violet6DarkA, FlyColor.violet7DarkA, FlyColor.violet8DarkA, FlyColor.violet9DarkA, FlyColor.violet10DarkA, FlyColor.violet11DarkA, FlyColor.violet12DarkA][step - 1];
+        case 'iris':
+          return isLight
+              ? [FlyColor.iris1A, FlyColor.iris2A, FlyColor.iris3A, FlyColor.iris4A, FlyColor.iris5A, FlyColor.iris6A, FlyColor.iris7A, FlyColor.iris8A, FlyColor.iris9A, FlyColor.iris10A, FlyColor.iris11A, FlyColor.iris12A][step - 1]
+              : [FlyColor.iris1DarkA, FlyColor.iris2DarkA, FlyColor.iris3DarkA, FlyColor.iris4DarkA, FlyColor.iris5DarkA, FlyColor.iris6DarkA, FlyColor.iris7DarkA, FlyColor.iris8DarkA, FlyColor.iris9DarkA, FlyColor.iris10DarkA, FlyColor.iris11DarkA, FlyColor.iris12DarkA][step - 1];
+        case 'indigo':
+          return isLight
+              ? [FlyColor.indigo1A, FlyColor.indigo2A, FlyColor.indigo3A, FlyColor.indigo4A, FlyColor.indigo5A, FlyColor.indigo6A, FlyColor.indigo7A, FlyColor.indigo8A, FlyColor.indigo9A, FlyColor.indigo10A, FlyColor.indigo11A, FlyColor.indigo12A][step - 1]
+              : [FlyColor.indigo1DarkA, FlyColor.indigo2DarkA, FlyColor.indigo3DarkA, FlyColor.indigo4DarkA, FlyColor.indigo5DarkA, FlyColor.indigo6DarkA, FlyColor.indigo7DarkA, FlyColor.indigo8DarkA, FlyColor.indigo9DarkA, FlyColor.indigo10DarkA, FlyColor.indigo11DarkA, FlyColor.indigo12DarkA][step - 1];
+        case 'blue':
+          return isLight
+              ? [FlyColor.blue1A, FlyColor.blue2A, FlyColor.blue3A, FlyColor.blue4A, FlyColor.blue5A, FlyColor.blue6A, FlyColor.blue7A, FlyColor.blue8A, FlyColor.blue9A, FlyColor.blue10A, FlyColor.blue11A, FlyColor.blue12A][step - 1]
+              : [FlyColor.blue1DarkA, FlyColor.blue2DarkA, FlyColor.blue3DarkA, FlyColor.blue4DarkA, FlyColor.blue5DarkA, FlyColor.blue6DarkA, FlyColor.blue7DarkA, FlyColor.blue8DarkA, FlyColor.blue9DarkA, FlyColor.blue10DarkA, FlyColor.blue11DarkA, FlyColor.blue12DarkA][step - 1];
+        case 'cyan':
+          return isLight
+              ? [FlyColor.cyan1A, FlyColor.cyan2A, FlyColor.cyan3A, FlyColor.cyan4A, FlyColor.cyan5A, FlyColor.cyan6A, FlyColor.cyan7A, FlyColor.cyan8A, FlyColor.cyan9A, FlyColor.cyan10A, FlyColor.cyan11A, FlyColor.cyan12A][step - 1]
+              : [FlyColor.cyan1DarkA, FlyColor.cyan2DarkA, FlyColor.cyan3DarkA, FlyColor.cyan4DarkA, FlyColor.cyan5DarkA, FlyColor.cyan6DarkA, FlyColor.cyan7DarkA, FlyColor.cyan8DarkA, FlyColor.cyan9DarkA, FlyColor.cyan10DarkA, FlyColor.cyan11DarkA, FlyColor.cyan12DarkA][step - 1];
+        case 'teal':
+          return isLight
+              ? [FlyColor.teal1A, FlyColor.teal2A, FlyColor.teal3A, FlyColor.teal4A, FlyColor.teal5A, FlyColor.teal6A, FlyColor.teal7A, FlyColor.teal8A, FlyColor.teal9A, FlyColor.teal10A, FlyColor.teal11A, FlyColor.teal12A][step - 1]
+              : [FlyColor.teal1DarkA, FlyColor.teal2DarkA, FlyColor.teal3DarkA, FlyColor.teal4DarkA, FlyColor.teal5DarkA, FlyColor.teal6DarkA, FlyColor.teal7DarkA, FlyColor.teal8DarkA, FlyColor.teal9DarkA, FlyColor.teal10DarkA, FlyColor.teal11DarkA, FlyColor.teal12DarkA][step - 1];
+        case 'jade':
+          return isLight
+              ? [FlyColor.jade1A, FlyColor.jade2A, FlyColor.jade3A, FlyColor.jade4A, FlyColor.jade5A, FlyColor.jade6A, FlyColor.jade7A, FlyColor.jade8A, FlyColor.jade9A, FlyColor.jade10A, FlyColor.jade11A, FlyColor.jade12A][step - 1]
+              : [FlyColor.jade1DarkA, FlyColor.jade2DarkA, FlyColor.jade3DarkA, FlyColor.jade4DarkA, FlyColor.jade5DarkA, FlyColor.jade6DarkA, FlyColor.jade7DarkA, FlyColor.jade8DarkA, FlyColor.jade9DarkA, FlyColor.jade10DarkA, FlyColor.jade11DarkA, FlyColor.jade12DarkA][step - 1];
+        case 'green':
+          return isLight
+              ? [FlyColor.green1A, FlyColor.green2A, FlyColor.green3A, FlyColor.green4A, FlyColor.green5A, FlyColor.green6A, FlyColor.green7A, FlyColor.green8A, FlyColor.green9A, FlyColor.green10A, FlyColor.green11A, FlyColor.green12A][step - 1]
+              : [FlyColor.green1DarkA, FlyColor.green2DarkA, FlyColor.green3DarkA, FlyColor.green4DarkA, FlyColor.green5DarkA, FlyColor.green6DarkA, FlyColor.green7DarkA, FlyColor.green8DarkA, FlyColor.green9DarkA, FlyColor.green10DarkA, FlyColor.green11DarkA, FlyColor.green12DarkA][step - 1];
+        case 'grass':
+          return isLight
+              ? [FlyColor.grass1A, FlyColor.grass2A, FlyColor.grass3A, FlyColor.grass4A, FlyColor.grass5A, FlyColor.grass6A, FlyColor.grass7A, FlyColor.grass8A, FlyColor.grass9A, FlyColor.grass10A, FlyColor.grass11A, FlyColor.grass12A][step - 1]
+              : [FlyColor.grass1DarkA, FlyColor.grass2DarkA, FlyColor.grass3DarkA, FlyColor.grass4DarkA, FlyColor.grass5DarkA, FlyColor.grass6DarkA, FlyColor.grass7DarkA, FlyColor.grass8DarkA, FlyColor.grass9DarkA, FlyColor.grass10DarkA, FlyColor.grass11DarkA, FlyColor.grass12DarkA][step - 1];
+        case 'brown':
+          return isLight
+              ? [FlyColor.brown1A, FlyColor.brown2A, FlyColor.brown3A, FlyColor.brown4A, FlyColor.brown5A, FlyColor.brown6A, FlyColor.brown7A, FlyColor.brown8A, FlyColor.brown9A, FlyColor.brown10A, FlyColor.brown11A, FlyColor.brown12A][step - 1]
+              : [FlyColor.brown1DarkA, FlyColor.brown2DarkA, FlyColor.brown3DarkA, FlyColor.brown4DarkA, FlyColor.brown5DarkA, FlyColor.brown6DarkA, FlyColor.brown7DarkA, FlyColor.brown8DarkA, FlyColor.brown9DarkA, FlyColor.brown10DarkA, FlyColor.brown11DarkA, FlyColor.brown12DarkA][step - 1];
+        case 'orange':
+          return isLight
+              ? [FlyColor.orange1A, FlyColor.orange2A, FlyColor.orange3A, FlyColor.orange4A, FlyColor.orange5A, FlyColor.orange6A, FlyColor.orange7A, FlyColor.orange8A, FlyColor.orange9A, FlyColor.orange10A, FlyColor.orange11A, FlyColor.orange12A][step - 1]
+              : [FlyColor.orange1DarkA, FlyColor.orange2DarkA, FlyColor.orange3DarkA, FlyColor.orange4DarkA, FlyColor.orange5DarkA, FlyColor.orange6DarkA, FlyColor.orange7DarkA, FlyColor.orange8DarkA, FlyColor.orange9DarkA, FlyColor.orange10DarkA, FlyColor.orange11DarkA, FlyColor.orange12DarkA][step - 1];
+        case 'sky':
+          return isLight
+              ? [FlyColor.sky1A, FlyColor.sky2A, FlyColor.sky3A, FlyColor.sky4A, FlyColor.sky5A, FlyColor.sky6A, FlyColor.sky7A, FlyColor.sky8A, FlyColor.sky9A, FlyColor.sky10A, FlyColor.sky11A, FlyColor.sky12A][step - 1]
+              : [FlyColor.sky1DarkA, FlyColor.sky2DarkA, FlyColor.sky3DarkA, FlyColor.sky4DarkA, FlyColor.sky5DarkA, FlyColor.sky6DarkA, FlyColor.sky7DarkA, FlyColor.sky8DarkA, FlyColor.sky9DarkA, FlyColor.sky10DarkA, FlyColor.sky11DarkA, FlyColor.sky12DarkA][step - 1];
+        case 'mint':
+          return isLight
+              ? [FlyColor.mint1A, FlyColor.mint2A, FlyColor.mint3A, FlyColor.mint4A, FlyColor.mint5A, FlyColor.mint6A, FlyColor.mint7A, FlyColor.mint8A, FlyColor.mint9A, FlyColor.mint10A, FlyColor.mint11A, FlyColor.mint12A][step - 1]
+              : [FlyColor.mint1DarkA, FlyColor.mint2DarkA, FlyColor.mint3DarkA, FlyColor.mint4DarkA, FlyColor.mint5DarkA, FlyColor.mint6DarkA, FlyColor.mint7DarkA, FlyColor.mint8DarkA, FlyColor.mint9DarkA, FlyColor.mint10DarkA, FlyColor.mint11DarkA, FlyColor.mint12DarkA][step - 1];
+        case 'lime':
+          return isLight
+              ? [FlyColor.lime1A, FlyColor.lime2A, FlyColor.lime3A, FlyColor.lime4A, FlyColor.lime5A, FlyColor.lime6A, FlyColor.lime7A, FlyColor.lime8A, FlyColor.lime9A, FlyColor.lime10A, FlyColor.lime11A, FlyColor.lime12A][step - 1]
+              : [FlyColor.lime1DarkA, FlyColor.lime2DarkA, FlyColor.lime3DarkA, FlyColor.lime4DarkA, FlyColor.lime5DarkA, FlyColor.lime6DarkA, FlyColor.lime7DarkA, FlyColor.lime8DarkA, FlyColor.lime9DarkA, FlyColor.lime10DarkA, FlyColor.lime11DarkA, FlyColor.lime12DarkA][step - 1];
+        case 'yellow':
+          return isLight
+              ? [FlyColor.yellow1A, FlyColor.yellow2A, FlyColor.yellow3A, FlyColor.yellow4A, FlyColor.yellow5A, FlyColor.yellow6A, FlyColor.yellow7A, FlyColor.yellow8A, FlyColor.yellow9A, FlyColor.yellow10A, FlyColor.yellow11A, FlyColor.yellow12A][step - 1]
+              : [FlyColor.yellow1DarkA, FlyColor.yellow2DarkA, FlyColor.yellow3DarkA, FlyColor.yellow4DarkA, FlyColor.yellow5DarkA, FlyColor.yellow6DarkA, FlyColor.yellow7DarkA, FlyColor.yellow8DarkA, FlyColor.yellow9DarkA, FlyColor.yellow10DarkA, FlyColor.yellow11DarkA, FlyColor.yellow12DarkA][step - 1];
+        case 'amber':
+          return isLight
+              ? [FlyColor.amber1A, FlyColor.amber2A, FlyColor.amber3A, FlyColor.amber4A, FlyColor.amber5A, FlyColor.amber6A, FlyColor.amber7A, FlyColor.amber8A, FlyColor.amber9A, FlyColor.amber10A, FlyColor.amber11A, FlyColor.amber12A][step - 1]
+              : [FlyColor.amber1DarkA, FlyColor.amber2DarkA, FlyColor.amber3DarkA, FlyColor.amber4DarkA, FlyColor.amber5DarkA, FlyColor.amber6DarkA, FlyColor.amber7DarkA, FlyColor.amber8DarkA, FlyColor.amber9DarkA, FlyColor.amber10DarkA, FlyColor.amber11DarkA, FlyColor.amber12DarkA][step - 1];
+        default:
+          throw ArgumentError('Unknown color scale: $name');
+      }
+    }
 
     // Helper function to get color for a step (hardcoded for example page)
     Color getColor(String name, int step) {
@@ -1045,18 +1689,104 @@ class _FlyColorExampleState extends State<FlyColorExample> {
                           // 12 step colors
                           ...List.generate(12, (index) {
                             final step = index + 1;
-                            final color = getColor(name, step);
+                            final color = _showAlpha ? getAlphaColor(name, step) : getColor(name, step);
                             return Expanded(
-                              child: Container(height: 50, color: color),
+                              child: GestureDetector(
+                                onTap: () => _showColorInfoDialog(
+                                  context,
+                                  color,
+                                  name,
+                                  step,
+                                  _showAlpha,
+                                ),
+                                child: _showAlpha
+                                    ? Container(
+                                        height: 50,
+                                        child: CustomPaint(
+                                          painter: _CheckerboardPainter(
+                                            color1: isLight ? const Color(0xFFE0E0E0) : const Color(0xFF404040),
+                                            color2: isLight ? const Color(0xFFF5F5F5) : const Color(0xFF505050),
+                                          ),
+                                          child: Material(
+                                            color: Colors.transparent,
+                                            child: InkWell(
+                                              onTap: () => _showColorInfoDialog(
+                                                context,
+                                                color,
+                                                name,
+                                                step,
+                                                _showAlpha,
+                                              ),
+                                              child: Container(color: color),
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    : Material(
+                                        color: Colors.transparent,
+                                        child: InkWell(
+                                          onTap: () => _showColorInfoDialog(
+                                            context,
+                                            color,
+                                            name,
+                                            step,
+                                            _showAlpha,
+                                          ),
+                                          child: Container(height: 50, color: color),
+                                        ),
+                                      ),
+                              ),
                             );
                           }),
                           // Contrast color
                           Expanded(
-                            child: Container(height: 50, color: contrastColor),
+                            child: GestureDetector(
+                              onTap: () => _showColorInfoDialog(
+                                context,
+                                contrastColor,
+                                '$name Contrast',
+                                null,
+                                false,
+                              ),
+                              child: Material(
+                                color: Colors.transparent,
+                                child: InkWell(
+                                  onTap: () => _showColorInfoDialog(
+                                    context,
+                                    contrastColor,
+                                    '$name Contrast',
+                                    null,
+                                    false,
+                                  ),
+                                  child: Container(height: 50, color: contrastColor),
+                                ),
+                              ),
+                            ),
                           ),
                           // Surface color
                           Expanded(
-                            child: Container(height: 50, color: surfaceColor),
+                            child: GestureDetector(
+                              onTap: () => _showColorInfoDialog(
+                                context,
+                                surfaceColor,
+                                '$name Surface',
+                                null,
+                                false,
+                              ),
+                              child: Material(
+                                color: Colors.transparent,
+                                child: InkWell(
+                                  onTap: () => _showColorInfoDialog(
+                                    context,
+                                    surfaceColor,
+                                    '$name Surface',
+                                    null,
+                                    false,
+                                  ),
+                                  child: Container(height: 50, color: surfaceColor),
+                                ),
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -1075,13 +1805,19 @@ class _FlyColorExampleState extends State<FlyColorExample> {
 /// Custom painter for checkerboard pattern background
 class _CheckerboardPainter extends CustomPainter {
   static const _squareSize = 10.0;
-  static const _color1 = Color(0xFFE0E0E0);
-  static const _color2 = Color(0xFFF5F5F5);
+  final Color color1;
+  final Color color2;
+
+  _CheckerboardPainter({
+    Color? color1,
+    Color? color2,
+  })  : color1 = color1 ?? const Color(0xFFE0E0E0),
+        color2 = color2 ?? const Color(0xFFF5F5F5);
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint1 = Paint()..color = _color1;
-    final paint2 = Paint()..color = _color2;
+    final paint1 = Paint()..color = color1;
+    final paint2 = Paint()..color = color2;
 
     for (double y = 0; y < size.height; y += _squareSize) {
       for (double x = 0; x < size.width; x += _squareSize) {
@@ -1098,5 +1834,10 @@ class _CheckerboardPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    if (oldDelegate is _CheckerboardPainter) {
+      return oldDelegate.color1 != color1 || oldDelegate.color2 != color2;
+    }
+    return false;
+  }
 }
