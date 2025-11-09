@@ -23,29 +23,26 @@ For a deep dive into the color generation algorithm and architecture, see [ARCHI
 FlyColor provides predefined color scales for all colors:
 
 ```dart
-import 'package:flycolor/flycolor.dart';
+import 'package:flycolor/colors.dart';
 
-// Explicit light/dark mode access
-FlyColorLight.blue1;        // Lightest step (light mode)
-FlyColorLight.blue9;        // Step 9 (seed/base color)
-FlyColorLight.blue12;       // Darkest step
-FlyColorLight.blueContrast; // Contrast color for text
-FlyColorLight.blueSurface;   // Surface color
-FlyColorLight.blue1A;       // Alpha variant
+// Direct access (defaults to light mode)
+FlyColor.blue9;        // Step 9 (seed/base color)
+FlyColor.blue1;        // Lightest step
+FlyColor.blue12;       // Darkest step
+FlyColor.blueContrast; // Contrast color for text
+FlyColor.blueSurface;  // Surface color
 
-FlyColorDark.blue1;         // Lightest step (dark mode)
-FlyColorDark.blue9;         // Step 9 (seed/base color)
-FlyColorDark.blue12;        // Darkest step
+// Dark mode variants
+FlyColor.blue1Dark;
+FlyColor.blue9Dark;
 
-// Convenience: Step 9 colors (same for light/dark)
-FlyColor.blue;              // Step 9 seed color
+// Explicit light/dark mode
+FlyColorLight.blue1;
+FlyColorDark.blue1;
 
 // Context-aware (automatically switches based on theme)
-final colors = FlyColor.of(context);
-colors.blue1;               // Automatically uses light or dark variant
-colors.blue9;
-colors.blueContrast;
-colors.blue1A;              // Alpha variant
+FlyColor.of(context).blue1;
+FlyColor.of(context).gray9;
 ```
 
 For detailed technical documentation on the colors, see `lib/colors.dart`.
