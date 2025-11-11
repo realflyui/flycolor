@@ -2,6 +2,8 @@
 
 A Radix inspired color system for Flutter with perceptually uniform, contextually aware 12-step color scales.
 
+📦 [View on pub.dev](https://pub.dev/packages/flycolor)
+
 ## Key Features
 
 - **Predefined Color Scales**: 30+ color scales (blue, red, green, etc.) with 12 steps each
@@ -16,6 +18,27 @@ A Radix inspired color system for Flutter with perceptually uniform, contextuall
 
 For a deep dive into the color generation algorithm and architecture, see [ARCHITECTURE.md](ARCHITECTURE.md).
 
+## Installation
+
+Add `flycolor` to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  flycolor: ^0.1.1
+```
+
+Then run:
+
+```bash
+flutter pub get
+```
+
+Or with Dart:
+
+```bash
+dart pub add flycolor
+```
+
 ## Usage
 
 ### Predefined Color Scales
@@ -23,7 +46,7 @@ For a deep dive into the color generation algorithm and architecture, see [ARCHI
 FlyColor provides predefined color scales for all colors:
 
 ```dart
-import 'package:flycolor/colors.dart';
+import 'package:flycolor/flycolor.dart';
 
 // Direct access (defaults to light mode)
 FlyColor.blue9;        // Step 9 (seed/base color)
@@ -52,7 +75,7 @@ For detailed technical documentation on the colors, see `lib/colors.dart`.
 For custom color schemes, you can generate scales from any accent, gray, and background colors:
 
 ```dart
-import 'package:flycolor/generator.dart';
+import 'package:flycolor/flycolor.dart';
 
 final colors = FlyColorGenerator.generate(
   appearance: 'light',
