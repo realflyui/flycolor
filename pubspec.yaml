@@ -1,6 +1,6 @@
 name: flycolor
 description: "A Radix inspired color system for Flutter with perceptually uniform, contextually aware 12-step color scales."
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/realflyui/flycolor
 repository: https://github.com/realflyui/flycolor
 
